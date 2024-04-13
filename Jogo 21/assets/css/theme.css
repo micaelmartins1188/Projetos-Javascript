@@ -1,0 +1,31 @@
+.theme {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: none;
+    color: purple;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.theme:hover {
+    background-color: rgb(94, 19, 95);
+    color: rgb(218, 109, 252);
+}
+
+.theme--player {
+    background-image: linear-gradient(#9830D1FF 0%, #B723C5FF 49%, #9830D1FF 100%);
+}
+
+.theme--panel {
+    background-image: linear-gradient(90deg, #9830D1FF 0%, #B723C5FF 49%, #9830D1FF 100%);
+}
+
+.theme--score {
+    box-shadow: 0 0 5px rgba(0, 0, 0, .4);
+}

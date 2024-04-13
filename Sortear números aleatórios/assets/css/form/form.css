@@ -1,0 +1,20 @@
+.form {
+    background-color: var(--blue-dark);
+    padding: 3rem;
+    border-radius: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    width: 60%;
+}
+
+@media screen and (max-width: 998px) {
+    .form {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .form {
+        width: 100%;
+    }
+}

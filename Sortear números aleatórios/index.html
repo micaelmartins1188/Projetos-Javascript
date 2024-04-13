@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sortear número</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- HEADER -->
+    <link rel="stylesheet" href="assets/css/header/header.css">
+    <link rel="stylesheet" href="assets/css/header/header-heading.css">
+
+    <!-- CONTAINERS -->
+    <link rel="stylesheet" href="assets/css/container-form.css">
+    <link rel="stylesheet" href="assets/css/container-sorted.css">
+
+    <!-- FORM -->
+    <link rel="stylesheet" href="assets/css/form/form.css">
+    <link rel="stylesheet" href="assets/css/form/form-box.css">
+    <link rel="stylesheet" href="assets/css/form/form-label.css">
+    <link rel="stylesheet" href="assets/css/form/form-input.css">
+    <link rel="stylesheet" href="assets/css/form/form-message-error.css">
+    <link rel="stylesheet" href="assets/css/form/form-btn.css">
+
+    <!-- SORTED SECTION-->
+    <link rel="stylesheet" href="assets/css/sorted/sorted.css">
+    <link rel="stylesheet" href="assets/css/sorted/sorted-heading.css">
+    <link rel="stylesheet" href="assets/css/sorted/sorted-box.css">
+    <link rel="stylesheet" href="assets/css/sorted/sorted-number.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header__heading">FAÇA O SEU SORTEIO !</h1>
+    </header>
+
+    <div class="container-form">
+        <form class="form">
+            <div class="form__box">
+                <label for="amount" class="form__label">Quantos números serão sorteados: </label>
+                <input type="number" id="amount" class="form__input">
+            </div>
+
+            <div class="form__box">
+                <label for="max" class="form__label">Quantos números vai ter no sorteio: </label>
+                <input type="number" id="max" class="form__input">
+            </div>
+
+            <p class="form__message-error hidden">Preencha todos os campos !</p>
+            <p class="form__message-error hidden">A quantidade de número sorteado não pode ser maior ou igual ao número
+                máximo que terá no sorteio !</p>
+
+            <div class="form__box--btn">
+                <button class="form__btn" id="sort">Fazer sorteio</button>
+                <button class="form__btn" id="clean-form">limpar campo</button>
+                <button class="form__btn" id="clean-sorted">limpar sorteados</button>
+            </div>
+        </form>
+    </div>
+
+    <main class="main">
+        <div class="container-sorted">
+            <section class="sorted">
+                <h3 class="sorted__heading">Números sorteados</h3>
+
+                <div class="sorted__box">
+                    <div class="sorted__number">?</div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

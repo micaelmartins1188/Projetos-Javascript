@@ -1,0 +1,11 @@
+.header__heading {
+    color: rgb(150, 119, 17);
+    font-size: 4rem;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 500px) {
+    .header__heading {
+        font-size: 3rem;
+    }
+}

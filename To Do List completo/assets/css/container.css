@@ -1,0 +1,20 @@
+.container {
+    background-color: var(--gray-dark-2);
+    width: 450px;
+    border-radius: 10px;
+    padding: 2rem;
+    overflow: auto;
+    height: 500px;
+}
+
+.container::-webkit-scrollbar {
+    background-color: var(--gray-dark-3);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background-color: var(--gray-light);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}

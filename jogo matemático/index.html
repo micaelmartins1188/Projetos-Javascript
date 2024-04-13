@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Matemático</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/mediaQuery.css">
+</head>
+
+<body>
+
+    <div class="choiceDiv">
+        <h2 class="choice__heading">Escolha uma operação matemática para jogar</h2>
+
+        <div class="choice__box">
+            <button class="btn choice__btn sum">&plus;</button>
+            <button class="btn choice__btn sub">&minus;</button>
+            <button class="btn choice__btn mult">x</button>
+        </div>
+    </div>
+    </div>
+
+    <div class="painel-highlight">
+        <h3 class="highlight-heading">Melhor pontuação</h3>
+        <div class="highlight-box">
+            <p>+</p>
+            <span class="highlight-sum">0</span>
+            <p class="highlight-icon">🏆</p>
+        </div>
+
+        <div class="highlight-box">
+            <p>-</p>
+            <span class="highlight-sub">0</span>
+            <p class="highlight-icon">🏆</p>
+        </div>
+
+        <div class="highlight-box">
+            <p>*</p>
+            <span class="highlight-mult">0</span>
+            <p class="highlight-icon">🏆</p>
+        </div>
+    </div>
+
+    <!-- GAME -->
+    <div class="game hidden">
+        <div class="painel-equation">
+            <div class="equation">
+                <div class="number1">2</div>
+                <div class="operation">+</div>
+                <div class="number2">5</div>
+            </div>
+
+            <input type="number" class="input" placeholder="?">
+
+            <button class="btn confirm">Confirmar</button>
+        </div>
+
+        <div class="level">level 1</div>
+
+        <div class="painel-again hidden">
+            <div class="message ">O jogo acabou!</div>
+
+            <div class="painel-again-box">
+                <button class="btn again">Jogar novamente</button>
+                <button class="btn choice">mudar operador</button>
+            </div>
+        </div>
+
+        <div class="painel">
+            <div class="painel__box">
+                <div class="life">5</div>
+                <div class="life-icon">❤</div>
+            </div>
+
+            <div class="painel__box">
+                <div class="timer">00:<span class="second">00</span></div>
+                <div class="timer-icon">⏳</div>
+            </div>
+
+            <div class="painel__box">
+                <div class="score">0</div>
+                <div class="score-icon">🏆</div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

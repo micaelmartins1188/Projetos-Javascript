@@ -1,0 +1,7 @@
+.player__name {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 2rem;
+    color: rgb(255, 0, 255);
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,22 @@
+.form__input {
+    padding: 1rem;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 1rem;
+    color: brown;
+    font-size: 2rem;
+    text-align: center;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.form__input:focus {
+    outline-color: rgba(251,188,32);
+}
+
+
+@media screen and (min-width: 980px) {
+    .form__input {
+        text-align: left;
+    }
+}

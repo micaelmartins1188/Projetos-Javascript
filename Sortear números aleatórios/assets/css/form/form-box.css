@@ -1,0 +1,33 @@
+.form__box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.form__box:nth-child(2) {
+    margin-bottom: 3rem;
+}
+
+
+.form__box--btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.form__box--btn .form__btn {
+    width: max-content;
+}
+
+@media screen and (max-width: 998px) {
+    .form__box {
+        flex-direction: column;
+    }
+
+    .form__box:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+}

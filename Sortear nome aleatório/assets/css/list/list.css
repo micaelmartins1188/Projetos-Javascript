@@ -1,0 +1,19 @@
+.list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: var(--green-dark);
+    padding: 3rem;
+    border-radius: 10px;
+    width: 70%;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 600px) {
+    .list {
+        width: 80%;
+    }
+}

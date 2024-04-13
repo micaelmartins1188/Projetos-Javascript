@@ -1,0 +1,23 @@
+.form__btn {
+    background-color: var(--brown-light);
+    border: none;
+    font-size: 3rem;
+    width: 70%;
+    text-transform: uppercase;
+    padding: 5px 0;
+    border-radius: 10px;
+    color: var(--orange-light-2);
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.form__btn:hover {
+    color: var(--brown-dark);
+    background-color: var(--bg-btn-orange-light-2);
+}
+
+.form__btn:focus {
+    outline-color: var(--orange-light);
+    color: var(--brown-dark);
+    background-color: var(--bg-btn-orange-light-2);
+}

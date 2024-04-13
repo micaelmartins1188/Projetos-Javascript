@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sortear Nome</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- HEADER -->
+    <link rel="stylesheet" href="assets/css/header/header.css">
+    <link rel="stylesheet" href="assets/css/header/header-heading.css">
+
+    <!-- CONTAINER -->
+    <link rel="stylesheet" href="assets/css/container-form.css">
+    <link rel="stylesheet" href="assets/css/container-sort.css">
+    <link rel="stylesheet" href="assets/css/container-list/container-list.css">
+    <link rel="stylesheet" href="assets/css/container-list/container-list-btn.css">
+
+    <!-- FORM -->
+    <link rel="stylesheet" href="assets/css/form/form.css">
+    <link rel="stylesheet" href="assets/css/form/form-input.css">
+    <link rel="stylesheet" href="assets/css/form/form-btn.css">
+
+    <!-- HEADING LIST -->
+    <link rel="stylesheet" href="assets/css/heading-list.css">
+
+    <!-- LIST -->
+    <link rel="stylesheet" href="assets/css/list/list.css">
+    <link rel="stylesheet" href="assets/css/list/list-row.css">
+    <link rel="stylesheet" href="assets/css/list/list-delete.css">
+
+    <!-- SORT -->
+    <link rel="stylesheet" href="assets/css/sort/sort.css">
+    <link rel="stylesheet" href="assets/css/sort/sort-heading.css">
+    <link rel="stylesheet" href="assets/css/sort/sort-winner.css">
+    <link rel="stylesheet" href="assets/css/sort/sort-btn.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header__heading">Faça o seu sorteio</h1>
+    </header>
+
+    <div class="container-form">
+        <form class="form form--register">
+            <input type="text" class="form__input" id="name" placeholder="digite o nome aqui">
+            <button class="form__btn" id="btn-confirm">salvar na lista</button>
+            <button class="form__btn--float form__btn--float-remove" id="btn-call-remove">remover nome da lista</button>
+        </form>
+
+        <form class="form form--remove hidden">
+            <input type="text" class="form__input" id="name-remove" placeholder="digite o nome aqui">
+            <button class="form__btn" id="btn-confirm-remove">remover da lista</button>
+            <button class="form__btn--float form__btn--float-add" id="btn-call-add">adicionar nome na lista</button>
+        </form>
+    </div>
+
+    <div class="container-list">
+        <h2 class="heading-list">LISTA PARA SORTEAR</h2>
+        <ul class="list">
+        </ul>
+        <button class="container-list__btn">limpar lista</button>
+    </div>
+
+    <div class="container-sort">
+        <div class="sort">
+            <h2 class="sort__heading">Quem será o sortudo ?</h2>
+
+            <p class="sort__winner hidden"></p>
+
+        </div>
+        <button class="sort__btn">Sortear ganhador</button>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

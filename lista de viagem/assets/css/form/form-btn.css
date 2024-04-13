@@ -1,0 +1,24 @@
+.form__btn {
+    margin: 1rem auto;
+    padding: 1.5rem 5rem;
+    border-radius: 8px;
+    background-color: #fff;
+    color: brown;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100%;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.form__btn:hover,
+.form__btn:focus {
+    background-color: rgba(255,163,50);
+    color: #fff;
+}
+
+.form__btn:focus {
+    outline-color: rgba(251,188,32);
+}

@@ -1,0 +1,15 @@
+.table {
+    border-collapse: collapse;
+    box-sizing: border-box;
+    width: 100%;
+    color: #fff;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+@media screen and (min-width: 510px) {
+    .table {
+        width: 90%;
+        margin: 0 auto;
+    }
+}

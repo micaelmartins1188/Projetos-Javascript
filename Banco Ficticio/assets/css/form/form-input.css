@@ -1,0 +1,19 @@
+.form__input {
+    background-color: rgba(255, 255, 255, 0.4);
+    border: none;
+    border-radius: 0.7rem;
+    color: #333;
+    font-family: inherit;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    transition: all 0.3s;
+    width: 100%;
+    margin-bottom: 1rem;
+    align-self: center;
+}
+
+.form__input:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.6);
+}

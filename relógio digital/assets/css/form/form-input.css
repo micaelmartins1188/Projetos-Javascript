@@ -1,0 +1,26 @@
+.form__input {
+    padding: .5rem 0;
+    text-align: center;
+    font-size: 1.8rem;
+    width: 100px;
+    outline-color: rgb(170, 255, 90);
+    color: rgb(170, 255, 90);
+    text-shadow: 0 0 5px rgb(0, 255, 85);
+    background-color: transparent;
+    border: none;
+    transition: all .3s;
+}
+
+.form__input::-webkit-inner-spin-button {
+    display: none;
+}
+
+.form__input::placeholder {
+    color: unset;
+    text-shadow: unset;
+}
+
+.form__input:not(:placeholder-shown) + .form__label{
+    transform: translate(-50%, 80%);
+    opacity: 1;
+}

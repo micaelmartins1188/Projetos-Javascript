@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viagem</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- HEADER -->
+    <link rel="stylesheet" href="assets/css/header/header.css">
+    <link rel="stylesheet" href="assets/css/header/header-heading.css">
+
+    <!-- MAIN -->
+    <link rel="stylesheet" href="assets/css/content.css">
+    <link rel="stylesheet" href="assets/css/primary.css">
+    <link rel="stylesheet" href="assets/css/baggage.css">
+
+    <!-- FORM -->
+    <link rel="stylesheet" href="assets/css/form/form.css">
+    <link rel="stylesheet" href="assets/css/form/form-label.css">
+    <link rel="stylesheet" href="assets/css/form/form-input.css">
+    <link rel="stylesheet" href="assets/css/form/form-btn.css">
+
+    <!-- LIST -->
+    <link rel="stylesheet" href="assets/css/list/list.css">
+    <link rel="stylesheet" href="assets/css/list/list-row.css">
+    <link rel="stylesheet" href="assets/css/list/list-strong.css">
+    <link rel="stylesheet" href="assets/css/list/list-text.css">
+    <link rel="stylesheet" href="assets/css/list/list-delete.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__heading">Lista de viagem</h1>
+    </header>
+
+    <main class="content">
+        <div class="primary">
+            <div class="baggage"><span class="plane">✈</span></div>
+            
+            <form class="form">
+                <label for="name" class="form__label">Nome</label>
+                <input type="text" id="name" class="form__input name">
+
+                <label for="amount" class="form__label">Quantidade</label>
+                <input type="number" id="amount" class="form__input amount">
+
+                <button class="form__btn">adicionar</button>
+            </form>
+        </div>
+
+        <ul class="list">
+            <!-- <li class="list__row"><strong class="list__strong">10</strong><p class="list__text">Camisa branca</p><button class="list__delete">🗑</button></li> -->
+        </ul>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

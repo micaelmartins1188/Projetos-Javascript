@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+    width: 70%;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+@media screen and (max-width: 900px) {
+    .container {
+        width: 90%;
+    }
+}

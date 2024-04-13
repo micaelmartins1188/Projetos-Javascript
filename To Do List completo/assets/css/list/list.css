@@ -1,0 +1,8 @@
+.list {
+    list-style: none;
+    padding: 2.5rem 0 0;
+}
+
+.list.hidden {
+    display: none;
+}

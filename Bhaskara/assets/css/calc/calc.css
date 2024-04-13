@@ -1,0 +1,15 @@
+.calc {
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    width: 90%;
+}
+
+
+@media screen and (min-width: 840px) {
+    .calc__content {
+        width: 60%;
+        margin: 0 auto;
+    }
+}

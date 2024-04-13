@@ -1,0 +1,11 @@
+.list__delete {
+    font-size: 3rem;
+    color: brown;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    cursor: pointer;
+}

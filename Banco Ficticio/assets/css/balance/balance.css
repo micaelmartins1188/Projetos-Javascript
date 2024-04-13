@@ -1,0 +1,11 @@
+.balance {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    background-color: var(--gray-light-3);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    margin-bottom: 2rem;
+    padding: 1rem 2rem;
+}

@@ -1,0 +1,21 @@
+.modal__close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 2.5rem;
+    background-color: transparent;
+    border: none;
+    color: var(--bg-btn-orange-light);
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.modal__close:hover,
+.modal__close:active {
+    color: var(--bg-btn-orange-light-2);
+}
+
+.modal__close:focus {
+    outline-color: var(--bg-btn-orange-light-2);
+    outline-offset: 5px;
+}

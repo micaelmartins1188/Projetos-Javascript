@@ -1,0 +1,11 @@
+.list__row {
+    display: flex;
+    align-items: center;
+    background-color: var(--brown-light);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.list__row:not(:last-child) {
+    margin-bottom: 2rem;
+}

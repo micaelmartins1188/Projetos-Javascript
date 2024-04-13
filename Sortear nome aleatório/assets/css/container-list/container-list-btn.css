@@ -1,0 +1,30 @@
+.container-list__btn {
+    background-color: var(--green-dark);
+    border: none;
+    color: var(--green-light);
+    width: 30%;
+    padding: 2rem 1rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    
+}
+
+.container-list__btn:hover,
+.container-list__btn:active {
+    color: var(--green-light-2);
+}
+
+@media screen and (max-width: 980px) {
+    .container-list__btn {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .container-list__btn {
+        width: 60%;
+    }
+}

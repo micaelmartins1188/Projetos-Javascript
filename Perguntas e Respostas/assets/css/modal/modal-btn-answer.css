@@ -1,0 +1,21 @@
+.modal__btn-answer {
+    background-color: var(--brown-light);
+    border: none;
+    width: 50%;
+    text-transform: uppercase;
+    padding: 2rem 0;
+    color: var(--orange-light);
+    font-size: 2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.modal__btn-answer:hover {
+    background-color: var(--brown-light-2);
+    color: var(--brown-dark);
+}
+
+.modal__btn-answer.hidden {
+    display: none;
+}

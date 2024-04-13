@@ -1,0 +1,56 @@
+.container {
+    display: flex;
+    gap: 2em;
+}
+
+.converter__box {
+    display: flex;
+    width: 470px;
+    gap: 2em;
+    flex-direction: column;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.painel {
+    background-color: #333;
+    border-radius: 8px;
+    overflow-y: scroll;
+    height: 592px;
+    width: 400px;
+}
+
+@media screen and (max-width: 920px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .painel {
+        width: 100%;
+        height: 150px;
+        order: -1;
+    }
+}
+
+@media screen and (max-width: 525px) {
+    .painel {
+        width: 100%;
+        height: 150px;
+        order: -1;
+    }
+
+.converter {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.converter__box {
+    width: 400px;
+}
+.converter__result {
+    box-sizing: border-box;
+}
+}

@@ -1,0 +1,32 @@
+.show-modal {
+    top: 2rem;
+    right: 2rem;
+    position: absolute;
+    font-size: 2rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    color: #B723C5FF;
+    box-shadow: 2px 2px rgba(0, 0, 0, .4);
+    cursor: pointer;
+    transition: all .2s ease;
+    outline-color: #B723C5FF;
+    z-index: 50;
+}
+
+.show-modal:hover {
+    transform: scale(1.1);
+    box-shadow: 4px 4px rgba(0, 0, 0, .4);
+}
+
+.show-modal:active {
+    transform: scale(1.05);
+}
+
+.show-modal--controls {
+    right: unset;
+    left: 2rem;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}

@@ -1,0 +1,15 @@
+.modal__close {
+    position: absolute;
+    top: .5rem;
+    right: 1rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #8400c2;
+    font-size: 2rem;
+}
+
+.modal__close:hover {
+    text-shadow: 0 0 5px #ae00ff;
+    color: #bf44f8;
+}

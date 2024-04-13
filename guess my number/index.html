@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo 2</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/top.css">
+    <link rel="stylesheet" href="assets/css/bottom.css">
+</head>
+
+<body>
+        <div class="content">
+
+            <div class="view">
+                <div class="top">
+                    <h2 class="top__heading">Advinhe o número secreto</h2>
+
+                    <p class="between">(entre 1 e 20)</p>
+
+                    <div class="secret-number">?</div>
+                </div>
+
+                <div class="bottom">
+
+                    <div class="box-input">
+                        <input type="number" class="input" id="number" placeholder="Digite um número">
+                        <span class="message-error invisible">Escolha um número entre 1 e 20</span>
+                        <button class="btn check">advinhar</button>
+                        <button class="btn again invisible">jogar novamente</button>
+                    </div>
+
+                    <div class="box-message">
+                        <p class="">Número jogado: <span class="number-played"></span></p>
+                        <p class="message">Advinhe o número...</p>
+                        <p class="label-score">Pontuação: <span class="score">20</span></p>
+                        <p class="label-highscore">Melhor pontuação: <span class="highscore">0</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="assets/js/main.js"></script>
+</body>
+
+</html>

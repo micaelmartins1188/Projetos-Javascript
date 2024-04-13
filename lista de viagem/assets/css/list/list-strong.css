@@ -1,0 +1,13 @@
+.list__strong {
+    color: brown;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+    width: 30px;
+    height: 30px;
+    font-size: 2rem;
+}

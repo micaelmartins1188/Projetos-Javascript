@@ -1,0 +1,12 @@
+.container-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+}
+
+@media screen and (max-width: 562px) {
+    .container-form {
+        padding: 5rem 0;
+    }
+}

@@ -1,0 +1,35 @@
+.list__row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    background-color: var(--gray-dark-3);
+}
+
+.list__row:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.list__row.done {
+    background-color: var(--green-light);
+    color: var(--gray-dark-2);
+    font-weight: bold;
+}
+
+.list__row.done > .list__text {
+    text-decoration: line-through;
+    font-style: italic;
+}
+
+.list__row > .btn {
+    padding: 10px 15px;
+}
+
+.list__row.done > .btn {
+    border-color: var(--gray-dark-2);
+    color: var(--gray-dark-2);
+}
+
+.list__row.done > .btn:hover {
+    color: var(--gray-light);
+}

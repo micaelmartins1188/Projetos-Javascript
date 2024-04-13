@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pig Game</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <main class="main">
+       <section class="player player--0 player--active">
+        <h2 class="name" id="name--0">Player 1</h2>
+        <p class="score" id="score--0">43</p>
+        <div class="current">
+            <p class="current-label">Pontos</p>
+            <p class="current-score" id="current--0">0</p>
+        </div>
+       </section>
+
+       <section class="player player--1">
+        <h2 class="name" id="name--1">Player 2</h2>
+        <p class="score" id="score--1">24</p>
+        <div class="current">
+            <p class="current-label">Pontos</p>
+            <p class="current-score" id="current--1">0</p>
+        </div>
+       </section>
+
+       <img src="assets/img/dice-5.png" alt="Jogando dado" class="dice">
+
+       <button class="btn btn--new">jogar novamente</button>
+       <button class="btn btn--roll">jogar dado</button>
+       <button class="btn btn--hold">segurar</button>
+    </main>
+
+    <button class="show-modal">?</button>
+
+    <div class="modal hidden">
+        <button class="close-modal">&times;</button>
+
+        <h3 class="modal-heading">Como jogar ?</h3>
+
+        <p class="modal-text">Você precisa acumular 100 pontos para ganhar o jogo, vai jogando os dados e ganhando pontos, caso tirar 1 no dado você perde os seus pontos e fica com 0, aperte no botão segurar para ficar com os pontos acumulados.</p>
+    </div>
+    <div class="overlay hidden"></div>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+.form__label {
+    position: absolute;
+    color: rgb(170, 255, 90);
+    text-shadow: 0 0 5px rgb(0, 255, 85);
+    font-size: 1.8rem;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+    opacity: 0;
+    transition: all .3s;
+    z-index: -1;
+}

@@ -1,0 +1,21 @@
+.btn-new-question {
+    background-color: var(--brown-dark);
+    color: inherit;
+    padding: 2rem;
+    border-radius: 8px;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.btn-new-question:hover,
+.btn-new-question:active {
+    background-color: var(--brown-light);
+}
+
+.btn-new-question.hidden {
+    display: none;
+}

@@ -1,0 +1,74 @@
+.bottom {
+    padding: 10em 0 5em;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.box-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input {
+    width: 30%;
+    padding: 10px 20px;
+    margin-bottom: 1em;
+    outline-color: #e5e5e5;
+    background-color: rgba(175, 170, 170, 0.6);
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.input::placeholder {
+    color: rgba(255, 255, 255, .3);
+}
+
+.input::-webkit-inner-spin-button {
+    appearance: none;
+}
+
+.message-error {
+    color: rgb(190, 64, 64);
+    text-transform: uppercase;
+    margin-bottom: 1em;
+}
+
+.invisible {
+    display: none;
+}
+
+.box-message p {
+    font-size: 1.2em;
+}
+
+.box-message p:not(:last-child) {
+    margin-bottom: 1em;
+}
+
+.number-played {
+    color: yellow;
+}
+
+.message {
+    color: orange;
+}
+
+@media screen and (max-width: 650px) {
+    .bottom {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box-message {
+        order: -1;
+        margin-bottom: 2em;
+    }
+
+    .input {
+        width: 70%;
+    }
+}

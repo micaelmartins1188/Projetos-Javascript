@@ -1,0 +1,9 @@
+.list__delete {
+    font-size: 4rem;
+    margin-left: 1rem;  
+    cursor: pointer;
+}
+
+.list__delete:hover {
+    color: var(--green-light);
+}

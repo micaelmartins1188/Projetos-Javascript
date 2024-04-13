@@ -1,0 +1,66 @@
+@media screen and (max-width: 980px) {
+    html {
+        font-size: 56.25%;
+    }
+    
+    .painel-again {
+        padding-top: 4rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .painel-highlight {
+        width: 95%;
+        justify-content: center;
+        box-sizing: border-box;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 2rem;
+    }
+    
+    .choice__heading {
+        font-size: 2.5rem;
+        padding: .5rem;
+    }
+
+    .painel-equation {
+        padding-top: 15rem;
+    }
+
+    .equation {
+        font-size: 6rem;
+    }
+
+    .btn.confirm {
+        padding: 2rem;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .painel-highlight {
+        width: 90%;
+        font-size: 1.5rem;
+    }
+
+    .choice__heading {
+        font-size: 2.5rem;
+        padding: 1rem;
+    }
+
+    .btn-choice {
+        width: 100px;
+        padding: 0;
+    }
+
+    .painel-again-box {
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .btn:not(:last-child).again {
+        margin-right: 0;
+    }
+}

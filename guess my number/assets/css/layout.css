@@ -1,0 +1,18 @@
+
+.header {
+    width: 100%;
+    background-image: linear-gradient(to left top, rgb(81, 81, 85),rgba(0, 0, 0, 0.6), rgb(81, 81, 85));
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.view {
+    flex: 1;
+    background-color: rgba(0,0,0, .3);
+    border-bottom-right-radius: 8px;
+}

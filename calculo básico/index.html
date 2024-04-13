@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="box-btns">
+            <button class="btn btn--add" id="add">adição</button>
+            <button class="btn btn--sub" id="sub">subtração</button>
+            <button class="btn btn--div" id="div">divisão</button>
+            <button class="btn btn--mult" id="mult">multiplicação</button>
+        </div>
+
+
+        <div class="box-result inv">
+            <h2 class="heading">Resultado</h2>
+            <div>
+                <span id="value1">4</span>
+                <span class="opr">+</span>
+                <span id="value2">4</span>
+                <span>=</span>
+                <span id="result">8</span>
+            </div>
+        </div>
+
+        <div class="box-error inv">
+            <span class="error">Preencha todos os campos!</span>
+        </div>
+
+        <div class="box-calc">
+            <div class="box-inputs">
+                <input type="number" id="input1">
+                <span class="opr">+</span>
+                <input type="number" id="input2">
+            </div>
+
+            <button class="btn btn--calc" id="calc">calcular</button>
+            <button class="btn btn--clean inv" id="clean">limpar</button>
+        </div>
+
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

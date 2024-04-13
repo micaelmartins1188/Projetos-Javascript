@@ -1,0 +1,69 @@
+.modal {
+    position: fixed;
+    z-index: 100;
+    background-color: #f2f2f2;
+    width: 90%;
+    height: 80%;
+    padding: 5rem 2rem 2rem;
+    box-sizing: border-box;
+    border-radius: 8px;
+    overflow-y: auto;
+    font-size: 2rem;
+}
+
+.modal::-webkit-scrollbar {
+    display: none;
+}
+
+.modal--result {
+    text-align: center;
+}
+
+.modal--result-line {
+    border-top: 1px solid darkgreen;
+    padding-top: 2rem;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.modal--result-text > .math {
+    font-size: 2.5rem;
+}
+
+.modal--result-text > .math--strong {
+    color: darkgreen;
+    text-shadow: 0 0 1px rgba(0, 0, 0, .2);
+}
+
+
+@media screen and (min-width: 660px) {
+    .modal--info {
+        padding: 5rem;
+    }
+
+    .modal--result-text math {
+        font-size: 2.5rem;
+    }
+
+    .modal--result-line {
+        border-width: 2px;
+    }
+
+    .modal.modal--result {
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 840px) {
+    .modal--info {
+        width: 70%;
+    }
+
+    .modal--result-text math {
+        font-size: 3rem;
+    }
+
+    .modal.modal--result {
+        width: 60%;
+    }
+}

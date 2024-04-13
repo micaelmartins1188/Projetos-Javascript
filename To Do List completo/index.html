@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <!-- CONTAINER -->
+        <link rel="stylesheet" href="assets/css/container.css">
+
+        <!-- HEADER -->
+        <link rel="stylesheet" href="assets/css/header/header.css">
+        <link rel="stylesheet" href="assets/css/header/header-heading.css">
+
+        <!-- FORM -->
+        <link rel="stylesheet" href="assets/css/form/form.css">
+        <link rel="stylesheet" href="assets/css/form/form-label.css">
+        <link rel="stylesheet" href="assets/css/form/form-box.css">
+        <link rel="stylesheet" href="assets/css/form/form-input.css">
+        <link rel="stylesheet" href="assets/css/form/form-btn.css">
+
+        <!-- BTN -->
+        <link rel="stylesheet" href="assets/css/btn.css">
+
+        <!-- TOOL BAR -->
+        <link rel="stylesheet" href="assets/css/toolbar.css">
+
+        <!-- FILTER -->
+        <link rel="stylesheet" href="assets/css/filter/filter.css">
+        <link rel="stylesheet" href="assets/css/filter/filter-heading.css">
+        <link rel="stylesheet" href="assets/css/filter/filter-select.css">
+
+        <!-- LIST -->
+        <link rel="stylesheet" href="assets/css/list/list.css">
+        <link rel="stylesheet" href="assets/css/list/list-row.css">
+        <link rel="stylesheet" href="assets/css/list/list-text.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="header__heading">Lista de Tarefas</h1>
+        </header>
+
+        <!-- TO DO FORM -->
+        <form class="form form--todo" id="todo-form">
+            <label for="todo-input" class="form__label">Adicione sua tarefa</label>
+
+            <div class="form__box">
+                <input type="text" id="todo-input" class="form__input" placeholder="Qual vai ser a tarefa ?">
+                <button class="form__btn btn">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+        </form>
+
+        <!-- EDIT FORM -->
+        <form class="form form--edit hidden" id="edit-form">
+            <label for="edit-input" class="form__label">Edite a sua tarefa</label>
+
+            <div class="form__box form__box--edit form__box--edit-id">
+                <p>ID</p>
+                <input type="text" id="edit-input-id" class="form__input form__input--id" readonly>
+            </div>
+            
+            <div class="form__box form__box--edit">
+                <input type="text" id="edit-input" class="form__input">
+                <button class="form__btn btn" id="edit-btn">
+                    <i class="fa-solid fa-check-double"></i>
+                </button>
+            </div>
+
+            <button class="form__btn form__btn--edit btn" id="cancel-edit-btn">Cancelar</button>
+        </form>
+
+        <!-- DIV TOOLBAR -->
+        <div class="toolbar" id="toolbar">
+            <!-- FORM SEARCH -->
+            <form class="form form--search" id="search-form">
+                <label class="form__label" for="search-input">Pesquisar:</label>
+
+                <div class="form__box">
+                    <input type="text" id="search-input" class="form__input" placeholder="Buscar">
+                    <button class="form__btn btn" id="erase-btn">
+                        <i class="fa-solid fa-delete-left"></i>
+                    </button>
+                </div>
+            </form>
+
+            <!-- DIV FILTER -->
+            <div class="filter" id="filter">
+                <h3 class="filter__heading">Filtrar:</h3>
+
+                <select class="filter__select" id="filter-select">
+                    <option value="all">Todos</option>
+                    <option value="done">Feitos</option>
+                    <option value="todo">A fazer</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- TO DO LIST -->
+        <ul class="list">
+
+        </ul>
+
+    </div>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

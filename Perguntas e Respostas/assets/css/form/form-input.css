@@ -1,0 +1,16 @@
+.form__input {
+    border-radius: 8px;
+    border: none;
+    font-size: 2rem;
+    color: var(--brown-dark);
+}
+
+.form__input.form__input--id {
+    text-align: center;
+    width: 30%;
+    padding: 10px 0;
+}
+
+.form__input:focus {
+    outline-color: var(--orange-light);
+}

@@ -1,0 +1,17 @@
+Se quizer adicionar mais modais, só copiar o msm código html e colar quantas vezes quizer, dps disso só utilizar o código js do arquivo main2.js
+
+<div class="modal hidden">
+            <button class="close-modal">&times;</button>
+
+            <h1>I'm a modal window 2</h1>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, aspernatur! Nam unde veniam aliquam ducimus fuga! Exercitationem ut fuga aperiam? Repellendus accusantium consequuntur asperiores tempore dolorem quo deserunt voluptates ducimus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam autem iusto suscipit incidunt, aperiam rem quis perferendis, doloremque consequuntur nobis eos est sequi numquam placeat accusamus dolore, voluptas architecto quam!</p>
+        </div>
+        
+        <div class="modal hidden">
+            <button class="close-modal">&times;</button>
+
+            <h1>I'm a modal window 3</h1>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, aspernatur! Nam unde veniam aliquam ducimus fuga! Exercitationem ut fuga aperiam? Repellendus accusantium consequuntur asperiores tempore dolorem quo deserunt voluptates ducimus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam autem iusto suscipit incidunt, aperiam rem quis perferendis, doloremque consequuntur nobis eos est sequi numquam placeat accusamus dolore, voluptas architecto quam!</p>
+        </div>

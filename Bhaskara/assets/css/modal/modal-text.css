@@ -1,0 +1,15 @@
+.modal__text {
+    font-size: 2rem;
+}
+
+.modal__text:not(:last-child) {
+    margin-bottom: 2rem;
+}
+
+.modal__text strong {
+    color: darkgreen;
+}
+
+.modal--result-text {
+    margin-bottom: 1rem;
+}

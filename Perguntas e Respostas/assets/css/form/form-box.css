@@ -1,0 +1,11 @@
+.form__box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    box-sizing: border-box;
+}
+
+.form__box.form__box--id {
+    flex-direction: row;
+    justify-content: center;
+}

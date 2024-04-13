@@ -1,0 +1,36 @@
+
+:root {
+    --font-family: sans-serif;
+    --bg-body: rgba(230, 230, 230);
+    --gray-dark-1: #888;
+    --gray-dark-2: #777;
+    --gray-dark-3: #666;
+    --gray-dark-4: #444;
+    --gray-light-1: #ccc;
+    --gray-light-2: #bbb;
+    --gray-light-3: #eee;
+    --deposit: linear-gradient(to top left, #39b385, #9be15d);
+    --withdrawal: linear-gradient(to top left, #e52a5a, #ff585f);
+    --value-in: #66c873;
+    --value-out: #f5465d;
+    --transfer: linear-gradient(to top left, #ffb003, #ffcb03);
+    --loan: linear-gradient(to top left, #39b385, #9be15d);
+    --close: linear-gradient(to top left, #e52a5a, #ff585f);
+    --white: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-body);
+    color: var(--gray-dark-4);
+}

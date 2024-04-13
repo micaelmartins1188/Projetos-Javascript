@@ -1,0 +1,18 @@
+.sort__btn {
+    background-color: #51B55B;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-size: 1.8rem;
+    color: var(--green-dark-2);
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.sort__btn:hover {
+    background-color: var(--green-light-2);
+    color: var(--green-dark-2);
+}

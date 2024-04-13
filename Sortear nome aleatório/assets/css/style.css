@@ -1,0 +1,26 @@
+:root {
+    --green-light: #B3F3C1;
+    --green-light-2: #4EDC6D;
+    --green-dark: #1A381A;
+    --green-dark-2: #11400A;
+    --red-light: #f3b3b3;
+    --red-light-2: #dc4e4e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--green-light);
+}
+
+.hidden {
+    display: none;
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anotação</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- HEADER -->
+    <link rel="stylesheet" href="assets/css/header/header.css">
+    <link rel="stylesheet" href="assets/css/header/header-heading.css">
+
+    <!-- BTN CALL FORM -->
+    <link rel="stylesheet" href="assets/css/btn-call-form.css">
+
+    <!-- CONTAINERS -->
+    <link rel="stylesheet" href="assets/css/container/container.css">
+    <link rel="stylesheet" href="assets/css/container/container-form.css">
+    <link rel="stylesheet" href="assets/css/container/container-table.css">
+
+    <!-- FORM -->
+    <link rel="stylesheet" href="assets/css/form/form.css">
+    <link rel="stylesheet" href="assets/css/form/form-heading.css">
+    <link rel="stylesheet" href="assets/css/form/form-box.css">
+    <link rel="stylesheet" href="assets/css/form/form-label.css">
+    <link rel="stylesheet" href="assets/css/form/form-input.css">
+    <link rel="stylesheet" href="assets/css/form/form-textarea.css">
+    <link rel="stylesheet" href="assets/css/form/form-btn.css">
+    <link rel="stylesheet" href="assets/css/form/form-close.css">
+
+    <!-- TABLE -->
+    <link rel="stylesheet" href="assets/css/table/table.css">
+    <link rel="stylesheet" href="assets/css/table/table-head.css">
+    <link rel="stylesheet" href="assets/css/table/table-body.css">
+    <link rel="stylesheet" href="assets/css/table/table-btn.css">
+
+    <!-- MODAL -->
+    <link rel="stylesheet" href="assets/css/modal/modal.css">
+    <link rel="stylesheet" href="assets/css/modal/modal-heading.css">
+    <link rel="stylesheet" href="assets/css/modal/modal-text.css">
+    <link rel="stylesheet" href="assets/css/modal/modal-close.css">
+    <link rel="stylesheet" href="assets/css/modal/modal-date.css">
+    <link rel="stylesheet" href="assets/css/overlay.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header__heading">Faça a sua anotação de forma simples e rápida</h1>
+    </header>
+    <div class="container">
+        <button class="btn-call-form">Fazer uma anotação</button>
+    </div>
+
+    <div class="container container__form hidden">
+        <form class="form" id='form__register'>
+            <h2 class="form__heading">Anotação</h2>
+            <span class="form__close">✖</span>
+
+            <!-- CONTAINER FORM BOX -->
+            <div class="container__form--box">
+                <div class="form__box--left">
+                    <div class="form__box">
+                        <label for="name" class="form__label">Nome</label>
+
+                        <div class="form__input--wrapper">
+                            <input id="name" type="text" class="form__input">
+                        </div>
+                    </div>
+
+                    <div class="form__box">
+                        <label for="tel" class="form__label">Telefone</label>
+
+                        <div class="form__input--wrapper">
+                            <input id="tel" type="text" class="form__input">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form__box--right">
+                    <div class="form__box">
+                        <label for="message" class="form__label">Mensagem</label>
+
+                        <div class="form__textarea--wrapper">
+                            <textarea id="message" cols="30" rows="10" class="form__textarea"
+                                placeholder="Faça a sua anotação aqui!"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="form__btn" id="btn-confirm">Salvar anotação</button>
+        </form>
+    </div>
+
+    <div class="container container__table">
+        <table class="table">
+            <thead class="table__head">
+                <tr>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>Mensagem</th>
+                    <th>Data</th>
+                    <th>Excluir</th>
+                </tr>
+            </thead>
+            <tbody class="table__body">
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="modal hidden">
+        <button class="modal__close">✖</button>
+        <h2 class="modal__heading">Anotação</h2>
+
+        <p class="modal__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, vero eos eius, provident
+            nostrum, at qui quo ab laudantium accusamus officiis aspernatur quod velit saepe pariatur voluptates aliquid
+            est alias!ipsum dolor sit amet consectetur adipisicing elit. Natus, vero eos eius, provident nostrum, at qui
+            quo ab laudantium accusamus officiis aspernatur quod velit saepe pariatur voluptates aliquid est alias!</p>
+
+        <span class="modal__date"></span>
+    </div>
+    <div class="overlay hidden"></div>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

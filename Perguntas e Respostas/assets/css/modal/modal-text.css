@@ -1,0 +1,11 @@
+.modal__text {
+    color: var(--brown-light-3);
+    font-size: 2rem;
+    line-height: 1.3;
+    letter-spacing: 2px;
+    margin-bottom: 3rem;
+}
+
+.modal__text--test.hidden {
+    display: none;
+}

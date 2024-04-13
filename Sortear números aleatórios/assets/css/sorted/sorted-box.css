@@ -1,0 +1,13 @@
+.sorted__box {
+    background-color: var(--blue-dark);
+    display: flex;
+    flex-wrap: wrap;
+    /* max-width: 80%; */
+    max-width: 70%;
+    padding: 3rem;
+    border-radius: 10px;
+    gap: 2rem;
+
+    justify-content: center;
+    align-items: center;
+}

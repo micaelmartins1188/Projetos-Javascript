@@ -1,0 +1,15 @@
+.summary__btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-left: auto;
+    color: inherit;
+}
+
+.summary__btn:hover,
+.summary__btn:focus {
+    color: var(--gray-light-2);
+    outline: none;
+}

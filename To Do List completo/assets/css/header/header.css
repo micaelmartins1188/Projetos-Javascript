@@ -1,0 +1,4 @@
+.header {
+    border-bottom: 2px solid var(--gray-dark-3);
+    padding-bottom: 2rem;
+}

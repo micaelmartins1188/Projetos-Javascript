@@ -1,0 +1,28 @@
+.list {
+    width: 50%;
+    height: 400px;
+    margin: 0 auto;
+    background-color: rgb(219, 198, 76);
+    overflow-y: scroll;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.delete {
+    font-size: 4rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+    .list {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .list {
+        width: 90%;
+    }
+}

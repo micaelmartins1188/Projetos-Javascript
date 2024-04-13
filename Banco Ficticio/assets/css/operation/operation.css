@@ -1,0 +1,20 @@
+.operation {
+    border-radius: 1rem;
+    padding: 2rem 4rem;
+}
+
+.operation:not(:last-child) {
+    margin-bottom: 2rem;
+}
+
+.operation--transfer {
+    background-image: var(--transfer);
+}
+
+.operation--loan {
+    background-image: var(--loan);
+}
+
+.operation--close {
+    background-image: var(--close);
+}

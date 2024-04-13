@@ -1,0 +1,19 @@
+.filter__select {
+    background-color: var(--gray-dark-3);
+    border-color: var(--gray-light);
+    padding: 5px;
+    color: var(--gray-light);
+    letter-spacing: 1px;
+    border-radius: 8px;
+}
+
+.filter__select:hover,
+.filter__select:focus {
+    border-color: var(--green-light);
+    outline: none;
+    color: var(--green-light);
+}
+
+.filter__select > option {
+    color: var(--gray-light);
+}

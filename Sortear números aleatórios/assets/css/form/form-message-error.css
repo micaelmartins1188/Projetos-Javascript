@@ -1,0 +1,7 @@
+.form__message-error {
+    color: var(--red-light);
+    font-size: 2rem;
+    width: 100%;
+    margin: 2rem auto;
+    letter-spacing: 1px;
+}

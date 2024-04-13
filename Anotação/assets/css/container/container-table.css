@@ -1,0 +1,17 @@
+.container__table {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-y: scroll;
+    max-height: 400px;
+    padding: 0;
+    margin: 0 0 2rem;
+}
+
+.container__table.hidden {
+    display: none;
+}
+
+.container__table::-webkit-scrollbar {
+    opacity: 0;
+}

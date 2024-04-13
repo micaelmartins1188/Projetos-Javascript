@@ -1,0 +1,8 @@
+.list__row {
+    padding: 10px 20px;
+    border-bottom: 1px solid rgb(150, 119, 17);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

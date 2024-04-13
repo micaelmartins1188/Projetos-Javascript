@@ -1,0 +1,21 @@
+.table__btn {
+    padding: 1rem;
+    border-radius: 8px;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all .3s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .4);
+}
+
+.table__btn:hover {
+    background-color: #e5e5e5;
+}
+
+.table__btn--remove {
+    font-size: 4rem;
+    font-weight: unset;
+    padding: 0 2rem;
+}

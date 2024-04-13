@@ -1,0 +1,6 @@
+.timer__options {
+    display: flex;
+    font-size: 2rem;
+    gap: 2rem;
+    margin-bottom: 4rem;
+}

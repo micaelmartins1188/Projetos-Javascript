@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco Fictício</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- NAVIGATION -->
+    <link rel="stylesheet" href="assets/css/nav/nav.css">
+    <link rel="stylesheet" href="assets/css/nav/nav-welcome.css">
+    <link rel="stylesheet" href="assets/css/nav/nav-logo.css">
+
+    <!-- LOGIN -->
+    <link rel="stylesheet" href="assets/css/login/login.css">
+    <link rel="stylesheet" href="assets/css/login/login-input.css">
+    <link rel="stylesheet" href="assets/css/login/login-btn.css">
+
+    <!-- APP -->
+    <link rel="stylesheet" href="assets/css/app.css">
+
+    <!-- CONTAINERS -->
+    <link rel="stylesheet" href="assets/css/container-primary.css">
+    <link rel="stylesheet" href="assets/css/container-secondary.css">
+    <link rel="stylesheet" href="assets/css/container-tertiary.css">
+
+    <!-- BALANCE -->
+    <link rel="stylesheet" href="assets/css/balance/balance.css">
+    <link rel="stylesheet" href="assets/css/balance/balance-box.css">
+    <link rel="stylesheet" href="assets/css/balance/balance-label.css">
+    <link rel="stylesheet" href="assets/css/balance/balance-date.css">
+    <link rel="stylesheet" href="assets/css/balance/balance-value.css">
+
+    <!-- MOVEMENTS -->
+    <link rel="stylesheet" href="assets/css/movements/movements.css">
+    <link rel="stylesheet" href="assets/css/movements/movements-row.css">
+    <link rel="stylesheet" href="assets/css/movements/movements-type.css">
+    <link rel="stylesheet" href="assets/css/movements/movements-date.css">
+    <link rel="stylesheet" href="assets/css/movements/movements-value.css">
+
+    <!-- SUMMARY -->
+    <link rel="stylesheet" href="assets/css/summary/summary.css">
+    <link rel="stylesheet" href="assets/css/summary/summary-box.css">
+    <link rel="stylesheet" href="assets/css/summary/summary-label.css">
+    <link rel="stylesheet" href="assets/css/summary/summary-value.css">
+    <link rel="stylesheet" href="assets/css/summary/summary-btn.css">
+
+    <!-- OPERATION -->
+    <link rel="stylesheet" href="assets/css/operations.css">
+    <link rel="stylesheet" href="assets/css/operation/operation.css">
+    <link rel="stylesheet" href="assets/css/operation/operation-heading.css">
+
+    <!-- FORM -->
+    <link rel="stylesheet" href="assets/css/form/form.css">
+    <link rel="stylesheet" href="assets/css/form/form-group.css">
+    <link rel="stylesheet" href="assets/css/form/form-input.css">
+    <link rel="stylesheet" href="assets/css/form/form-label.css">
+    <link rel="stylesheet" href="assets/css/form/form-btn.css">
+
+    <!-- LOGOUT TIMER -->
+    <link rel="stylesheet" href="assets/css/logout/logout.css">
+    <link rel="stylesheet" href="assets/css/logout/logout-time.css">
+</head>
+
+<body>
+    <!-- TOP NAVIGATION -->
+    <nav class="nav">
+        <p class="nav__welcome">Faça login para começar</p>
+
+        <h2 class="nav__logo">banco fictício</h2>
+
+        <form class="login">
+            <input type="text" class="login__input login__input--user" placeholder="usuário">
+            <input type="password" maxlength="4" class="login__input login__input--pin" placeholder="PIN">
+            <button class="login__btn">&rarr;</button>
+        </form>
+
+        <div class="nav--accounts">| user: jo => PIN: 1111 | user: ma => PIN: 2222 | user: pe => PIN: 3333 |</div>
+    </nav>
+
+    <main class="app">
+        <div class="container-primary">
+            <!-- Balance -->
+            <div class="balance">
+                <div class="balance__box">
+                    <p class="balance__label">Saldo atual</p>
+                    <p class="balance__date"><span class="date">01/02/2024</span></p>
+                </div>
+                <p class="balance__value">0000</p>
+            </div>
+
+            <div class="container-secondary">
+                <div class="container-tertiary">
+                    <!-- Movements -->
+                    <div class="movements">
+                       
+                    </div>
+
+                    <!-- SUMMARY -->
+                    <div class="summary">
+                        <div class="summary__box">
+                            <p class="summary__label">Entrada</p>
+                            <p class="summary__value summary__value--in">0000€</p>
+                        </div>
+
+                        <div class="summary__box">
+                            <p class="summary__label">Saída</p>
+                            <p class="summary__value summary__value--out">0000€</p>
+                        </div>
+
+                        <div class="summary__box">
+                            <p class="summary__label">Interest</p>
+                            <p class="summary__value summary__value--interest">0000€</p>
+                        </div>
+
+                        <button class="summary__btn summary__btn--sort">&downarrow; ORDENAR</button>
+                    </div>
+                </div>
+
+                <div class="container-tertiary">
+                    <!-- OPERATIONS -->
+                    <div class="operations">
+                        <!-- OPERATION TRANSFERS -->
+                        <div class="operation operation--transfer">
+                            <h3 class="operation__heading">Transferência</h3>
+                            <form class="form form--transfer">
+                                <div class="form__group">
+                                    <input type="text" class="form__input form__input--to">
+                                    <label class="form__label">Transferir para</label>
+                                </div>
+
+                                <div class="form__group">
+                                    <input type="number" class="form__input form__input--amount">
+                                    <label class="form__label">Quantidade</label>
+                                </div>
+
+                                <button class="form__btn form__btn--transfer">&rarr;</button>
+                            </form>
+                        </div>
+
+                        <!-- OPERATION LOAN -->
+                        <div class="operation operation--loan">
+                            
+                                <h3 class="operation__heading">Empréstimo</h3>
+
+                                <form class="form form--loan">
+                                    <div class="form__group">
+                                        <input type="number" class="form__input form__input--loan-amount">
+                                        <label class="form__label">Quantidade</label>
+                                    </div>
+
+                                    <button class="form__btn form__btn--loan">&rarr;</button>
+                                </form>
+                            
+                        </div>
+
+                        <!-- OPERATION CLOSE -->
+                        <div class="operation operation--close">
+                            <h3 class="operation__heading">Fechar conta</h3>
+                            <form class="form form--close">
+                                <div class="form__group">
+                                    <input type="text" class="form__input form__input--user">
+                                    <label class="form__label">Confirmar usuário</label>
+                                </div>
+
+                                <div class="form__group">
+                                    <input type="password" maxlength="6" class="form__input form__input--pin">
+                                    <label class="form__label">Confirmar PIN</label>
+                                </div>
+
+                                <button class="form__btn form__btn--close">&rarr;</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- LOGOUT TIMER -->
+                    <div class="logout">
+                        <p class="logout__timer">Você será deslogado em <span class="timer">05:00</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

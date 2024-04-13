@@ -1,0 +1,27 @@
+:root {
+    --gray-dark: #141414;
+    --gray-dark-2: #242424;
+    --gray-dark-3: #333;
+    --gray-light: #ebebeb;
+    --gray-light-2: #707070;
+    --green-light: #00FF88;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: sans-serif;
+    background-color: var(--gray-dark);
+    color: var(--gray-light);
+}

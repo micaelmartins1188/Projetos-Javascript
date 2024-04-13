@@ -1,0 +1,29 @@
+:root {
+    --brown-dark: #332614;
+    --brown-light: #664b28;
+    --brown-light-2: #E6A95B;
+    --brown-light-3: #FFE4C1;
+    --orange-light: #FFBC65;
+    --orange-light-2: #FFF2E0;
+
+    --bg-btn-orange-light: #ffc374;
+    --bg-btn-orange-light-2: #FFD093;
+
+    --bg-btn-red-light: #FF9994;
+    --bg-btn-red-light-2: #f3dcdb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--orange-light);
+    color: var(--orange-light-2);
+}

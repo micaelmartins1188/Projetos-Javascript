@@ -1,0 +1,21 @@
+.modal__btn-choice {
+    background-color: var(--brown-light);
+    border: none;
+    font-size: 2rem;
+    text-transform: uppercase;
+    padding: 1rem 5rem;
+    border-radius: 8px;
+    color: var(--orange-light);
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all .3s ease;
+}
+
+.modal__btn-choice:hover {
+    background-color: var(--brown-light-2);
+    color: var(--brown-dark);
+}
+
+.modal__btn-choice.hidden {
+    display: none;
+}

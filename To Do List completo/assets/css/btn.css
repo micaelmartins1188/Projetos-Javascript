@@ -1,0 +1,22 @@
+.btn {
+    background-color: transparent;
+    border: 1.5px solid var(--gray-light);
+    color: var(--gray-light);
+    padding: 5px 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .4s ease;
+    border-radius: 5px;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: var(--gray-dark-3);
+    border-color: var(--green-light);
+    outline-color: var(--gray-dark-3);
+    color: var(--green-light);
+    outline: none;
+}

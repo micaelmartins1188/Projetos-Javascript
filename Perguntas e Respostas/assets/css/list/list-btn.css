@@ -1,0 +1,25 @@
+.list__btn {
+    font-size: 3.5rem;
+    border: none;
+    background-color: transparent;
+    color: var(--orange-light);
+    cursor: pointer;
+}
+
+.list__btn:not(:last-child) {
+    margin-right: 1rem;
+}
+
+.list__btn:first-of-type {
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+.list__btn:hover,
+.list__btn:active {
+    color: var(--orange-light-2);
+}
+
+.list__btn:first-of-type {
+    margin-left: 1rem;
+}

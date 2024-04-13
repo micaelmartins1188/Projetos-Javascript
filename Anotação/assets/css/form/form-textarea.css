@@ -1,0 +1,28 @@
+.form__textarea {
+    box-sizing: border-box;
+    background-color: transparent;
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 2rem;
+    height: 150px;
+    color: inherit;
+    resize: none;
+    border: none;
+    outline: none;
+}
+
+.form__textarea::placeholder {
+    color: #ffffff;
+    letter-spacing: 1px;
+    opacity: .7;
+}
+
+.form__textarea--wrapper {
+    background-image: linear-gradient(90deg, rgba(65, 212, 218, .5),rgba(199, 88, 250, .5));
+    border-radius: 8px;
+}
+
+.form__textarea--wrapper.wrapper-focus {
+    background-image: linear-gradient(90deg, rgba(65, 212, 218, .7),rgba(199, 88, 250, .7));
+}

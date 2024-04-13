@@ -1,0 +1,7 @@
+.logout__timer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 1.25rem;
+    color: var(--white);
+}

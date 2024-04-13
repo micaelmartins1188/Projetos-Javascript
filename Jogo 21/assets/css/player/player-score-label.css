@@ -1,0 +1,6 @@
+.player__score-label {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: rgb(94, 19, 95);
+}

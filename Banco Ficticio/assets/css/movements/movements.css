@@ -1,0 +1,9 @@
+.movements {
+    background-color: #fff;
+    /* border-radius: 1rem; */
+    margin-bottom: 2rem;
+    height: 45rem;
+    overflow-y: scroll;
+
+    border-bottom-left-radius: 1rem;
+}

@@ -1,0 +1,16 @@
+.modal__close {
+    font-size: 3rem;
+    background-color: unset;
+    border: none;
+    color: darkgreen;
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.modal__close:hover,
+.modal__close:active {
+    color: rgb(87, 201, 87);
+}

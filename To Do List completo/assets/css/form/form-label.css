@@ -1,0 +1,6 @@
+.form__label {
+    font-size: 2rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}

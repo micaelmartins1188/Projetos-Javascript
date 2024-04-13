@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 0;
+}
+
+.container--list.hidden {
+    display: none;
+}
+
+.container--test {
+    width: 60%;
+    background-color: var(--brown-dark);
+    margin: 0 auto;
+    margin-bottom: 5rem;
+    border-radius: 10px;
+}

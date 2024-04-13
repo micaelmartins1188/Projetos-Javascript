@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pergunta e Resposta</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- HEADER -->
+    <link rel="stylesheet" href="assets/css/header/header.css">
+    <link rel="stylesheet" href="assets/css/header/header-heading.css">
+
+    <!-- CONTAINER -->
+    <link rel="stylesheet" href="assets/css/container.css">
+
+    <!-- BTN NEW QUESTION -->
+    <link rel="stylesheet" href="assets/css/btn-new-question.css">
+
+    <!-- FORM -->
+    <link rel="stylesheet" href="assets/css/form/form.css">
+    <link rel="stylesheet" href="assets/css/form/form-close.css">
+    <link rel="stylesheet" href="assets/css/form/form-heading.css">
+    <link rel="stylesheet" href="assets/css/form/form-id.css">
+    <link rel="stylesheet" href="assets/css/form/form-box.css">
+    <link rel="stylesheet" href="assets/css/form/form-label.css">
+    <link rel="stylesheet" href="assets/css/form/form-input.css">
+    <link rel="stylesheet" href="assets/css/form/form-textarea.css">
+    <link rel="stylesheet" href="assets/css/form/form-btn.css">
+
+    <!-- LIST -->
+    <link rel="stylesheet" href="assets/css/list/list.css">
+    <link rel="stylesheet" href="assets/css/list/list-row.css">
+    <link rel="stylesheet" href="assets/css/list/list-question.css">
+    <link rel="stylesheet" href="assets/css/list/list-btn.css">
+
+    <!-- TEST -->
+    <link rel="stylesheet" href="assets/css/test/test.css">
+    <link rel="stylesheet" href="assets/css/test/test-panel.css">
+    <link rel="stylesheet" href="assets/css/test/test-panel-box.css">
+    <link rel="stylesheet" href="assets/css/test/test-panel-heading.css">
+    <link rel="stylesheet" href="assets/css/test/test-panel-span.css">
+    <link rel="stylesheet" href="assets/css/test/test-btn.css">
+
+    <!-- MODAL -->
+    <link rel="stylesheet" href="assets/css/modal/modal.css">
+    <link rel="stylesheet" href="assets/css/modal/modal-close.css">
+    <link rel="stylesheet" href="assets/css/modal/modal-container.css">
+    <link rel="stylesheet" href="assets/css/modal/modal-heading.css">
+    <link rel="stylesheet" href="assets/css/modal/modal-text.css">
+    <link rel="stylesheet" href="assets/css/modal/modal-btn-answer.css">
+    <link rel="stylesheet" href="assets/css/modal/modal-box.css">
+    <link rel="stylesheet" href="assets/css/modal/modal-btn-choice.css">
+
+    <!-- OVERLAY -->
+    <link rel="stylesheet" href="assets/css/overlay.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header__heading">Perguntas & Respostas</h1>
+    </header>
+
+
+    <div class="container">
+        <button class="btn-new-question">Cadastrar uma pergunta</button>
+
+        <form class="form form__register hidden">
+            <button class="form__close">✖</button>
+            <h2 class="form__heading">Cadastro</h2>
+
+            <!-- FORM PERGUNTA -->
+            <div class="form__box">
+                <label for="question" class="form__label">Pergunta</label>
+                <textarea id="question" placeholder="Digite sua pergunta aqui!"
+                    class="form__textarea form__textarea-question"></textarea>
+            </div>
+
+            <!-- FORM RESPOSTA -->
+            <div class="form__box">
+                <label for="answer" class="form__label">Resposta</label>
+                <textarea id="answer" placeholder="Digite sua resposta aqui!"
+                    class="form__textarea form__textarea-answer"></textarea>
+            </div>
+
+            <button class="form__btn" id="btn-save">salvar</button>
+        </form>
+
+        <form class="form form__update hidden">
+            <button class="form__close">✖</button>
+            <h2 class="form__heading">Atualização</h2>
+
+            <!-- FORM ID -->
+            <div class="form__box form__box--id">
+                <label for="id" class="form__label form__label--id">ID <button
+                        class="form__label--info">?</button></label>
+                <input id="id" placeholder="ID" class="form__input form__input--id" readonly></input>
+            </div>
+
+            <!-- FORM PERGUNTA -->
+            <div class="form__box">
+                <label for="id-question" class="form__label">Pergunta</label>
+                <textarea placeholder="Digite sua pergunta aqui!" class="form__textarea" id="id-question"></textarea>
+            </div>
+
+            <!-- FORM RESPOSTA -->
+            <div class="form__box">
+                <label for="id-answer" class="form__label">Resposta</label>
+                <textarea placeholder="Digite sua resposta aqui!" class="form__textarea" id="id-answer"></textarea>
+            </div>
+
+            <button class="form__btn" id="btn-update">atualizar</button>
+        </form>
+    </div>
+
+    <!-- LIST -->
+    <div class="container container--list hidden">
+        <ul class="list"></ul>
+    </div>
+
+    <!-- CONTAINER TEST -->
+    <div class="container container--test">
+        <div class="test">
+            <div class="test__panel">
+                <div class="test__panel-box">
+                    <h3 class="test__panel-heading">Acertos</h3>
+                    <span class="test__panel-span" id="right-answers">0</span>
+                </div>
+
+                <div class="test__panel-box">
+                    <h3 class="test__panel-heading">Taxa de Acertos</h3>
+                    <span class="test__panel-span" id="average">0</span>
+                </div>
+
+                <div class="test__panel-box">
+                    <h3 class="test__panel-heading">Erros</h3>
+                    <span class="test__panel-span" id="wrong-answers">0</span>
+                </div>
+            </div>
+
+            <button class="test__btn">Iniciar teste</button>
+        </div>
+
+        <!-- MODAL-->
+        <div class="modal hidden">
+            <button class="modal__close">✖</button>
+            <div class="modal__container">
+                <!-- MODAL INFO -->
+                <div class="modal__container modal__container--info hidden">
+
+                    <h2 class="modal__heading modal__heading--info">Lorem ipsum dolor sit amet consectetur,
+                        adipisicing elit. Modi vel eius
+                        suscipit dolores totam quos architecto quis, quo autem. Voluptatibus fuga provident tempore
+                        rerum
+                        tenetur. Maxime esse aliquid corporis facere ?</h2>
+
+                    <div class="modal__text modal__text--info">Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Optio beatae
+                        doloribus repellat quisquam ex molestiae sint qui consequatur explicabo, odit incidunt quasi
+                        illo
+                        ab. Eum doloremque placeat illum ut ad.</div>
+
+                </div>
+
+                <!-- MODAL TESTE -->
+                <div class="modal__container modal__container--test hidden">
+                    <h2 class="modal__heading modal__heading--test">Teste <span class="progress-test">0</span> de
+                        <span class="question-numbers">0</span>
+                    </h2>
+
+                    <h3 class="modal__heading modal-heading--test">Lorem ipsum dolor sit amet consectetur,
+                        adipisicing elit.
+                        Modi vel eius
+                        suscipit dolores totam quos architecto quis, quo autem. Voluptatibus fuga provident tempore
+                        rerum
+                        tenetur. Maxime esse aliquid corporis facere ?</h3>
+
+                    <div class="modal__text modal__text--test hidden">Lorem ipsum dolor, sit amet consectetur
+                        adipisicing
+                        elit. Optio beatae
+                        doloribus repellat quisquam ex molestiae sint qui consequatur explicabo, odit incidunt quasi
+                        illo
+                        ab. Eum doloremque placeat illum ut ad.</div>
+
+                    <div class="modal__box">
+                        <button class="modal__btn-answer ">Ver resposta</button>
+                        <div class="modal__box--choice hidden">
+                            <button class="modal__btn-choice" id="correct">Acertei</button>
+                            <button class="modal__btn-choice" id="incorrect">Errei</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- OVERLAY -->
+        <div class="overlay hidden"></div>
+        <script src="assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+.form__input {
+   padding: 8px 0;
+   background-color: var(--blue-light);
+   border: none;
+   font-size: 2.5rem;
+   text-align: center;
+   border-radius: 10px;
+   box-sizing: border-box;
+   color: inherit;
+   width: 20%;
+}
+
+.form__input::-webkit-inner-spin-button {
+    display: none;
+}
+
+.form__input:focus {
+    outline-color: var(--blue-dark);
+}
+
+@media screen and (max-width: 998px) {
+    .form__input {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .form__input {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 558px) {
+    .form__input {
+        padding: 12px;
+    }
+}

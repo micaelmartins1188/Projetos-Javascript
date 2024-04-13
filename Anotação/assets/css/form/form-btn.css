@@ -1,0 +1,21 @@
+.form__btn {
+    padding: 10px 20px;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 8px;
+    color: inherit;
+    width: 70%;
+    cursor: pointer;
+    outline: none;
+    background-image: linear-gradient(90deg, rgb(67, 165, 168),rgb(158, 69, 199));
+
+    transition: all .5s ease;
+}
+
+.form__btn:hover,
+.form__btn:focus {
+    background-image: linear-gradient(90deg, rgb(65, 212, 218),rgb(199, 88, 250));
+    text-shadow: 0 0 15px rgba(0, 0, 0, 1);
+}

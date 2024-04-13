@@ -1,0 +1,14 @@
+.modal__box {
+    display: flex;
+    justify-content: center;
+}
+
+.modal__box--choice {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.modal__box--choice.hidden {
+    display: none;
+}

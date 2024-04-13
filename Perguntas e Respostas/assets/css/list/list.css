@@ -1,0 +1,20 @@
+.list {
+    list-style: none;
+    background-color: var(--brown-dark);
+    padding: 3rem;
+    border-radius: 10px;
+    width: 60%;
+    max-height: 486px;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.list::-webkit-scrollbar {
+    background-color: var(--brown-light);
+    border-radius: 8px;
+}
+
+.list::-webkit-scrollbar-thumb {
+    background-color: var(--brown-light-2);
+    border-radius: 8px;
+}

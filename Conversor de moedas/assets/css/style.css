@@ -1,0 +1,123 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+   background-color: #e6e6e6;
+    color: #fff;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.converter {
+    padding: 2em 0 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.converter:not(:last-child) {
+    margin-bottom: 2em;
+}
+
+.converter__us--br {
+    background-image: linear-gradient(to bottom right, rgb(204, 38, 38), rgb(54, 54, 172), rgb(204, 38, 38));
+}
+
+.converter__br--us {
+    background-image: linear-gradient(to bottom right, rgb(38, 204, 74), rgb(172, 170, 54), rgb(38, 204, 74));
+}
+
+.converter__heading {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+}
+
+.form__label {
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: .5em;
+    text-align: center;
+}
+
+.form__input {
+    background-color: rgba(0, 0, 0, .6);
+    border: none;
+    font-size: 1.2em;
+    color: inherit;
+    padding: 5px 10px;
+    margin-bottom: 1em;
+    text-align: center;
+    border-radius: 8px;
+    width: 70%;
+    align-self: center;
+}
+
+.form__input::-webkit-inner-spin-button {
+    display: none;
+}
+
+.form__btn {
+    padding: 10px 0;
+    width: 50%;
+    align-self: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.form__btn:hover,
+.form__btn:active {
+    background-color: rgba(241, 241, 241, .8);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .6);
+}
+
+.form__btn:active {
+    transform: scale(.99);
+}
+
+.converter__result {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.converter__result-span {
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    padding: .5em 1em;
+}
+
+.painel__row {
+    display: flex;
+    justify-content: space-around;
+    padding: 1em;
+}
+
+.painel__row:not(:last-child) {
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.painel__span {
+    margin: 0 1em;
+}
+
+.dollar {
+    background-image: linear-gradient(90deg, rgba(204, 38, 38, .6), rgba(54, 54, 172, .6),  rgba(38, 204, 74, .6), rgba(172, 170, 54, .6));
+}
+
+.reais {
+    background-image: linear-gradient(-90deg, rgb(204, 38, 38, .6), rgb(54, 54, 172, .6), rgb(38, 204, 74, .6), rgb(172, 170, 54, .6));
+}
+
+.hidden {
+    display: none;
+}

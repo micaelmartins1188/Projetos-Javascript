@@ -1,0 +1,12 @@
+.calc__heading {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+}
+
+
+@media screen and (min-width: 840px) {
+    .calc__heading {
+        font-size: 3rem;
+    }
+}

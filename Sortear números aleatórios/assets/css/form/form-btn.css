@@ -1,0 +1,22 @@
+.form__btn {
+    background-color: var(--blue-light);
+    border: none;
+    border-radius: 8px;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    padding: 8px 15px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    color: var(--blue-dark);
+}
+
+.form__btn:hover,
+.form__btn:focus {
+    background-color: var(--blue-light-2);
+}
+
+@media screen and (max-width: 680px) {
+    .form__btn {
+        padding: 15px 25px;
+    }
+}

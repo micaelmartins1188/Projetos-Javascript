@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio digital</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- CLOCK -->
+    <link rel="stylesheet" href="assets/css/clock/clock.css">
+    <link rel="stylesheet" href="assets/css/clock/clock-hour.css">
+    <link rel="stylesheet" href="assets/css/clock/clock-minute.css">
+    <link rel="stylesheet" href="assets/css/clock/clock-second.css">
+    <link rel="stylesheet" href="assets/css/clock/clock-separator.css">
+
+
+    <!-- TIMER DISPLAY -->
+    <link rel="stylesheet" href="assets/css/timer/timer.css">
+    <link rel="stylesheet" href="assets/css/timer/timer-display.css">
+    <link rel="stylesheet" href="assets/css/timer/timer-hour.css">
+    <link rel="stylesheet" href="assets/css/timer/timer-minute.css">
+    <link rel="stylesheet" href="assets/css/timer/timer-second.css">
+    <link rel="stylesheet" href="assets/css/timer/timer-separator.css">
+    <link rel="stylesheet" href="assets/css/timer/timer-options.css">
+    <link rel="stylesheet" href="assets/css/timer/timer-btn.css     ">
+  
+    
+
+    <!-- FORM -->
+    <link rel="stylesheet" href="assets/css/form/form.css">
+    <link rel="stylesheet" href="assets/css/form/form-box.css">
+    <link rel="stylesheet" href="assets/css/form/form-group.css">
+    <link rel="stylesheet" href="assets/css/form/form-input.css">
+    <link rel="stylesheet" href="assets/css/form/form-label.css">
+    <link rel="stylesheet" href="assets/css/form/form-separator.css">
+    <link rel="stylesheet" href="assets/css/form/form-btn.css">
+</head>
+
+<body>
+    <div class="clock">
+        <span class="clock__hour">00</span>
+        <span class="clock__separator">:</span>
+        <span class="clock__minute">00</span>
+        <span class="clock__separator">:</span>
+        <span class="clock__second">00</span>
+    </div>
+
+
+    <div class="timer">
+
+        <div class="timer__display">
+            <span class="timer__hour">00</span>
+            <span class="timer__separator">:</span>
+            <span class="timer__minute">00</span>
+            <span class="timer__separator">:</span>
+            <span class="timer__second">00</span>
+        </div>
+
+        <div class="timer__options">
+            <btn class="timer__btn timer__btn--start">iniciar</btn>
+            <btn class="timer__btn timer__btn--pause">pausar</btn>
+            <btn class="timer__btn timer__btn--restart">reiniciar</btn>
+            <btn class="timer__btn timer__btn--new">novo timer</btn>
+        </div>
+
+
+        <form class="form">
+            <span class="form--animation"></span>
+            <span class="form--animation"></span>
+            <span class="form--animation"></span>
+            <span class="form--animation"></span>
+
+            <div class="form__box">
+                <div class="form__group">
+                    <input type="number" class="form__input form__input--hour" placeholder="Horas">
+                    <label class="form__label">Horas</label>
+                </div>
+
+                <span class="form__separator">:</span>
+
+                <div class="form__group">
+                    <input type="number" class="form__input form__input--minute" placeholder="Minutos">
+                    <label class="form__label">Minutos</label>
+                </div>
+
+                <span class="form__separator">:</span>
+
+                <div class="form__group">
+                    <input type="number" class="form__input form__input--second" placeholder="Segundos">
+                    <label class="form__label">Segundos</label>
+                </div>
+            </div>
+
+            <button class="form__btn">Criar timer</button>
+        </form>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

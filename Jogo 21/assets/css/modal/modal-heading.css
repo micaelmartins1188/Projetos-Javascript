@@ -1,0 +1,6 @@
+.modal__heading {
+    text-transform: uppercase;
+    color: rgb(255, 0, 255);
+    margin-bottom: 2rem;
+    text-align: center;
+}

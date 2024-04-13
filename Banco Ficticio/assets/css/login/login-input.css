@@ -1,0 +1,18 @@
+.login__input {
+    border: 1px solid var(--white);
+    border-radius: 10rem;
+    color: inherit;
+    margin-right: 1rem;
+    padding: .5rem 2rem;
+    text-align: center;
+    width: 12rem;
+}
+
+.login__input:focus {
+    border: 1px solid var(--gray-light-1);
+    outline: none;
+}
+
+.login__input::placeholder {
+    color: var(--gray-light-2);
+}

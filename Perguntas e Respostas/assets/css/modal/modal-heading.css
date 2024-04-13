@@ -1,0 +1,7 @@
+.modal__heading {
+    letter-spacing: 2px;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    color: var(--brown-light-2);
+    line-height: 1.5;
+}

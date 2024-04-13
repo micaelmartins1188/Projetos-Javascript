@@ -1,0 +1,10 @@
+.list__row {
+    background-color: var(--green-light-2);
+    padding: 0 2rem;
+    border-radius: 8px;
+    font-size: 2rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

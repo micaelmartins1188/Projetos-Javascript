@@ -1,0 +1,23 @@
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    background-color: var(--gray-light-3);
+    height: 6rem;
+    padding: 0 2rem;
+    position: relative;
+}
+
+.nav__welcome {
+    font-size: 1.9rem;
+    font-weight: bold;
+}
+
+.nav--accounts {
+    position: absolute;
+    top: 105%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+}

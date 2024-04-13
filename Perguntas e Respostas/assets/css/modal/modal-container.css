@@ -1,0 +1,30 @@
+.modal__container {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    padding: 10px;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.modal__container::-webkit-scrollbar {
+    background-color: var(--brown-light);
+    border-radius: 8px;
+}
+
+.modal__container::-webkit-scrollbar-thumb {
+    background-color: var(--brown-light-2);
+    border-radius: 10px;
+}
+
+.modal__container--info.hidden,
+.modal__container--test.hidden {
+    display: none;
+}
+
+.modal__container--info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

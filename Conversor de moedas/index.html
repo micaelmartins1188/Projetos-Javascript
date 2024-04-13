@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Moedas</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+</head>
+
+<body>
+
+    <main class="main">
+        <div class="container">
+            <div class="converters">
+                <div class="converter converter__us--br">
+                    <h2 class="converter__heading">Dólar para Reais</h2>
+                    <div class="converter__box">
+                        <form class="form form-us">
+                            <label class="form__label">Valor em dólares</label>
+                            <input type="number" class="form__input form__input-us" placeholder="$ 0.00">
+                            <button class="form__btn form__btn-us--br">converter</button>
+                        </form>
+                        <div class="converter__result">
+                            <span class="converter__result-span converter__result-span-input-us--br">$ 0</span>
+                            <span class="converter__result-span converter__result-span-us--br">R$ 0</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="converter converter__br--us">
+                    <h2 class="converter__heading">Reais para Dólar</h2>
+                    <div class="converter__box">
+                        <form class="form form-us">
+                            <label class="form__label">Valor em reais</label>
+                            <input type="number" class="form__input form__input-br" placeholder="R$ 0,00">
+                            <button class="form__btn form__btn-br--us">converter</button>
+                        </form>
+                        <div class="converter__result">
+                            <span class="converter__result-span converter__result-span-input-br--us">$ 0</span>
+                            <span class="converter__result-span converter__result-span-br--us">$ 0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="painel"></div>
+        </div>
+    </main>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

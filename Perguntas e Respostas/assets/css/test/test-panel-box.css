@@ -1,0 +1,6 @@
+.test__panel-box {
+    text-align: center;
+    background-color: var(--brown-light);
+    padding: 2rem;
+    border-radius: 8px;
+}

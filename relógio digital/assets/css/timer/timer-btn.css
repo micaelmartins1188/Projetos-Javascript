@@ -1,0 +1,44 @@
+.timer__btn {
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.timer__btn:focus {
+    color:  red;
+}
+
+.timer__btn--start {
+    color: rgb(175, 255, 172);
+}
+
+.timer__btn--start:hover,
+.timer__btn--start:active {
+    text-shadow: 0 0 5px rgb(0, 255, 13);
+}
+
+.timer__btn--pause {
+    color: rgb(240, 255, 172);
+}
+
+.timer__btn--pause:hover,
+.timer__btn--pause:active {
+    text-shadow: 0 0 5px rgb(217, 255, 0);
+}
+
+.timer__btn--restart{
+    color: rgb(255, 175, 172);
+}
+
+.timer__btn--restart:hover,
+.timer__btn--restart:active {
+    text-shadow: 0 0 5px rgb(255, 0, 0);
+}
+
+.timer__btn--new {
+    color: rgb(172, 199, 255);
+}
+
+.timer__btn--new:hover,
+.timer__btn--new:active {
+    text-shadow: 0 0 5px rgb(0, 195, 255);
+}

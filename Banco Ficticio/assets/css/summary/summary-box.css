@@ -1,0 +1,4 @@
+.summary__box {
+    display: flex;
+    align-items: first baseline;
+}

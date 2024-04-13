@@ -1,0 +1,6 @@
+.movements__row {
+    display: flex;
+    align-items: center;
+    padding: 2.25rem 4rem;
+    border-bottom: 1px solid var(--gray-light-3);
+}

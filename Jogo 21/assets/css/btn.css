@@ -1,0 +1,35 @@
+.btn {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    text-transform: uppercase;
+    background-color: rgb(94, 19, 95);
+    color: rgb(218, 109, 252);
+    outline-color: #B723C5FF;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all .3s ease-out;
+}
+
+.btn:hover {
+    background-color: rgb(218, 109, 252);
+    color: rgb(94, 19, 95);
+}
+
+.btn--new {
+    top: 10%
+}
+
+.btn--roll {
+    top: 70%;
+}
+
+.btn--hold {
+    top: 82%;
+}

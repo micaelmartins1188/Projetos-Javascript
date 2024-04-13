@@ -1,0 +1,37 @@
+.form__input {
+    width: 45%;
+    height: 25px;
+    text-align: center;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border: none;
+    outline-color: rgb(235, 206, 42);
+    font-size: 2rem;
+    padding: 5px 10px;
+    color: rgb(150, 119, 17);
+    margin-right: 1rem;
+    z-index: 10;
+}
+
+.form__input::placeholder {
+    color: rgb(201, 157, 12);
+}
+
+@media screen and (max-width: 1120px) {
+    .form__input {
+        border-radius: 8px;
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .form__input {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .form__input {
+        width: 90%;
+    }
+}

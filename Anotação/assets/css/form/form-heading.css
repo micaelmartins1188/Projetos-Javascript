@@ -1,0 +1,11 @@
+.form__heading {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(0deg, rgb(107, 250, 255),rgb(158, 69, 199));
+}

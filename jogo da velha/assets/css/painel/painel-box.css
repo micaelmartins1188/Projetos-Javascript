@@ -1,0 +1,6 @@
+.painel__box {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 3rem;
+}

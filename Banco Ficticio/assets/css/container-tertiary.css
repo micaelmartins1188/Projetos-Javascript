@@ -1,0 +1,7 @@
+.container-tertiary:first-child {
+   width: 80%;
+}
+
+.container-tertiary:not(:last-child) {
+    margin-right: 2rem;
+}

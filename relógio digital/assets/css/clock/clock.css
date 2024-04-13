@@ -1,0 +1,6 @@
+.clock {
+    color: rgb(172, 199, 255);
+    text-shadow: 0 0 5px rgb(0, 195, 255);
+    letter-spacing: 1px;
+    margin-bottom: 4rem;
+}

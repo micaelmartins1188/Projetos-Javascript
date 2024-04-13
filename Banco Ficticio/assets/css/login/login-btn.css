@@ -1,0 +1,14 @@
+.login__btn {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    font-size: 2.2rem;
+    transition: all 0.3s;
+}
+
+.login__btn:hover,
+.login__btn:focus {
+    color: #777;
+    outline: none;
+}

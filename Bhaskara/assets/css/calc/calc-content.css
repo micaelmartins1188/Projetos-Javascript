@@ -1,0 +1,12 @@
+.calc__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 840px) {
+    .calc__content {
+        margin-bottom: 3rem;
+    }
+}

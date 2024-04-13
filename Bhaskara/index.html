@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhaskara</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- BTN SHOW MODAL -->
+    <link rel="stylesheet" href="assets/css/show-modal.css">
+
+    <!-- CONTAINER -->
+    <link rel="stylesheet" href="assets/css/container.css">
+
+    <!-- CALC -->
+    <link rel="stylesheet" href="assets/css/calc/calc.css">
+    <link rel="stylesheet" href="assets/css/calc/calc-heading.css">
+    <link rel="stylesheet" href="assets/css/calc/calc-content.css">
+    <link rel="stylesheet" href="assets/css/calc/calc-box.css">
+    <link rel="stylesheet" href="assets/css/calc/calc-label.css">
+    <link rel="stylesheet" href="assets/css/calc/calc-input.css">
+    <link rel="stylesheet" href="assets/css/calc/calc-btn.css">
+
+    <!-- TABLE -->
+    <link rel="stylesheet" href="assets/css/table/table.css">
+    <link rel="stylesheet" href="assets/css/table/table-head.css">
+    <link rel="stylesheet" href="assets/css/table/table-body.css">
+
+    <!-- MODAL -->
+    <link rel="stylesheet" href="assets/css/modal/modal.css">
+    <link rel="stylesheet" href="assets/css/modal/modal-close.css">
+    <link rel="stylesheet" href="assets/css/modal/modal-heading.css">
+    <link rel="stylesheet" href="assets/css/modal/modal-text.css">
+
+    <!-- OVERLAY -->
+    <link rel="stylesheet" href="assets/css/overlay.css">
+</head>
+
+<body>
+    <button class="show-modal show-modal--info">?</button>
+
+    <!-- CALC -->
+    <div class="container container--calc">
+        <div class="calc">
+            <h1 class="calc__heading">Fórmula de Bhaskara</h1>
+
+            <div class="calc__content">
+                <div class="calc__box">
+                    <label class="calc__label" for="a">a</label>
+                    <input class="calc__input" type="number" id="a" placeholder="?">
+                </div>
+
+                <div class="calc__box">
+                    <label class="calc__label" for="b">b</label>
+                    <input class="calc__input" type="number" id="b" placeholder="?">
+                </div>
+
+                <div class="calc__box">
+                    <label class="calc__label" for="c">c</label>
+                    <input class="calc__input" type="number" id="c" placeholder="?">
+                </div>
+            </div>
+
+            <button class="calc__btn">Calcular</button>
+        </div>
+    </div>
+
+    <!-- TABLE -->
+    <div class="container container--table hidden">
+        <table class="table">
+            <thead class="table__head">
+                <tr>
+                    <th>a</th>
+                    <th>b</th>
+                    <th>c</th>
+                    <th>Δ</th>
+                    <th>x<sub>1</sub></th>
+                    <th>x<sub>2</sub></th>
+                    <th>cálculo</th>
+                </tr>
+            </thead>
+            <tbody class="table__body">
+                
+
+            </tbody>
+        </table>
+    </div>
+
+    <!-- MODAL INFO -->
+    <div class="modal modal--info hidden">
+        <button class="modal__close">✖</button>
+
+        <h2 class="modal__heading modal--info-heading">Fórmula de Bhaskara</h2>
+
+        <p class="modal__text modal--info-text">A fórmula de Bhaskara é uma fórmula matemática usada para encontrar as
+            raízes de equações
+            do segundo grau, do tipo <strong>ax<sup>2</sup> + bx + x = 0</strong>, onde <strong>a</strong>,
+            <strong>b</strong> e <strong>c</strong> são coeficientes reais.
+        </p>
+
+        <p class="modal__text modal--info-text"><strong>A fórmula é dada por:</strong></p>
+        <p class="modal__text modal--info-text">
+            <math>
+                <mrow>
+                    <mn>x</mn>
+                    <mo>=</mo>
+                    <mrow>
+                        <mfrac>
+                            <mrow>
+                                <mo>-</mo>
+                                <mi>b</mi>
+                                <mo>±</mo>
+                                <msqrt>
+                                    <mrow>
+                                        <msup>
+                                            <mi>b</mi>
+                                            <mn>2</mn>
+                                        </msup>
+                                        <mo>-</mo>
+                                        <mn>4</mn>
+                                        <mo>.</mo>
+                                        <mi>a</mi>
+                                        <mo>.</mo>
+                                        <mi>c</mi>
+                                    </mrow>
+                                </msqrt>
+                            </mrow>
+                            <mrow>
+                                <mn>2</mn>
+                                <mo>.</mo>
+                                <mi>a</mi>
+                            </mrow>
+                        </mfrac>
+                    </mrow>
+                </mrow>
+            </math>
+        </p>
+
+        <p class="modal__text modal--info-text"><strong>Etapa 1: Achar a discriminante</strong></p>
+        <p class="modal__text modal--info-text">
+            <math>
+                <mn>Δ</mn>
+                <mo>=</mo>
+
+                <msup>
+                    <mn>b</mn>
+                    <mn>2</mn>
+                </msup>
+
+                <mo>-</mo>
+
+                <!-- <mn>4 . a . c</mn> -->
+                <mn>4</mn>
+                <mo>.</mo>
+                <mn>a</mn>
+                <mo>.</mo>
+                <mn>c</mn>
+            </math>
+        </p>
+        <p class="modal__text modal--info-text">
+            <strong>Δ &gt; 0</strong>  A equação terá duas raízes reais e distintas
+        </p>
+        <p class="modal__text modal--info-text">
+            <strong>Δ = 0</strong>  A equação apresentará uma raiz real
+        </p>
+        <p class="modal__text modal--info-text">
+            <strong>Δ &lt; 0</strong>  A equação não possui raízes reais
+        </p>
+        
+
+        <p class="modal__text modal--info-text"><strong>Etapa 2: Altere a fórmula de Bhaskara</strong></p>
+        <p class="modal__text">
+            <math>
+                <mrow>
+                    <mn>x</mn>
+                    <mo>=</mo>
+                    <mrow>
+                        <mfrac>
+                            <mrow>
+                                <mo>-</mo>
+                                <mi>b</mi>
+                                <mo>±</mo>
+                                <msqrt>
+                                    <mrow>
+                                        <mn>Δ</mn>
+                                    </mrow>
+                                </msqrt>
+                            </mrow>
+                            <mrow>
+                                <mn>2</mn>
+                                <mo>.</mo>
+                                <mi>a</mi>
+                            </mrow>
+                        </mfrac>
+                    </mrow>
+                </mrow>
+            </math>
+        </p>
+
+        <p class="modal__text modal--info-text"><strong>Etapa 3: Calcule as raízes da equação</strong></p>
+
+
+        <p class="modal__text">
+            <math style="margin-right: 2rem;">
+                <mrow>
+                    <msub>
+                        <mn>x</mn>
+                        <mi>1</mi>
+                    </msub>
+                    <mo>=</mo>
+                    <mrow>
+                        <mfrac>
+                            <mrow>
+                                <mo>-</mo>
+                                <mi>b</mi>
+                                <mo>+</mo>
+                                <msqrt>
+                                    <mrow>
+                                        <mn>Δ</mn>
+                                    </mrow>
+                                </msqrt>
+                            </mrow>
+                            <mrow>
+                                <mn>2</mn>
+                                <mo>.</mo>
+                                <mi>a</mi>
+                            </mrow>
+                        </mfrac>
+                    </mrow>
+                </mrow>
+            </math>
+
+
+            <math>
+                <mrow>
+                    <msub>
+                        <mn>x</mn>
+                        <mi>2</mi>
+                    </msub>
+                    <mo>=</mo>
+                    <mrow>
+                        <mfrac>
+                            <mrow>
+                                <mo>-</mo>
+                                <mi>b</mi>
+                                <mo>-</mo>
+                                <msqrt>
+                                    <mrow>
+                                        <mn>Δ</mn>
+                                    </mrow>
+                                </msqrt>
+                            </mrow>
+                            <mrow>
+                                <mn>2</mn>
+                                <mo>.</mo>
+                                <mi>a</mi>
+                            </mrow>
+                        </mfrac>
+                    </mrow>
+                </mrow>
+            </math>
+        </p>
+
+    </div>
+
+    <!-- MODAL RESULT -->
+    <div class="modal modal--result hidden">
+        <button class="modal__close">✖</button>
+        <h2 class="modal__heading modal--result-heading">Resultado</h2>
+
+        <!-- CALC DELTA -->
+        <div class="modal__text modal--result-text">
+            <math class="math">
+                <mn>Δ</mn>
+                <mo>=</mo>
+
+                <msup>
+                    <mn class="math__b">b</mn>
+                    <mn>2</mn>
+                </msup>
+
+                <mo>-</mo>
+
+                <mn>4</mn>
+                <mo>x</mo>
+                <mn class="math__a">a</mn>
+                <mo>x</mo>
+                <mn class="math__c">c</mn>
+            </math>
+        </div>
+
+        <div class="modal__text modal--result-text">
+            <math class="math">
+                <mn>Δ</mn>
+                <mo>=</mo>
+
+                <msup>
+                    <mn class="math__b2">b</mn>
+                </msup>
+
+                <mo>+</mo>
+
+                <mn class="math__ac">4</mn>
+            </math>
+        </div>
+
+        <div class="modal__text modal--result-text">
+            <math class="math math--strong">
+                <mn>Δ</mn>
+                <mo>=</mo>
+
+                <mn class="math__delta">4</mn>
+            </math>
+        </div>
+        <!-- END CALC DELTA -->
+
+
+        <!-- CALC x1-->
+        <div class="modal--result-x1">
+            <div class="modal__text modal--result-text modal--result-line">
+                <math class="math">
+                    <mrow>
+                        <msub>
+                            <mn>x</mn>
+                            <mi>1</mi>
+                        </msub>
+                        <mo>=</mo>
+                        <mrow>
+                            <mfrac>
+                                <mrow>
+                                    <mo>-</mo>
+                                    <mi class="math__b">b</mi>
+                                    <mo>+</mo>
+                                    <msqrt>
+                                        <mrow>
+                                            <mn class="math__delta">Δ</mn>
+                                        </mrow>
+                                    </msqrt>
+                                </mrow>
+                                <mrow>
+                                    <mn>2</mn>
+                                    <mo>x</mo>
+                                    <mi class="math__a">a</mi>
+                                </mrow>
+                            </mfrac>
+                        </mrow>
+                    </mrow>
+                </math>
+            </div>
+
+            <div class="modal__text modal--result-text">
+                <math class="math">
+                    <mrow>
+                        <msub>
+                            <mn>x</mn>
+                            <mi>1</mi>
+                        </msub>
+                        <mo>=</mo>
+                        <mrow>
+                            <mfrac>
+                                <mrow>
+                                    <mn class="math__x1sup1-1">bΔ</mn>
+                                    <mo>+</mo>
+                                    <mn class="math__x1sup1-2">oi</mn>
+                                </mrow>
+                                <mrow>
+                                    <mn class="math__x1sub1">2a</mn>
+                                </mrow>
+                            </mfrac>
+                        </mrow>
+                    </mrow>
+                </math>
+            </div>
+
+            <div class="modal__text modal--result-text">
+                <math class="math">
+                    <mrow>
+                        <msub>
+                            <mn>x</mn>
+                            <mi>1</mi>
+                        </msub>
+                        <mo>=</mo>
+                        <mrow>
+                            <mfrac>
+                                <mrow>
+                                    <mo class="math__x1sup">bΔ</mo>
+                                </mrow>
+                                <mrow>
+                                    <mn class="math__x1sub">2a</mn>
+                                </mrow>
+                            </mfrac>
+                        </mrow>
+                    </mrow>
+                </math>
+            </div>
+
+            <div class="modal__text modal--result-text">
+                <math class="math math--strong">
+                    <msub>
+                        <mn>x</mn>
+                        <mi>1</mi>
+                    </msub>
+
+                    <mo>=</mo>
+
+                    <mn class="math__x1">bΔ2a</mn>
+                </math>
+            </div>
+        </div>
+        <!-- END CALC x1 -->
+
+        <!-- CALC x2-->
+        <div class="modal--result-x2">
+            <div class="modal__text modal--result-text modal--result-line">
+                <math class="math">
+                    <mrow>
+                        <msub>
+                            <mn>x</mn>
+                            <mi>2</mi>
+                        </msub>
+                        <mo>=</mo>
+                        <mrow>
+                            <mfrac>
+                                <mrow>
+                                    <mo>-</mo>
+                                    <mi class="math__b">b</mi>
+                                    <mo>-</mo>
+                                    <msqrt>
+                                        <mrow>
+                                            <mn class="math__delta">Δ</mn>
+                                        </mrow>
+                                    </msqrt>
+                                </mrow>
+                                <mrow>
+                                    <mn>2</mn>
+                                    <mo>x</mo>
+                                    <mi class="math__a">a</mi>
+                                </mrow>
+                            </mfrac>
+                        </mrow>
+                    </mrow>
+                </math>
+            </div>
+
+            <div class="modal__text modal--result-text">
+                <math class="math">
+                    <mrow>
+                        <msub>
+                            <mn>x</mn>
+                            <mi>2</mi>
+                        </msub>
+                        <mo>=</mo>
+                        <mrow>
+                            <mfrac>
+                                <mrow>
+                                    <mn class="math__x2sup2-1">bΔ</mn>
+                                    <mo>-</mo>
+                                    <mn class="math__x2sup2-2">oi</mn>
+                                </mrow>
+                                <mrow>
+                                    <mn class="math__x2sub2">2a</mn>
+                                </mrow>
+                            </mfrac>
+                        </mrow>
+                    </mrow>
+                </math>
+            </div>
+
+
+            <div class="modal__text modal--result-text">
+                <math class="math">
+                    <mrow>
+                        <msub>
+                            <mn>x</mn>
+                            <mi>2</mi>
+                        </msub>
+                        <mo>=</mo>
+                        <mrow>
+                            <mfrac>
+                                <mrow>
+                                    <mo class="math__x2sup">bΔ</mo>
+                                </mrow>
+                                <mrow>
+                                    <mn class="math__x2sub">2a</mn>
+                                </mrow>
+                            </mfrac>
+                        </mrow>
+                    </mrow>
+                </math>
+            </div>
+
+            <div class="modal__text modal--result-text">
+                <math class="math math--strong">
+                    <msub>
+                        <mn>x</mn>
+                        <mi>2</mi>
+                    </msub>
+
+                    <mo>=</mo>
+
+                    <mn class="math__x2">bΔ2a</mn>
+                </math>
+            </div>
+        </div>
+        <!-- END CALC x2 -->
+    </div>
+
+    <!-- OVERLAY -->
+    <div class="overlay hidden"></div>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

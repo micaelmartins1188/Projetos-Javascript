@@ -1,0 +1,22 @@
+.form__btn {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 1rem 3rem;
+    border-radius: 8px;
+    border: 2px solid rgb(0, 255, 85);
+    background-color: transparent;
+    color: rgb(0, 255, 85);
+    transition: all .2s;
+    outline-color: rgb(170, 255, 90);
+    position: relative;
+}
+
+.form__btn:hover,
+.form__btn:active,
+.form__btn:focus {
+    border: 2px solid rgb(170, 255, 90);
+    background-color: rgb(170, 255, 90);
+    color: #12631d;
+    cursor: pointer;
+}

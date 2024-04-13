@@ -1,0 +1,27 @@
+.baggage {
+    width: 200px;
+    height: 200px;
+    background-image: url('../icon/baggage.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: relative;
+}
+
+.plane {
+    z-index: 100;
+    font-size: 9rem;
+    color: brown;
+    position: absolute;
+    top: -20%;
+    left: 5%;
+    transform: rotate(-45deg);
+}
+
+@media screen and (min-width: 560px) {
+    .plane {
+        font-size: 10rem;
+        top: -25%;
+        left: 10%;
+    }
+}

@@ -1,0 +1,16 @@
+.form__box {
+    display: flex;
+}
+
+.form__box--edit {
+    margin-bottom: 2rem;
+}
+
+.form__box--edit-id {
+    align-items: center;
+}
+
+.form__box--edit p {
+    font-size: 2rem;
+    margin-right: 1rem;
+}

@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    font-family: sans-serif;
+    background-image: linear-gradient(90deg, #B723C5FF 0%, #9830D1FF 49%, #B723C5FF 100%);
+    position: relative;
+}
+
+.hidden {
+    display: none;
+}
+
+.show-modal {
+    color: blue;
+}

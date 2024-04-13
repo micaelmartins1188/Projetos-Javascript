@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: sans-serif;
+    background-image: linear-gradient(to right bottom, rgb(104, 24, 104), rgb(146, 57, 146), rgb(104, 24, 104));
+    height: 100vh;
+    color: #fff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.choiceDiv {
+    text-align: center;
+    width: 90%;
+}
+
+.choice__heading {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    font-size: 3rem;
+}
+
+.choice__box {
+    display: flex;
+    justify-content: center;
+}
+
+.choice__btn {
+    padding: 1rem 3rem;
+    font-size: 2rem;
+}
+
+.game,
+.painel-equation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.painel-equation {
+    margin-bottom: 2rem;
+}
+
+.equation {
+    display: flex;
+    font-size: 5rem;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.input {
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    font-size: 2.5rem;
+    color: blueviolet;
+    outline-color: blueviolet;
+    margin-bottom: 2rem;
+}
+
+.input::-webkit-inner-spin-button {
+    display: none;
+}
+
+.input::placeholder {
+    color: blueviolet;
+}
+
+.btn {
+    outline-color: blueviolet;
+    background-color: #fff;
+    width: 150px;
+    padding: 1rem 0;
+    border: none;
+    color: blueviolet;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn:hover,
+.btn:active {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .4);
+}
+
+.level {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: rgb(162, 255, 209);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.max-level {
+    color: springgreen;
+}
+
+.message {
+    text-transform: uppercase;
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+
+.painel-again {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.btn.again,
+.btn.choice {
+    width: 200px;
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus {
+    background-color: rgb(228, 84, 228);
+    color: #fff;
+}
+
+.btn:not(:last-child) {
+    margin-right: 3rem;
+}
+
+.painel {
+    display: flex;
+    background-color: #333;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.painel__box {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.painel__box:not(:last-child) {
+    margin-right: 4rem;
+}
+
+.life-icon {
+    color: rgb(241, 53, 53);
+}
+
+.hidden {
+    display: none;
+}
+
+
+.painel-highlight {
+    position: absolute;
+    display: flex;
+    top: 2rem;
+    left: 2rem;
+    gap: 2rem;
+    background-color: #333;
+    padding: 2rem;
+    border-radius: 8px;
+    align-items: center;
+}
+
+.highlight-heading {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.highlight-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 2rem;
+}

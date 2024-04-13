@@ -1,0 +1,15 @@
+.container__form {
+    display: flex;
+    justify-content: center;
+}
+
+.container__form.hidden {
+    display: none;
+}
+
+.container__form--box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 2rem;
+}

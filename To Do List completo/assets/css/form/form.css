@@ -1,0 +1,16 @@
+.form {
+    border-bottom: 2px solid var(--gray-dark-3);
+    padding: 2rem;
+}
+
+.form--todo.hidden,
+.form--edit.hidden {
+    display: none;
+}
+
+
+.form--search {
+    border-bottom: none;
+    border-right: 2px solid var(--gray-dark-3);
+    padding: 0 1rem 0 2rem;
+}
