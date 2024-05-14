@@ -10,12 +10,14 @@
     max-height: 250px;
 }
 
+.table::-webkit-scrollbar,
 .expenses__table::-webkit-scrollbar {
     background-color: var(--gray-light-4);
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
 }
 
+.table::-webkit-scrollbar-thumb,
 .expenses__table::-webkit-scrollbar-thumb {
     background-color: var(--gray-light);
     border-top-right-radius: 8px;
