@@ -1,0 +1,9 @@
+.header {
+    background-color: var(--gray-dark-2);
+    color: var(--green-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 3rem 0;
+    text-align: center;
+    font-size: 1.8rem;
+}

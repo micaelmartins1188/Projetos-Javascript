@@ -1,0 +1,9 @@
+.modal__acc-card-text {
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+    color: var(--gray-light-4);
+}
+
+.modal__acc-card-text:not(:last-child) {
+    margin-bottom: 1rem;
+}

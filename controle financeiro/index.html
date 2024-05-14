@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Molde</title>
+    <!-- STYLE CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- HEADER -->
+    <link rel="stylesheet" href="assets/css/header/header.css">
+    <link rel="stylesheet" href="assets/css/header/header-heading.css">
+    <link rel="stylesheet" href="assets/css/header/header-icon.css">
+
+    <!-- INFO -->
+    <link rel="stylesheet" href="assets/css/info/info.css">
+    <link rel="stylesheet" href="assets/css/info/info-message.css">
+    <link rel="stylesheet" href="assets/css/info/info-text.css">
+    <link rel="stylesheet" href="assets/css/info/info-message-btn.css">
+    <link rel="stylesheet" href="assets/css/info/info-container.css">
+    <link rel="stylesheet" href="assets/css/info/info-left.css">
+    <link rel="stylesheet" href="assets/css/info/info-right.css">
+    <link rel="stylesheet" href="assets/css/info/info-heading.css">
+
+    <!-- FORM -->
+    <link rel="stylesheet" href="assets/css/form/form.css">
+    <link rel="stylesheet" href="assets/css/form/form-box.css">
+    <link rel="stylesheet" href="assets/css/form/form-label.css">
+    <link rel="stylesheet" href="assets/css/form/form-input.css">
+    <link rel="stylesheet" href="assets/css/form/form-btn.css">
+
+    <!-- MODAL FORGOT ACCOUNT -->
+    <link rel="stylesheet" href="assets/css/modal/modal.css">
+    <link rel="stylesheet" href="assets/css/modal/modal-close.css">
+    <link rel="stylesheet" href="assets/css/overlay.css">
+    <link rel="stylesheet" href="assets/css/modal-acc/modal-acc.css">
+    <link rel="stylesheet" href="assets/css/modal-acc/modal-acc-heading.css">
+    <link rel="stylesheet" href="assets/css/modal-acc/modal-acc-cards.css">
+    <link rel="stylesheet" href="assets/css/modal-acc/modal-acc-card.css">
+    <link rel="stylesheet" href="assets/css/modal-acc/modal-acc-card-text.css">
+    <link rel="stylesheet" href="assets/css/modal-acc/modal-acc-card-span.css">
+
+
+    <!-- BTN -->
+    <link rel="stylesheet" href="assets/css/btn.css">
+
+    <!-- BALANCE -->
+    <link rel="stylesheet" href="assets/css/balance/balance-warning.css">
+    <link rel="stylesheet" href="assets/css/balance/balance.css">
+    <link rel="stylesheet" href="assets/css/balance/balance-box.css">
+    <link rel="stylesheet" href="assets/css/balance/balance-card.css">
+    <link rel="stylesheet" href="assets/css/balance/balance-value.css">
+    <link rel="stylesheet" href="assets/css/balance/balance-label.css">
+
+    <!-- STATISTIC-->
+    <link rel="stylesheet" href="assets/css/statistic/statistic.css">
+    <link rel="stylesheet" href="assets/css/statistic/statistic-heading.css">
+    <link rel="stylesheet" href="assets/css/statistic/statistic-box.css">
+
+    <!-- FILTER -->
+    <link rel="stylesheet" href="assets/css/filter/filter.css">
+    <link rel="stylesheet" href="assets/css/filter/filter-heading.css">
+    <link rel="stylesheet" href="assets/css/filter/filter-select.css">
+    <link rel="stylesheet" href="assets/css/filter/filter-btn.css">
+
+    <!-- TABLE -->
+    <link rel="stylesheet" href="assets/css/table/table.css">
+    <link rel="stylesheet" href="assets/css/table/table-head.css">
+    <link rel="stylesheet" href="assets/css/table/table-body.css">
+
+    <!-- EXPENSES -->
+    <link rel="stylesheet" href="assets/css/expenses/expenses.css">
+    <link rel="stylesheet" href="assets/css/expenses/expenses-heading.css">
+    <link rel="stylesheet" href="assets/css/expenses/expenses-table.css">
+    <link rel="stylesheet" href="assets/css/expenses/expenses-thead.css">
+    <link rel="stylesheet" href="assets/css/expenses/expenses-tbody.css">
+    <link rel="stylesheet" href="assets/css/expenses/expenses-btn.css">
+    <link rel="stylesheet" href="assets/css/expenses/expenses-result.css">
+
+    <!-- CONTAINER EXPENSES -->
+    <link rel="stylesheet" href="assets/css/container-expenses.css">
+
+    <!-- MODAL INFO -->
+    <link rel="stylesheet" href="assets/css/modal/modal-heading.css">
+    <link rel="stylesheet" href="assets/css/modal/modal-card.css">
+    <link rel="stylesheet" href="assets/css/modal/modal-card-heading.css">
+    <link rel="stylesheet" href="assets/css/modal/modal-card-text.css">
+    <link rel="stylesheet" href="assets/css/modal/modal-cards.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header__heading">Controle Financeiro <i class="fa-solid fa-hand-holding-dollar header__icon"></i>
+            </h2>
+    </header>
+    <!-- DEPOIS QUE TERMINAR A PARTE DE LAYOUT DO APP REMOVER O HIDDEN DE INFO -->
+    <div class="info">
+
+        <div class="info__container">
+            <div class="info__left">
+                <h2 class="info__heading">Fazer login</h2>
+
+                <form class="form login">
+                    <div class="form__box">
+                        <label for="login-user" class="form__label">Usuário</label>
+                        <input type="text" id="login-user" class="form__input">
+                    </div>
+
+                    <div class="form__box">
+                        <label for="login-pin" class="form__label">PIN</label>
+                        <input type="number" id="login-pin" class="form__input">
+                    </div>
+
+                    <button class="form__btn btn" id="login-btn">Entrar <i
+                            class="fa-solid fa-right-to-bracket"></i></button>
+                </form>
+                <p class="info__left-error hidden">Usuário ou senha incorreta!<br><button
+                        class="btn btn--forgot">esqueci minha senha</button></p>
+                <button class="btn btn--new-acc">criar conta</button>
+            </div>
+
+            <div class="info__message hidden">
+                <p class="info__text"><strong>Sua conta foi criada com sucesso!</strong></p>
+                <p class="info__text"><strong>Usuário:</strong> <span class="info__text--user"></span></p>
+                <p class="info__text"><strong>PIN:</strong> <span class="info__text--pin"></span></p>
+
+                <button class="info__message-btn" id="message-btn">Fechar aviso</button>
+            </div>
+
+            <div class="info__right hidden">
+                <h2 class="info__heading">Cadastrar uma conta</h2>
+
+                <form class="form register">
+                    <div class="form__box">
+                        <label for="register-name" class="form__label">Nome</label>
+                        <input type="text" id="register-name" class="form__input">
+                    </div>
+
+                    <div class="form__box">
+                        <label for="register-surname" class="form__label">Sobrenome</label>
+                        <input type="text" id="register-surname" class="form__input">
+                    </div>
+
+                    <div class="form__box">
+                        <label for="register-current-balance" class="form__label">Saldo Atual</label>
+                        <input type="number" id="register-current-balance" class="form__input">
+                    </div>
+
+                    <button class="form__btn btn" id="register-btn">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL FORGOT ACCOUNT  -->
+    <div class="modal modal__acc hidden">
+        <button class="modal__close" id="close-modal-acc"><i class="fa-solid fa-xmark"></i></button>
+        <h2 class="modal__acc-heading">Contas cadastradas</h2>
+
+        <div class="modal__acc-cards">
+            <!-- <div class="modal__acc-card">
+                <p class="modal__acc-card-text">Dono: <span class="modal__acc-card-span acc-owner">Micael
+                        Martins</span></p>
+                <p class="modal__acc-card-text">Username: <span class="modal__acc-card-span acc-username">Micael
+                        Martins</span></p>
+                <p class="modal__acc-card-text">PIN: <span class="modal__acc-card-span acc-pin">Micael
+                        Martins</span></p>
+                <p class="modal__acc-card-text">Data de criação: <span class="modal__acc-card-span acc-date">12/05/2024</span></p>
+            </div> -->
+
+
+        </div>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <div class="app hidden">
+        <div class="balance">
+            <p class="balance__warning">Os dados abaixo são alterados conforme vai adicionando as despesas ou entradas,
+                e esses dados são a junção das entradas e despesas dos meses anteriores até o mês atual!</p>
+
+            <div class="balance__box">
+                <div class="balance__card balance__card--current">
+                    <p class="balance__value balance__value--current" id="value-current">R$ 00,00</p>
+                    <p class="balance__label">saldo atual</p>
+                </div>
+
+                <div class="balance__card balance__card--expected">
+                    <p class="balance__value balance__value--expected" id="value-expected">R$ 00,00</p>
+                    <p class="balance__label">saldo final previsto</p>
+                </div>
+            </div>
+
+            <div class="balance__box">
+                <div class="balance__card balance__card--in">
+                    <p class="balance__value balance__value--in" id="value-in">R$ 00,00</p>
+                    <p class="balance__label">entrada</p>
+                </div>
+
+                <div class="balance__card balance__card--out">
+                    <p class="balance__value balance__value--out" id="value-out">R$ 00,00</p>
+                    <p class="balance__label">saída</p>
+                </div>
+
+                <div class="balance__card balance__card--result">
+                    <p class="balance__value balance__value--result" id="value-result">R$ 00,00</p>
+                    <p class="balance__label">resultado</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ESTATISTICA ANUAL -->
+        <div class="statistic">
+
+            <div class="statistic__box">
+                <h2 class="statistic__heading">Estatística Anual</h2>
+
+                <div class="filter" id="filter">
+                    <h3 class="filter__heading">Filtrar:</h3>
+
+                    <select class="filter__select" id="filter-select-year">
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                    </select>
+
+                    <!-- <button class="filter__btn">confirmar</button> -->
+                </div>
+
+
+                <h3 class="statistic__heading" id="statistic-year-heading">2024</h3>
+
+                <table class="table">
+                    <thead class="table__head">
+                        <tr>
+                            <th>jan</th>
+                            <th>fev</th>
+                            <th>mar</th>
+                            <th>abr</th>
+                            <th>mai</th>
+                            <th>jun</th>
+                            <th>jul</th>
+                            <th>ago</th>
+                            <th>set</th>
+                            <th>out</th>
+                            <th>nov</th>
+                            <th>dez</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="table__body">
+                        <tr>
+                            <td class="month-in month-0--in">R$ 00,00</td>
+                            <td class="month-in month-1--in">R$ 00,00</td>
+                            <td class="month-in month-2--in">R$ 00,00</td>
+                            <td class="month-in month-3--in">R$ 00,00</td>
+                            <td class="month-in month-4--in">R$ 00,00</td>
+                            <td class="month-in month-5--in">R$ 00,00</td>
+                            <td class="month-in month-6--in">R$ 00,00</td>
+                            <td class="month-in month-7--in">R$ 00,00</td>
+                            <td class="month-in month-8--in">R$ 00,00</td>
+                            <td class="month-in month-9--in">R$ 00,00</td>
+                            <td class="month-in month-10--in">R$ 00,00</td>
+                            <td class="month-in month-11--in">R$ 00,00</td>
+                        </tr>
+
+                        <tr>
+                            <td class="month-out month-0--out">R$ 00,00</td>
+                            <td class="month-out month-1--out">R$ 00,00</td>
+                            <td class="month-out month-2--out">R$ 00,00</td>
+                            <td class="month-out month-3--out">R$ 00,00</td>
+                            <td class="month-out month-4--out">R$ 00,00</td>
+                            <td class="month-out month-5--out">R$ 00,00</td>
+                            <td class="month-out month-6--out">R$ 00,00</td>
+                            <td class="month-out month-7--out">R$ 00,00</td>
+                            <td class="month-out month-8--out">R$ 00,00</td>
+                            <td class="month-out month-9--out">R$ 00,00</td>
+                            <td class="month-out month-10--out">R$ 00,00</td>
+                            <td class="month-out month-11--out">R$ 00,00</td>
+                        </tr>
+
+                        <tr>
+                            <td class="month-result month-0--result">R$ 00,00</td>
+                            <td class="month-result month-1--result">R$ 00,00</td>
+                            <td class="month-result month-2--result">R$ 00,00</td>
+                            <td class="month-result month-3--result">R$ 00,00</td>
+                            <td class="month-result month-4--result">R$ 00,00</td>
+                            <td class="month-result month-5--result">R$ 00,00</td>
+                            <td class="month-result month-6--result">R$ 00,00</td>
+                            <td class="month-result month-7--result">R$ 00,00</td>
+                            <td class="month-result month-8--result">R$ 00,00</td>
+                            <td class="month-result month-9--result">R$ 00,00</td>
+                            <td class="month-result month-10--result">R$ 00,00</td>
+                            <td class="month-result month-11--result">R$ 00,00</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="statistic__box statistic__box--balance">
+                    <div class="balance__box">
+                        <div class="balance__card balance__card--in">
+                            <p class="balance__value balance__value--in" id="value-in--yearly">R$ 00,00</p>
+                            <p class="balance__label">entrada</p>
+                        </div>
+
+                        <div class="balance__card balance__card--out">
+                            <p class="balance__value balance__value--out" id="value-out--yearly">R$ 00,00</p>
+                            <p class="balance__label">saída</p>
+                        </div>
+
+                        <div class="balance__card balance__card--result">
+                            <p class="balance__value balance__value--result" id="value-result--yearly">R$ 00,00</p>
+                            <p class="balance__label">resultado</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ENTRADA - CADASTRO -->
+        <div class="container-expenses">
+
+            <div class="expenses">
+                <h3 class="expenses__heading">Entrada <button class="expenses__heading--question" id="btn1"><i
+                            class="fa-solid fa-question"></i></button></h3>
+
+                <table class="expenses__table">
+                    <thead class="expenses__thead">
+                        <tr>
+                            <th>descrição</th>
+                            <th>valor</th>
+                            <th>Data de recebimento</th>
+                            <th>recebido ?</th>
+                            <th>ação</th>
+                        </tr>
+                    </thead>
+                    <tbody class="expenses__tbody" id="e-tbody">
+                        <!-- <tr class="e-tr" id="0">
+                            <td>salário</td>
+                            <td>R$ 1400,00</td>
+                            <td>09/05/2024</td>
+                            <td>
+                                <button class="expenses__btn expenses__btn--not-received">não</button>
+                            </td>
+                            <td>
+                                <button class="expenses__btn expenses__btn--remove"><i class="fa-solid fa-trash-can"></i></button>
+                            </td>
+                        </tr> -->
+
+                    </tbody>
+                </table>
+
+                <div class="expenses__result">total <i class="fa-solid fa-equals expenses__result--icon"></i> <span
+                        class="expenses__in--value">R$ 00,00</span></div>
+            </div>
+
+            <form class="form form--expense">
+                <div class="form__box">
+                    <label for="description-df" class="form__label">Descrição</label>
+                    <input type="text" name="" id="description-e" class="form__input">
+                </div>
+
+                <div class="form__box">
+                    <label for="value-df" class="form__label">Valor</label>
+                    <input type="number" class="form__input" id="value-e"></input>
+                </div>
+
+                <div class="form__box">
+                    <label for="date-df" class="form__label">Dia de Recebimento</label>
+                    <input type="number" id="date-e" class="form__input">
+                </div>
+
+                <button class="form__btn btn" id="e-btn">Cadastrar</button>
+            </form>
+        </div>
+
+        <!-- DESPESA FIXA - CADASTRO -->
+        <div class="container-expenses">
+
+            <div class="expenses">
+                <h3 class="expenses__heading">Despesas Fixas <button class="expenses__heading--question" id="btn2"><i
+                            class="fa-solid fa-question"></i></button></h3>
+
+                <table class="expenses__table">
+                    <thead class="expenses__thead">
+                        <tr>
+                            <th>descrição</th>
+                            <th>valor</th>
+                            <th>Vencimento</th>
+                            <th>ação</th>
+                        </tr>
+                    </thead>
+                    <tbody class="expenses__tbody" id="df-tbody">
+                        <!-- <tr class="df-tr" id="0">
+                            <td>aluguel</td>
+                            <td>R$ 400,00</td>
+                            <td>Dia 12</td>
+                            <td>
+                                <button class="expenses__btn expenses__btn--remove"><i class="fa-solid fa-trash-can"></i></button>
+                            </td>
+                        </tr> -->
+
+                    </tbody>
+                </table>
+
+                <div class="expenses__result">total <i class="fa-solid fa-equals expenses__result--icon"></i> <span
+                        class="expenses__result--value" id="df-total">R$ 00,00</span></div>
+            </div>
+
+            <form class="form form--expense">
+                <div class="form__box">
+                    <label for="description-df" class="form__label">Descrição</label>
+                    <input type="text" name="" id="description-df" class="form__input">
+                </div>
+
+                <div class="form__box">
+                    <label for="value-df" class="form__label">Valor</label>
+                    <input type="number" class="form__input" id="value-df"></input>
+                </div>
+
+                <div class="form__box">
+                    <label for="date-df" class="form__label">Dia de Vencimento</label>
+                    <input type="number" id="date-df" class="form__input">
+                </div>
+
+                <button class="form__btn btn" id="df-btn">Cadastrar</button>
+            </form>
+        </div>
+
+        <!-- DESPESA VARIAVEL - CADASTRO -->
+        <div class="container-expenses">
+
+            <div class="expenses">
+                <h3 class="expenses__heading">Despesas Variáveis <button class="expenses__heading--question"
+                        id="btn3"><i class="fa-solid fa-question"></i></button></h3>
+
+                <table class="expenses__table">
+                    <thead class="expenses__thead">
+                        <tr>
+                            <th>descrição</th>
+                            <th>valor</th>
+                            <th>data de pagamento</th>
+                            <th>ação</th>
+                        </tr>
+                    </thead>
+                    <tbody class="expenses__tbody" id="dv-tbody">
+                        <!-- <tr class="dv-tr" id="0">
+                            <td>aluguel</td>
+                            <td>R$ 400,00</td>
+                            <td>07/05/2024</td>
+                            <td>
+                                <button class="expenses__btn expenses__btn--remove"><i class="fa-solid fa-trash-can"></i></button>
+                            </td>
+                        </tr> -->
+
+                    </tbody>
+                </table>
+
+                <div class="expenses__result">total <i class="fa-solid fa-equals expenses__result--icon"></i> <span
+                        class="expenses__result--value" id="dv-total">R$ 00,00</span></div>
+            </div>
+
+            <form class="form form--expense">
+                <div class="form__box">
+                    <label for="description-dv" class="form__label">Descrição</label>
+                    <input type="text" name="" id="description-dv" class="form__input">
+                </div>
+
+                <div class="form__box">
+                    <label for="value-dv" class="form__label">Valor</label>
+                    <input type="number" class="form__input" id="value-dv"></input>
+                </div>
+
+                <button class="form__btn btn" id="dv-btn">Cadastrar</button>
+            </form>
+        </div>
+
+        <!-- CARTÃO DE CRÉIDTO - CADASTRO -->
+        <div class="container-expenses">
+
+            <div class="expenses expenses--cc">
+                <h3 class="expenses__heading">Cartão de Crédito</h3>
+
+                <table class="expenses__table">
+                    <thead class="expenses__thead">
+                        <tr>
+                            <th>descrição</th>
+                            <th>valor</th>
+                            <th>parcelas</th>
+                            <th>valor da parcela</th>
+                            <th>status</th>
+                            <th>ação</th>
+                        </tr>
+                    </thead>
+                    <tbody class="expenses__tbody" id="cc-tbody">
+                        <!-- <tr class="cc-tr" id="0">
+                            <td>aluguel</td>
+                            <td>R$ 400,00</td>
+                            <td>4</td>
+                            <td>100</td>
+                            <td>
+                                <button class="expenses__btn expenses__btn--waiting" id="status--cc">em andamento</button>
+                            </td>
+                            <td>
+                                <button class="expenses__btn expenses__btn--remove"><i class="fa-solid fa-trash-can"></i></button>
+                            </td>
+                        </tr> -->
+                    </tbody>
+                </table>
+
+                <div class="expenses__result">total mensal<i class="fa-solid fa-equals expenses__result--icon"></i>
+                    <span class="expenses__result--value" id="cc-total-monthly">R$ 00,00</span>
+                </div>
+                <div class="expenses__result">total cartão<i class="fa-solid fa-equals expenses__result--icon"></i>
+                    <span class="expenses__result--value" id="cc-total">R$ 00,00</span>
+                </div>
+            </div>
+
+            <form class="form form--expense">
+                <div class="form__box">
+                    <label for="description-cc" class="form__label">Descrição</label>
+                    <input type="text" name="" id="description-cc" class="form__input">
+                </div>
+
+                <div class="form__box">
+                    <label for="value-cc" class="form__label">Valor da Parcela</label>
+                    <input type="number" class="form__input" id="value-cc"></input>
+                </div>
+
+                <div class="form__box">
+                    <label for="parcels-cc" class="form__label">Quantidade de Parcelas</label>
+                    <input type="number" class="form__input" id="parcels-cc"></input>
+                </div>
+
+                <div class="form__box">
+                    <label for="date-cc" class="form__label">Dia de Vencimento da Fatura</label>
+                    <input type="number" id="date-cc" class="form__input">
+                </div>
+
+                <button class="form__btn btn" id="cc-btn">Cadastrar</button>
+            </form>
+        </div>
+
+        <!-- DESPESAS MENSAIS-->
+        <div class="container-expenses">
+
+            <div class="expenses expenses--monthly">
+                <h3 class="expenses__heading">Despesas Mensais</h3>
+
+                <table class="expenses__table">
+                    <thead class="expenses__thead">
+                        <tr>
+                            <th>descrição</th>
+                            <th>valor</th>
+                            <th>nº de parcelas</th>
+                            <th>valor da parcela</th>
+                            <th>parcela atual</th>
+                            <th>vencimento</th>
+                            <th>status</th>
+                            <th>ação</th>
+                        </tr>
+                    </thead>
+                    <tbody class="expenses__tbody" id="dm-tbody">
+                        <!-- <tr class="dm-tr" id="0">
+                            <td>aluguel</td>
+                            <td>R$ 400,00</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>07/05/2024</td>
+                            <td>
+                                <button class="expenses__btn expenses__btn--not-paid">não pago</button>
+                            </td>
+                            <td>
+                                <button class="expenses__btn expenses__btn--remove"><i class="fa-solid fa-trash-can"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>aluguel</td>
+                            <td>R$ 600,00</td>
+                            <td>R$ 200,00</td>
+                            <td>3</td>
+                            <td>2º parcela</td>
+                            <td>23/05/2024</td>
+                            <td>
+                                <button class="expenses__btn expenses__btn--not-paid">não pago</button>
+                            </td>
+                            <td>
+                                <button class="expenses__btn expenses__btn--remove"><i class="fa-solid fa-trash-can"></i></button>
+                            </td>
+                        </tr> -->
+
+                    </tbody>
+                </table>
+
+                <!-- <div class="expenses__result">total <i class="fa-solid fa-equals expenses__result--icon"></i> <span
+                        class="expenses__result--value" id="dm-total">R$ 00,00</span></div> -->
+            </div>
+
+        </div>
+
+        <!-- DESPESAS PENDENTES-->
+        <div class="container-expenses">
+
+            <div class="expenses expenses--monthly">
+                <h3 class="expenses__heading">Despesas Pendentes</h3>
+
+                <table class="expenses__table">
+                    <thead class="expenses__thead">
+                        <tr>
+                            <th>descrição</th>
+                            <th>valor</th>
+                            <th>nº de parcelas</th>
+                            <th>valor da parcela</th>
+                            <th>parcela atual</th>
+                            <th>vencimento</th>
+                            <th>status</th>
+                            <th>ação</th>
+                        </tr>
+                    </thead>
+                    <tbody class="expenses__tbody" id="dp-tbody">
+                        <!-- <tr class="dm-tr" id="0">
+                            <td>aluguel</td>
+                            <td>R$ 400,00</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>07/05/2024</td>
+                            <td>
+                                <button class="expenses__btn expenses__btn--not-paid">não pago</button>
+                            </td>
+                            <td>
+                                <button class="expenses__btn expenses__btn--remove"><i class="fa-solid fa-trash-can"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>aluguel</td>
+                            <td>R$ 600,00</td>
+                            <td>R$ 200,00</td>
+                            <td>3</td>
+                            <td>2º parcela</td>
+                            <td>23/05/2024</td>
+                            <td>
+                                <button class="expenses__btn expenses__btn--not-paid">não pago</button>
+                            </td>
+                            <td>
+                                <button class="expenses__btn expenses__btn--remove"><i class="fa-solid fa-trash-can"></i></button>
+                            </td>
+                        </tr> -->
+
+                    </tbody>
+                </table>
+
+                <!-- <div class="expenses__result">total <i class="fa-solid fa-equals expenses__result--icon"></i> <span
+                        class="expenses__result--value" id="dm-total">R$ 00,00</span></div> -->
+            </div>
+
+        </div>
+    </div>
+
+    <!-- MODAL INFO -->
+    <div class="modal modal__info hidden">
+        <button class="modal__close" id="close-modal-info"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modal__heading">INFORMAÇÕES</div>
+
+        <div class="modal__cards">
+            <div class="modal__card">
+                <h3 class="modal__card-heading">Entrada</h3>
+                <p class="modal__card-text">A entrada refere-se ao dinheiro que entra para você, isso pode incluir seu
+                    salário, o pagamento recebido por um serviço prestado, ou o lucro das vendas de produto, ou seja, é
+                    basicamente o dinheiro que você recebe.</p>
+            </div>
+
+            <div class="modal__card">
+                <h3 class="modal__card-heading">Despesa fixa</h3>
+                <p class="modal__card-text">Despesa fixa é um custo que não muda mês a mês, como aluguel ou a
+                    mensalidade da escola. Isso significa que você paga o mesmo valor, independente de outras coisas que
+                    aconteçam.</p>
+            </div>
+
+            <div class="modal__card">
+                <h3 class="modal__card-heading">Despesa variável</h3>
+                <p class="modal__card-text">Despesa variável é um gasto que muda todo mês, como a conta do supermercado
+                    ou gasolina. E também é um gasto imprevisto, por exemplo: comprar um sorvete, blusa, roupa.</p>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

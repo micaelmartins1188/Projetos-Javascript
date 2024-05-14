@@ -1,0 +1,17 @@
+.modal {
+    background-color: var(--gray-dark);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    transform: translate(-50%, -50%);
+    height: 80%;
+    z-index: 1000;
+    padding: 5rem;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.modal.hidden {
+    display: none;
+}

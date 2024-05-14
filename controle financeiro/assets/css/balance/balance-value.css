@@ -1,0 +1,25 @@
+.balance__value {
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.balance__value--current {
+    color: var(--purple-light);
+}
+
+.balance__value--expected {
+    color: var(--orange-light);
+}
+
+.balance__value--in {
+    color: var(--green-light);
+}
+
+.balance__value--out {
+    color: var(--red-light);
+}
+
+.balance__value--result {
+    color: var(--blue-light);
+}

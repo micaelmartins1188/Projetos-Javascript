@@ -1,0 +1,11 @@
+.balance__card {
+    width: 200px;
+    border-radius: 8px;
+    background-color: var(--gray-dark);
+    padding: 2rem;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

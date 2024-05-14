@@ -1,0 +1,16 @@
+.table {
+    background-color: var(--gray-dark);
+    padding: 1rem;
+    border-spacing: 10px;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.blur {
+    filter: blur(2px);
+}
+  
+.active {
+    transform: scale(1.3);
+    cursor: none;
+}

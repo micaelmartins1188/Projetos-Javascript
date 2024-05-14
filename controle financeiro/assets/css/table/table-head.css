@@ -1,0 +1,10 @@
+.table__head {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    background-color: var(--gray-dark-2);
+    letter-spacing: 1px;
+}
+
+.table__head th {
+    padding: 5px 10px;
+}

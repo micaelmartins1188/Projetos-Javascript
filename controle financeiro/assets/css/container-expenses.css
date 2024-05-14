@@ -1,0 +1,10 @@
+.container-expenses {
+    display: flex;
+    padding: 4rem 2rem;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container-expenses:not(:last-child) {
+    border-bottom: 2px solid var(--gray-dark-2);
+}

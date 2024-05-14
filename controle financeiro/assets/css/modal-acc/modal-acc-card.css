@@ -1,0 +1,7 @@
+.modal__acc-card {
+    padding: 3rem;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background-color: var(--gray-dark-2);
+    text-align: left;
+}

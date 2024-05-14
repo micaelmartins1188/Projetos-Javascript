@@ -1,0 +1,17 @@
+.filter__btn {
+    background-color: var(--gray-dark);
+    padding: 5px 10px;
+    color: var(--gray-light);
+    letter-spacing: 1px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    font-size: 1.6rem;
+    box-sizing: border-box;
+}
+
+.filter__btn:hover,
+.filter__btn:focus {
+    outline: none;
+    border-color: var(--gray-light);
+    color: var(--gray-light-2);
+}

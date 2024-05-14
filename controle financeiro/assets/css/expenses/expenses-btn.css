@@ -1,0 +1,51 @@
+.expenses__btn {
+    border: none;
+    background-color: transparent;
+    background-color: var(--gray-dark);
+    padding: 5px 10px;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.expenses__btn--not-paid,
+.expenses__btn--not-received {
+    background-color: var(--red-light);
+    color: var(--gray-dark-3);
+}
+
+.expenses__btn--not-paid:focus {
+    outline-color: var(--gray-dark);
+}
+
+.expenses__btn--paid,
+.expenses__btn--received {
+    background-color: var(--green-light);
+    color: var(--gray-dark-3);
+}
+
+.expenses__btn--remove {
+    color: var(--gray-light-2);
+    font-size: 1.5rem;
+    transition: all .4s ease;
+}
+
+.expenses__btn--remove:hover,
+.expenses__btn--remove:focus {
+    outline: none;
+    color: var(--red-light);
+}
+
+.expenses__btn--waiting {
+    outline: none;
+    color: var(--orange-light);
+}
+
+.expenses__btn.expenses__btn--done {
+    cursor: unset;
+    outline: none;
+    color: var(--green-light);
+}
+

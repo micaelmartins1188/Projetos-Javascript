@@ -1,0 +1,4 @@
+.balance__box {
+    display: flex;
+    gap: 2rem;
+}

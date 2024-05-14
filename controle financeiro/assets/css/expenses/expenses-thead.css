@@ -1,0 +1,10 @@
+.expenses__thead {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: var(--gray-dark-3);
+}
+
+.expenses__thead th {
+    padding: 10px 20px;
+}

@@ -1,0 +1,13 @@
+.filter__select {
+    background-color: var(--gray-dark);
+    padding: 5px 10px;
+    color: var(--gray-light);
+    margin-right: 1rem;
+}
+
+.filter__select:hover,
+.filter__select:focus {
+    border-color: var(--gray-light-2);
+    outline: none;
+    color: var(--gray-light-2);
+}

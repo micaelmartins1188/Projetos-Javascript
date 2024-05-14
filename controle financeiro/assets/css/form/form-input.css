@@ -1,0 +1,21 @@
+.form__input {
+    background-color: var(--gray-dark-3);
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 1rem;
+    color: var(--gray-light);
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    transition: all .3s ease;
+}
+
+.form__input:focus {
+    outline: none;
+    background-color: var(--gray-dark);
+    border-color: var(--gray-light);
+}
+
+.form__input::-webkit-inner-spin-button {
+    display: none;
+}

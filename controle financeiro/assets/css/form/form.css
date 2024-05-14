@@ -1,0 +1,9 @@
+.form {
+    text-align: center;
+}
+
+.form--expense {
+    background-color: var(--gray-dark-2);
+    padding: 4rem;
+    border-radius: 10px;
+}

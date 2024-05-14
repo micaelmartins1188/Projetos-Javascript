@@ -1,0 +1,12 @@
+.info__text {
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+.info__text:first-of-type {
+    margin-bottom: 1rem;
+}
+
+.info__text:last-of-type {
+    margin-bottom: 2rem;
+}

@@ -1,0 +1,14 @@
+.expenses__result {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 2rem;
+    background-color: var(--gray-dark-3);
+    padding: 10px 20px;
+    width: 50%;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.expenses__result--icon {
+    margin-right: 1rem;
+}

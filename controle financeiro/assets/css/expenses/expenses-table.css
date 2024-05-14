@@ -1,0 +1,23 @@
+.expenses__table {
+    display: block;
+    background-color: var(--gray-dark-2);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    border-collapse: collapse;
+    overflow: auto;
+
+    max-height: 250px;
+}
+
+.expenses__table::-webkit-scrollbar {
+    background-color: var(--gray-light-4);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.expenses__table::-webkit-scrollbar-thumb {
+    background-color: var(--gray-light);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}

@@ -1,0 +1,20 @@
+.expenses {
+    background-color: var(--gray-dark);
+    display: inline-block;
+    padding: 4rem 2rem 2rem;
+    border-radius: 10px;
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.expenses--monthly {
+    width: 80%;
+}
+
+.expenses--cc {
+    width: 60%;
+}

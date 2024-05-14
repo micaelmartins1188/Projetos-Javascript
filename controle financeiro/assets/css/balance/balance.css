@@ -1,0 +1,10 @@
+.balance {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    border-bottom: 2px solid var(--gray-dark-2);
+}

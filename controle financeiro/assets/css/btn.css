@@ -1,0 +1,23 @@
+.btn {
+    background-color: transparent;
+    border: none;
+    text-transform: uppercase;
+    color: var(--gray-light);
+    letter-spacing: 1px;
+    font-size: 2rem;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.btn:focus,
+.btn:hover,
+.btn:active {
+    outline: none;
+    color: var(--green-light);
+}
+
+.btn--new-acc,
+.btn--forgot {
+    font-size: 1rem;
+    margin-top: 1rem;
+}

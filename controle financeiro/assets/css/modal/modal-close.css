@@ -1,0 +1,19 @@
+.modal__close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background-color: transparent;
+    border: none;
+    color: var(--gray-light);
+    font-size: 3rem;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.modal__close:hover {
+    color: var(--gray-light-5);
+}
+
+.modal__close.hidden {
+    display: none;
+}

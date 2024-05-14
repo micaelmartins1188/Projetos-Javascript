@@ -1,0 +1,9 @@
+.info__right {
+    background-color: var(--gray-dark-2);
+    padding: 3rem;
+    border-radius: 10px;
+}
+
+.info__right.hidden {
+    display: none;
+}

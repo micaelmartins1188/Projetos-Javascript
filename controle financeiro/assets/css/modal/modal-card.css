@@ -1,0 +1,7 @@
+.modal__card {
+    width: 25%;
+    box-sizing: border-box;
+    background-color: var(--gray-dark-2);
+    padding: 2rem;
+    border-radius: 8px;
+}
