@@ -65,7 +65,7 @@ btnConfirmRemove.addEventListener('click', function (e) {
         }
 
         localStorage.setItem('itens', JSON.stringify(itens));
-        
+
         nameInputRemove.value = '';
         btnConfirmRemove.blur();
         list.innerHTML = '';
@@ -76,24 +76,28 @@ btnConfirmRemove.addEventListener('click', function (e) {
     }
 })
 
-btnCallRemove.addEventListener('click', function(e) {
+btnCallRemove.addEventListener('click', function (e) {
     e.preventDefault();
     formRegister.classList.add('hidden');
     formRemove.classList.remove('hidden')
 })
 
-btnCallAdd.addEventListener('click', function(e) {
+btnCallAdd.addEventListener('click', function (e) {
     e.preventDefault();
     formRegister.classList.remove('hidden');
     formRemove.classList.add('hidden')
 })
 
-btnCleanList.addEventListener('click', function() {
+btnCleanList.addEventListener('click', function () {
     btnCleanList.blur();
-    itens.splice();
+
+    itens.splice(0, itens.length);
+
     localStorage.setItem('itens', JSON.stringify(itens));
 
     list.innerHTML = '';
+    sortHeading.textContent = 'Quem será o sortudo ?';
+    sortWinner.classList.add('hidden');
 })
 
 btnSort.addEventListener('click', function () {
