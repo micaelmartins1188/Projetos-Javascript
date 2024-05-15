@@ -1240,7 +1240,7 @@ let currentAccount;
 btnLogin.addEventListener('click', function (e) {
     e.preventDefault();
     btnLogin.blur();
-    const inputUser = loginUser.value;
+    const inputUser = loginUser.value.toLowerCase();
     const inputPin = loginPin.value;
 
     if (inputUser !== '' && inputPin !== '') {
