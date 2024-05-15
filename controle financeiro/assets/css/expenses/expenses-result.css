@@ -12,3 +12,7 @@
 .expenses__result--icon {
     margin-right: 1rem;
 }
+
+.expenses__result:not(:last-child) {
+    margin-bottom: 1rem;
+}
