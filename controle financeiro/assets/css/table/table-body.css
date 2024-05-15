@@ -3,6 +3,7 @@
     font-size: 1.3rem;
     letter-spacing: 1px;
     text-align: center;
+    white-space: nowrap;
 }
 
 .table__body tr:first-of-type {

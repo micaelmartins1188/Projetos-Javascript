@@ -278,22 +278,22 @@ function criarTabelaDV(conta) {
     dvTabela.innerHTML = '';
     if (conta.dv.length > 0) {
         conta.dv.forEach(item => {
-
-            const lista = document.createElement('tr');
-            lista.classList.add("dv-tr");
-            lista.dataset.id = item.id
-            lista.innerHTML = `<td>${item.descricao}</td>
+            if (new Date(item.vencimento).getMonth() === new Date().getMonth() && new Date(item.vencimento).getFullYear() === new Date().getFullYear()) {
+                const lista = document.createElement('tr');
+                lista.classList.add("dv-tr");
+                lista.dataset.id = item.id
+                lista.innerHTML = `<td>${item.descricao}</td>
             <td>${formatarDinheiro(item.valor)}</td>
             <td>${formatarData(new Date(item.vencimento))}</td>
             `;
 
-            const td = document.createElement('td');
-            const btnRemover = criarBotaoRemover(conta, item);
-            td.appendChild(btnRemover);
+                const td = document.createElement('td');
+                const btnRemover = criarBotaoRemover(conta, item);
+                td.appendChild(btnRemover);
 
-            lista.appendChild(td);
-            dvTabela.appendChild(lista);
-
+                lista.appendChild(td);
+                dvTabela.appendChild(lista);
+            }
         })
     } else return;
 
@@ -883,23 +883,18 @@ function atualizarEstatisticas(conta, ano = undefined) {
                 return (new Date(despesa.vencimento).getMonth() === i && new Date(despesa.vencimento).getFullYear() === new Date().getFullYear())
             }
 
-        }).reduce((acc, despesa) => {
-            const despesasMensais = [0];
-
-            if (despesa.tipo === 'cc') {
-                despesasMensais[0] += (acc + despesa.valorDaParcela);
+        }).forEach(item => {
+            if(item.tipo === 'cc') {
+                estatisticaMensalArr[1] += -item.valorDaParcela;
             } else {
-                despesasMensais[0] += (acc + despesa.valor);
+                estatisticaMensalArr[1] += -item.valor;
             }
-
-            return despesasMensais[0];
-        }, 0);
-
-        estatisticaMensalArr[1] += saidaEstatistica;
-        mesesSaida[i].textContent = formatarDinheiro(estatisticaMensalArr[1]);
+         });
+         mesesSaida[i].textContent = formatarDinheiro(estatisticaMensalArr[1]);
+         
 
         //RESULTADO
-        estatisticaMensalArr[2] = estatisticaMensalArr[0] - estatisticaMensalArr[1];
+        estatisticaMensalArr[2] = estatisticaMensalArr[0] + estatisticaMensalArr[1];
         mesesResultado[i].textContent = formatarDinheiro(estatisticaMensalArr[2]);
 
         estatisticaMensalArr[0] = 0;
@@ -935,23 +930,18 @@ function atualizarEstatisticas(conta, ano = undefined) {
                 return (new Date(despesa.vencimento).getMonth() === i && new Date(despesa.vencimento).getFullYear() === new Date().getFullYear())
             }
 
-        }).reduce((acc, despesa) => {
-            const despesasAnual = [0];
-
-            if (despesa.tipo === 'cc') {
-                despesasAnual[0] += (acc + despesa.valorDaParcela);
+        }).forEach(item => {
+            if(item.tipo === 'cc') {
+                estatisticaAnualArr[1] += -item.valorDaParcela;
             } else {
-                despesasAnual[0] += (acc + despesa.valor);
+                estatisticaAnualArr[1] += -item.valor;
             }
+         });
+         saidaAnual.textContent = formatarDinheiro(estatisticaAnualArr[1]);
 
-            return despesasAnual[0];
-        }, 0);
-
-        estatisticaAnualArr[1] += saidaEstatistica;
-        saidaAnual.textContent = formatarDinheiro(estatisticaAnualArr[1]);
 
         //RESULTADO
-        estatisticaAnualArr[2] = estatisticaAnualArr[0] - estatisticaAnualArr[1];
+        estatisticaAnualArr[2] = estatisticaAnualArr[0] + estatisticaAnualArr[1];
         resultadoAnual.textContent = formatarDinheiro(estatisticaAnualArr[2]);
     }
 }
@@ -987,7 +977,7 @@ function atualizarValorTotalDasTabelas(conta) {
 
     //ATUALIZAR TOTAL DA TABELA DE DESPESA VARIAVEL
     if (conta.dv.length > 0) {
-        const despesaSomaDV = conta.dv.reduce((acc, despesa) => {
+        const despesaSomaDV = conta.dv.filter(item => new Date(item.vencimento).getMonth() === new Date().getMonth() && new Date(item.vencimento).getFullYear() === new Date().getFullYear()).reduce((acc, despesa) => {
             return acc + despesa.valor;
         }, 0);
         dvTotal.textContent = formatarDinheiro(despesaSomaDV);
@@ -1020,6 +1010,28 @@ function atualizarValorTotalDasTabelas(conta) {
 
     ////////////////////////////////////////////////////////////////////////////////////
 
+    //ATUALIZAR O TOTAL DAS DESPESAS MENSAIS
+    if (conta.dm.length > 0) {
+        const despesasMensais = [0];
+
+        
+        conta.dm.forEach(item => {
+            if (item.tipo === 'cc') {
+                despesasMensais[0] += item.valorDaParcela;
+            } else {  
+                despesasMensais[0] += item.valor;
+            }
+        })
+        
+        
+        dmTotal.textContent = formatarDinheiro(despesasMensais[0]);
+    } else {
+        dmTotal.textContent = formatarDinheiro(0);
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////
+
+
     //ATUALIZAR AS ESTATISTICAS
     atualizarEstatisticas(conta);
 }
@@ -1042,13 +1054,13 @@ function attBalance(conta) {
     const saidasPaga = conta.despesas.filter(despesa => despesa.pago && new Date(despesa.vencimento).getMonth() <= new Date().getMonth() && new Date(despesa.vencimento).getFullYear() <= new Date().getFullYear()).reduce((acc, despesa) => {
         const despesasMensais = [0];
 
-                if (despesa.tipo === 'cc') {
-                    despesasMensais[0] += (acc + despesa.valorDaParcela);
-                } else {
-                    despesasMensais[0] += (acc + despesa.valor);
-                }
+        if (despesa.tipo === 'cc') {
+            despesasMensais[0] += (acc + despesa.valorDaParcela);
+        } else {
+            despesasMensais[0] += (acc + despesa.valor);
+        }
 
-                return despesasMensais[0];
+        return despesasMensais[0];
         // return acc + despesa.valor;
     }, 0);
 
@@ -1208,6 +1220,7 @@ registerBtn.addEventListener('click', function (e) {
 btnCallFormRegister.addEventListener('click', function () {
     displayRegister();
     btnCallFormRegister.blur();
+    loginUser.value = loginPin.value = '';
 })
 
 
