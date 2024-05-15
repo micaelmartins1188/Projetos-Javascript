@@ -1,0 +1,11 @@
+.footer__link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 2rem;
+    color: #fff;
+    letter-spacing: 1px;
+    width: min-content;
+}

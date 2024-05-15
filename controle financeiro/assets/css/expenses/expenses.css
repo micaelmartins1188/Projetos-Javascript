@@ -18,3 +18,7 @@
 .expenses--cc {
     width: 60%;
 }
+
+.expenses:last-child {
+    margin-bottom: 5rem;
+}
