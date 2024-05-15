@@ -77,6 +77,23 @@
         border-bottom-right-radius: 0;
     }
 
+
+    /* INFO CARDS */
+    #btn2 {
+        right: -20%;
+    }
+
+    #btn3 {
+        right: -10%;
+    }
+
+    .modal.modal__info {
+        overflow: auto;
+    }
+
+    .modal__cards .modal__card {
+        width: 100%;
+    }
 }
 
 
