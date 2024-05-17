@@ -1301,6 +1301,7 @@ btnLogin.addEventListener('click', function (e) {
                     attStatusEntrada(currentAccount);
                     checkStatusCC(currentAccount);
                     app.classList.remove('hidden');
+                    btnTopoPagina.classList.remove('hidden');
                     topoPagina();
                     return;
                 } else {
