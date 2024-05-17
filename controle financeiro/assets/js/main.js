@@ -995,6 +995,7 @@ function atualizarValorTotalDasTabelas(conta) {
         }, 0);
         ccTotalMensal.textContent = formatarDinheiro(despesaSomaMensalCC);
     } else {
+        ccTotalMensal.textContent = formatarDinheiro(0);
         ccTotal.textContent = formatarDinheiro(0);
     }
 
@@ -1584,7 +1585,7 @@ ccBtn.addEventListener('click', function (e) {
 
         criarTabelaCC(currentAccount);
 
-        ccInputDescricao.value = ccInputValor.value = ccInputVencimento.value = '';
+        ccInputDescricao.value = ccInputValor.value = ccInputParcelas.value = ccInputVencimento.value = '';
         localStorage.setItem('accounts', JSON.stringify(accounts));
         //Atualizando a tabela de despesas mensais para o usuário
         atualizarDM();
