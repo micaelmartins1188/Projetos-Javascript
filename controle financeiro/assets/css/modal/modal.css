@@ -15,3 +15,7 @@
 .modal.hidden {
     display: none;
 }
+
+.modal.modal__acc {
+    background-color: var(--gray-dark-2);
+}

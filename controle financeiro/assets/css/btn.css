@@ -21,3 +21,21 @@
     font-size: 1rem;
     margin-top: 1rem;
 }
+
+.btn--top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--gray-light-3);
+    border: none;
+    color: var(--gray-dark-3);
+    padding: 2rem;
+    font-size: 2rem;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.btn--top:hover,
+.btn--top:active {
+    background-color: var(--gray-light-2);
+}

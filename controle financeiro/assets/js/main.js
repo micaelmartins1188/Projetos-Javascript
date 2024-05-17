@@ -104,11 +104,9 @@ const dmTotal = document.getElementById('dm-total');
 //TABELA DE DESPESAS PENDENTES
 const dpTabela = document.getElementById('dp-tbody');
 
-//CRIANDO UM ARRAY PARA ARMAZENAR ENTRADA, SAIDA e Resultado
-const despesasPrevistas = [0, 0, 0];
-
-//CRIANDO UM ARRAY PARA ARMAZENAR saldo atual E saldo previsto
-const saldos = [0, 0];
+//BOTÃO TOPO DA PÁGINA
+const btnTopoPagina = document.getElementById('top-page');
+btnTopoPagina.addEventListener('click', topoPagina);
 
 
 const accounts = JSON.parse(localStorage.getItem('accounts')) || [];
@@ -1151,6 +1149,15 @@ document.querySelectorAll('td').forEach(cell => {
 });
 
 
+//FUNÇÃO DE MOVER PARA O TOPO DA PAGINA
+function topoPagina() {
+    //Para navegadores web
+    document.body.scrollTop = 0;
+
+    //Para navegadores móveis
+    document.documentElement.scrollTop = 0;
+}
+
 
 
 //FUNÇÃO CRIAR OS CARDS DAS CONTAS CADASTRADAS
@@ -1294,6 +1301,7 @@ btnLogin.addEventListener('click', function (e) {
                     attStatusEntrada(currentAccount);
                     checkStatusCC(currentAccount);
                     app.classList.remove('hidden');
+                    topoPagina();
                     return;
                 } else {
                     infoErrorLogin.classList.remove('hidden');
