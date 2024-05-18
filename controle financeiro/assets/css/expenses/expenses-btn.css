@@ -49,3 +49,13 @@
     color: var(--green-light);
 }
 
+.expenses__btn--edit {
+    color: var(--gray-light-2);
+    font-size: 1.5rem;
+    transition: all .4s ease;
+}
+
+.expenses__btn--edit:hover,
+.expenses__btn--edit:active  {
+    color: var(--blue-light);
+}

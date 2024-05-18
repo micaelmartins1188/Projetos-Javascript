@@ -97,6 +97,22 @@ const ccBtn = document.getElementById('cc-btn');
 const ccTotal = document.getElementById('cc-total');
 const ccTotalMensal = document.getElementById('cc-total-monthly');
 
+// MODAL DE EDIÇÃO
+const modalEdit = document.querySelector('.modal__edit');
+const modalEditContainerCC = document.querySelector('.container-edit-cc');
+const modalEditTitulo = document.querySelector('.modal__edit-heading');
+const btnFecharModalEdit = document.getElementById('close-modal-edit');
+const modalEditDescricao = document.getElementById('edit-description');
+const modalEditValor = document.getElementById('edit-value');
+const modalEditValorParcela = document.getElementById('edit-value-parcel');
+const modalEditQtdParcela = document.getElementById('edit-qtd-parcel');
+const btnAlterar = document.getElementById('edit-btn');
+const radioOpcoes = document.querySelectorAll('.form__box--radio-label');
+const containerOpcoes = document.querySelector('.modal__edit-container--radio');
+
+let despesaAtual;
+
+
 //TABELA DA DESPESA MENSAL
 const dmTabela = document.getElementById('dm-tbody');
 const dmTotal = document.getElementById('dm-total');
@@ -199,8 +215,14 @@ function criarTabelaEntrada(conta) {
             const td = document.createElement('td');
             const btnRemover = criarBotaoRemover(conta, item);
             td.appendChild(btnRemover);
-
             lista.appendChild(td);
+
+            //BOTÃO DE EDITAR
+            const tdEdit = document.createElement('td');
+            const btnEdit = criarBotaoEdit(item);
+            tdEdit.appendChild(btnEdit);
+            lista.appendChild(tdEdit);
+
             eTabela.appendChild(lista);
 
         })
@@ -262,8 +284,14 @@ function criarTabelaDF(conta) {
             const td = document.createElement('td');
             const btnRemover = criarBotaoRemover(conta, item);
             td.appendChild(btnRemover);
+            lista.appendChild(td)
 
-            lista.appendChild(td);
+            //BOTÃO DE EDITAR
+            const tdEdit = document.createElement('td');
+            const btnEdit = criarBotaoEdit(item);
+            tdEdit.appendChild(btnEdit);
+
+            lista.appendChild(tdEdit);
             dfTabela.appendChild(lista);
         })
     } else return;
@@ -281,15 +309,21 @@ function criarTabelaDV(conta) {
                 lista.classList.add("dv-tr");
                 lista.dataset.id = item.id
                 lista.innerHTML = `<td>${item.descricao}</td>
-            <td>${formatarDinheiro(item.valor)}</td>
-            <td>${formatarData(new Date(item.vencimento))}</td>
-            `;
+                <td>${formatarDinheiro(item.valor)}</td>
+                <td>${formatarData(new Date(item.vencimento))}</td>
+                `;
 
                 const td = document.createElement('td');
                 const btnRemover = criarBotaoRemover(conta, item);
                 td.appendChild(btnRemover);
-
                 lista.appendChild(td);
+
+                //BOTÃO DE EDITAR
+                const tdEdit = document.createElement('td');
+                const btnEdit = criarBotaoEdit(item);
+                tdEdit.appendChild(btnEdit);
+                lista.appendChild(tdEdit);
+
                 dvTabela.appendChild(lista);
             }
         })
@@ -326,8 +360,14 @@ function criarTabelaCC(conta) {
             const td = document.createElement('td');
             const btnRemover = criarBotaoRemover(conta, item);
             td.appendChild(btnRemover);
-
             lista.appendChild(td);
+
+            //BOTÃO DE EDITAR
+            const tdEdit = document.createElement('td');
+            const btnEdit = criarBotaoEdit(item);
+            tdEdit.appendChild(btnEdit);
+            lista.appendChild(tdEdit);
+
             ccTabela.appendChild(lista);
 
         })
@@ -414,6 +454,73 @@ function criarBotaoRemover(conta, despesa) {
     })
 
     return btn;
+}
+
+//BOTÃO DE EDITAR
+function criarBotaoEdit(despesa) {
+    const btn = document.createElement('button');
+    btn.classList.add('expenses__btn', 'expenses__btn--edit');
+    btn.innerHTML = '<i class="fa-regular fa-pen-to-square"></i>';
+
+    btn.addEventListener('click', function () {
+        modalEdit.classList.remove('hidden');
+        overlay.classList.remove('hidden');
+        despesaAtual = despesa;
+        preencherFormularioEdit(despesa);
+    })
+
+    return btn;
+}
+
+//PREENCHER FORMULARIO DE ALTERAÇÃO
+function preencherFormularioEdit(despesaAtual) {
+
+    if (despesaAtual.tipo === 'e') {
+        modalEditTitulo.textContent = 'Entrada';
+        containerOpcoes.classList.add('hidden');
+        modalEditContainerCC.classList.add('hidden');
+
+        modalEditDescricao.value = despesaAtual.descricao;
+        modalEditValor.value = despesaAtual.valor;
+        modalEditValor.disabled = false;
+
+        return;
+    } else if (despesaAtual.tipo === 'df') {
+        modalEditTitulo.textContent = 'Despesa fixa';
+        containerOpcoes.classList.remove('hidden');
+        modalEditContainerCC.classList.add('hidden');
+
+        modalEditDescricao.value = despesaAtual.descricao;
+        modalEditValor.value = despesaAtual.valor;
+        modalEditValor.disabled = false;
+
+        return;
+
+    } else if (despesaAtual.tipo === 'dv') {
+        modalEditTitulo.textContent = 'Despesa variável';
+        containerOpcoes.classList.add('hidden');
+        modalEditContainerCC.classList.add('hidden');
+
+        modalEditDescricao.value = despesaAtual.descricao;
+        modalEditValor.value = despesaAtual.valor;
+        modalEditValor.disabled = false;
+
+        return;
+
+    } else if (despesaAtual.tipo === 'cc') {
+        modalEditTitulo.textContent = 'Cartão de crédito';
+        modalEditContainerCC.classList.remove('hidden');
+        containerOpcoes.classList.add('hidden');
+
+        modalEditDescricao.value = despesaAtual.descricao;
+        modalEditValor.value = despesaAtual.valor;
+        modalEditValor.disabled = true;
+        modalEditValorParcela.value = despesaAtual.valorDaParcela;
+        modalEditQtdParcela.value = despesaAtual.parcelas;
+
+        return;
+    }
+
 }
 
 //  FUNÇÃO ATUALIZAR O STATUS DO CARTÃO DE CRÉDITO
@@ -834,18 +941,6 @@ function attStatusEntrada(conta) {
     })
 }
 
-/*
-conta.entrada.filter(despesa => {
-            if (ano) {
-                return (new Date(despesa.vencimento).getMonth() === i && despesa.pago && new Date(despesa.vencimento).getFullYear() === ano)
-            } else {
-                return (new Date(despesa.vencimento).getMonth() === i && despesa.pago && new Date(despesa.vencimento).getFullYear() === new Date().getFullYear())
-            }
- 
-Se o usuario filtrar o ano da estatisca, irá retornar as despesas e as entradas do mês filtrado
-Caso ele não filtre, mostrará por padrão o do ano atual
-*/
-
 function atualizarEstatisticas(conta, ano = undefined) {
 
     if (ano) {
@@ -882,14 +977,14 @@ function atualizarEstatisticas(conta, ano = undefined) {
             }
 
         }).forEach(item => {
-            if(item.tipo === 'cc') {
+            if (item.tipo === 'cc') {
                 estatisticaMensalArr[1] += -item.valorDaParcela;
             } else {
                 estatisticaMensalArr[1] += -item.valor;
             }
-         });
-         mesesSaida[i].textContent = formatarDinheiro(estatisticaMensalArr[1]);
-         
+        });
+        mesesSaida[i].textContent = formatarDinheiro(estatisticaMensalArr[1]);
+
 
         //RESULTADO
         estatisticaMensalArr[2] = estatisticaMensalArr[0] + estatisticaMensalArr[1];
@@ -929,13 +1024,13 @@ function atualizarEstatisticas(conta, ano = undefined) {
             }
 
         }).forEach(item => {
-            if(item.tipo === 'cc') {
+            if (item.tipo === 'cc') {
                 estatisticaAnualArr[1] += -item.valorDaParcela;
             } else {
                 estatisticaAnualArr[1] += -item.valor;
             }
-         });
-         saidaAnual.textContent = formatarDinheiro(estatisticaAnualArr[1]);
+        });
+        saidaAnual.textContent = formatarDinheiro(estatisticaAnualArr[1]);
 
 
         //RESULTADO
@@ -1013,16 +1108,16 @@ function atualizarValorTotalDasTabelas(conta) {
     if (conta.dm.length > 0) {
         const despesasMensais = [0];
 
-        
+
         conta.dm.forEach(item => {
             if (item.tipo === 'cc') {
                 despesasMensais[0] += item.valorDaParcela;
-            } else {  
+            } else {
                 despesasMensais[0] += item.valor;
             }
         })
-        
-        
+
+
         dmTotal.textContent = formatarDinheiro(despesasMensais[0]);
     } else {
         dmTotal.textContent = formatarDinheiro(0);
@@ -1175,6 +1270,11 @@ const criarCardDasContas = conta => {
     divAccCards.appendChild(div);
 }
 
+
+//FUNÇÃO REMOVER A CLASSE ATIVO DO BOTÃO RADIO
+function removerClasseRadioAtivo() {
+    radioOpcoes.forEach(opcao => opcao.classList.remove('radio-active'));
+}
 ////////////////////////////////////////////////////////////////////////////////////
 
 //EVENT LISTENERS
@@ -1638,4 +1738,384 @@ btnFecharModalInfo.addEventListener('click', function () {
     modalInfo.classList.add('hidden');
     overlay.classList.add('hidden');
 })
-//  só falta fazer o funcionamento do botão filtro e chamar a função atualizarEsatistica
+
+
+radioOpcoes.forEach(opcao => {
+    opcao.addEventListener('click', () => {
+        removerClasseRadioAtivo();
+        opcao.classList.add('radio-active');
+    })
+})
+
+btnAlterar.addEventListener('click', e => {
+    e.preventDefault();
+
+    const valorRadio = document.querySelector(`input[name="option"]:checked`).value;
+    // console.log(typeof valorRadio);
+
+    if (despesaAtual.tipo === 'e') {
+        if (+modalEditValor.value > 0) {
+            //MUDANDO O VALOR DA ENTRADA
+            const entradaAtual = currentAccount.entrada.find(despesa => despesa.id === despesaAtual.id);
+            entradaAtual.descricao = modalEditDescricao.value;
+            entradaAtual.valor = +modalEditValor.value;
+
+            //ATUALIZANDO O VALOR NAS DESPESAS
+            const despesaEntrada = currentAccount.entrada.find(despesa => despesa.id === despesaAtual.id && despesa.tipo === despesaAtual.tipo && despesa.tipo === 'e');
+            despesaEntrada.descricao = modalEditDescricao.value;
+            despesaEntrada.valor = +modalEditValor.value;
+
+
+            localStorage.setItem('accounts', JSON.stringify(accounts));
+            criarTabelaEntrada(currentAccount);
+            atualizarEstatisticas(currentAccount);
+            atualizarValorTotalDasTabelas(currentAccount);
+            attBalance(currentAccount);
+            mostrarDM(currentAccount);
+
+            modalEditDescricao.value = modalEditQtdParcela.value = modalEditValor.value = modalEditValorParcela.value = '';
+            modalEdit.classList.add('hidden');
+            overlay.classList.add('hidden');
+            return;
+        } else {
+            return;
+        }
+
+    } else if (despesaAtual.tipo === 'df') {
+        if (+valorRadio === 0) {
+            currentAccount.despesas.filter(despesa => despesa.idR === despesaAtual.id && despesa.tipo === despesaAtual.tipo && despesa.tipo === 'df' && new Date(despesa.vencimento).getMonth() === new Date().getMonth()).forEach(despesa => {
+                despesa.descricao = modalEditDescricao.value;
+                despesa.valor = +modalEditValor.value;
+            });
+
+
+            localStorage.setItem('accounts', JSON.stringify(accounts));
+            mostrarDM(currentAccount);
+            atualizarEstatisticas(currentAccount);
+            atualizarValorTotalDasTabelas(currentAccount);
+            attBalance(currentAccount);
+
+            modalEditDescricao.value = modalEditQtdParcela.value = modalEditValor.value = modalEditValorParcela.value = '';
+            modalEdit.classList.add('hidden');
+            overlay.classList.add('hidden');
+            return;
+        } else if (+valorRadio === 1) {
+            //MUDANDO O VALOR DA DESPESA FIXA
+            currentAccount.df.find(despesa => despesa.id === despesaAtual.id).valor = +modalEditValor.value;
+
+            //MUDANDO OS DADOS DAS DESPESAS DO ANO ATUAL
+            currentAccount.despesas.filter(despesa => despesa.idR === despesaAtual.id && despesa.tipo === despesaAtual.tipo && despesa.tipo === 'df' && new Date(despesa.vencimento).getMonth() > new Date().getMonth() && new Date(despesa.vencimento).getFullYear() === new Date().getFullYear()).forEach(despesa => {
+                despesa.descricao = modalEditDescricao.value;
+                despesa.valor = +modalEditValor.value;
+            });
+
+            //MUDANDO OS DADOS DAS DESPESAS DO PRÓXIMO ANO
+            currentAccount.despesas.filter(despesa => despesa.idR === despesaAtual.id && despesa.tipo === despesaAtual.tipo && despesa.tipo === 'df' && new Date(despesa.vencimento).getFullYear() === new Date().getFullYear() + 1).forEach(despesa => {
+                despesa.descricao = modalEditDescricao.value;
+                despesa.valor = +modalEditValor.value;
+            });
+
+
+            localStorage.setItem('accounts', JSON.stringify(accounts));
+            criarTabelaDF(currentAccount);
+            mostrarDM(currentAccount);
+            atualizarEstatisticas(currentAccount);
+            atualizarValorTotalDasTabelas(currentAccount);
+            attBalance(currentAccount);
+
+            modalEditDescricao.value = modalEditQtdParcela.value = modalEditValor.value = modalEditValorParcela.value = '';
+            modalEdit.classList.add('hidden');
+            overlay.classList.add('hidden');
+            return;
+        } else if (+valorRadio === 2) {
+            //MUDANDO O VALOR DA DESPESA FIXA
+            currentAccount.df.find(despesa => despesa.id === despesaAtual.id).valor = +modalEditValor.value;
+
+            //MUDANDO O VALOR DA DESPESA DE TODOS OS MESES
+            currentAccount.despesas.filter(despesa => despesa.idR === despesaAtual.id && despesa.tipo === despesaAtual.tipo && despesa.tipo === 'df').forEach(despesa => {
+                despesa.descricao = modalEditDescricao.value;
+                despesa.valor = +modalEditValor.value;
+            });
+
+
+            localStorage.setItem('accounts', JSON.stringify(accounts));
+            criarTabelaDF(currentAccount);
+            mostrarDM(currentAccount);
+            atualizarEstatisticas(currentAccount);
+            atualizarValorTotalDasTabelas(currentAccount);
+            attBalance(currentAccount);
+
+            modalEditDescricao.value = modalEditQtdParcela.value = modalEditValor.value = modalEditValorParcela.value = '';
+            modalEdit.classList.add('hidden');
+            overlay.classList.add('hidden');
+            return;
+        }
+
+    } else if (despesaAtual.tipo === 'dv') {
+        //MUDANDO O VALOR DA DESPESA VARIÁVEL
+        const dvAtual = currentAccount.dv.find(despesa => despesa.id === despesaAtual.id);
+        dvAtual.descricao = modalEditDescricao.value;
+        dvAtual.valor = +modalEditValor.value;
+
+        //ATUALIZANDO O VALOR NAS DESPESAS
+        const despesaDV = currentAccount.despesas.find(despesa => despesa.idR === despesaAtual.id && despesa.tipo === despesaAtual.tipo && despesa.tipo === 'dv');
+        despesaDV.descricao = modalEditDescricao.value;
+        despesaDV.valor = +modalEditValor.value;
+
+
+        localStorage.setItem('accounts', JSON.stringify(accounts));
+        criarTabelaDV(currentAccount);
+        atualizarEstatisticas(currentAccount);
+        atualizarValorTotalDasTabelas(currentAccount);
+        attBalance(currentAccount);
+        mostrarDM(currentAccount);
+
+        modalEditDescricao.value = modalEditQtdParcela.value = modalEditValor.value = modalEditValorParcela.value = '';
+        modalEdit.classList.add('hidden');
+        overlay.classList.add('hidden');
+        return;
+    } else if (despesaAtual.tipo === 'cc') {
+        //SE O NUMERO DE PARCELAS FOR MENOR QUE A QUANTIDADE DE PARCELAS EXISTENTE
+        if (+modalEditQtdParcela.value < despesaAtual.parcelas && +modalEditQtdParcela.value >= 1) {
+
+            //PRIMEIRA ETAPA PEGAR TODAS AS DESPESAS REFERENTE A DESPESA ATUAL DO CARTAO DE CRÉDITO
+            const despesasArr = currentAccount.despesas.filter(despesa => despesa.idR === despesaAtual.id && despesa.tipo === despesaAtual.tipo);
+
+
+            //SEGUNDA ETAPA - REMOVER TODAS AS DESPESAS DO CC REFERENTE A DESPESA ATUAL DO CC
+            //Primeiro - Pegar o index
+            const indexDaDespesa = currentAccount.despesas.findIndex(despesa => despesa.idR === despesaAtual.id && despesa.tipo === despesaAtual.tipo);
+
+            //Segundo remover as depesas da lista
+            //FAZER A REMOÇÃO DE QUANTIDADES DE PARCELAS
+            currentAccount.despesas.splice(indexDaDespesa, despesasArr.length);
+
+
+
+            // Loop para inverter o array
+            for (let i = 0; i < despesasArr.length / 2; i++) {
+                // Usando uma variável temporária para realizar a troca
+                let temp = despesasArr[i];
+                despesasArr[i] = despesasArr[despesasArr.length - 1 - i];
+                despesasArr[despesasArr.length - 1 - i] = temp;
+            }
+
+
+            //VER SE ESTÁ TUDO CERTO NO CONSOLE
+            // console.log(despesasArr);
+
+            //Removendo
+            despesasArr.splice(0, despesasArr.length - +modalEditQtdParcela.value);
+
+            //TUDO CERTO
+            // console.log('3 parcealas: ', despesasArr);
+
+            // Loop para inverter o array (para add os ID)
+            for (let i = 0; i < despesasArr.length / 2; i++) {
+                // Usando uma variável temporária para realizar a troca
+                let temp = despesasArr[i];
+                despesasArr[i] = despesasArr[despesasArr.length - 1 - i];
+                despesasArr[despesasArr.length - 1 - i] = temp;
+            }
+
+            // TUDO CERTO
+            // console.log(despesasArr);
+
+
+            //CONSERTAR O ID PARA CADA PARCELA
+            for (let x = 0; x < despesasArr.length; x++) {
+                // mudar a parte do id pelo codigo abaixo
+                //(currentAccount.despesas[currentAccount.despesas.length - 1]).id + (x + 1);
+                const id = currentAccount.despesas[currentAccount.despesas.length - 1].id + (x + 1); //Pegando o ultimo ID das depesas
+                despesasArr[x].id = id;
+            }
+
+            //CONSERTAR O VALOR DE CADA PARCELA
+            for (let n = 0; n < despesasArr.length; n++) {
+                despesasArr[n].descricao = modalEditDescricao.value;
+                despesasArr[n].valorDaParcela = +modalEditValorParcela.value;
+                despesasArr[n].numeroDeParcelas = +modalEditQtdParcela.value;
+            }
+
+            //ARRUMAR O VALOR TOTAL DAS PARCELAS
+            const total = despesasArr.reduce((acc, despesa) => acc + despesa.valorDaParcela, 0);
+
+            //Adicionando o valor total nas parcelas
+            for (let j = 0; j < despesasArr.length; j++) {
+                despesasArr[j].valor = total;
+            }
+
+            //TUDO OSKAY
+            // console.log(despesasArr);
+
+            //SALVAR TUDO NO ARRAY ORIGINAL DE DESPESAS
+            despesasArr.forEach(despesa => currentAccount.despesas.push(despesa));
+
+
+            //MODIFICAR AS INFORMAÇÕES DO CARTÃO DE CRÉDITO RAIZ (CC)
+            const despesaRaiz = currentAccount.cc.find(despesa => despesa.id === despesaAtual.id);
+            despesaRaiz.valor = total;
+            despesaRaiz.valorDaParcela = +modalEditValorParcela.value;
+            despesaRaiz.parcelas = +modalEditQtdParcela.value;
+            despesaRaiz.descricao = modalEditDescricao.value;
+
+
+
+            localStorage.setItem('accounts', JSON.stringify(accounts));
+            criarTabelaCC(currentAccount);
+            mostrarDM(currentAccount);
+            atualizarEstatisticas(currentAccount);
+            atualizarValorTotalDasTabelas(currentAccount);
+            attBalance(currentAccount);
+
+            modalEditDescricao.value = modalEditQtdParcela.value = modalEditValor.value = modalEditValorParcela.value = '';
+            modalEdit.classList.add('hidden');
+            overlay.classList.add('hidden');
+            return;
+        }
+        //SE O NUMERO DE PARCELAS FOR MAIOR QUE A QUANTIDADE DE PARCELAS EXISTENTE
+        else if (+modalEditQtdParcela.value > despesaAtual.parcelas && +modalEditQtdParcela.value >= 1) {
+
+            //PRIMEIRA ETAPA PEGAR TODAS AS DESPESAS REFERENTE A DESPESA ATUAL DO CARTAO DE CRÉDITO
+            const despesasArr = currentAccount.despesas.filter(despesa => despesa.idR === despesaAtual.id && despesa.tipo === despesaAtual.tipo);
+
+            //SEGUNDA ETAPA - REMOVER TODAS AS DESPESAS DO CC REFERENTE A DESPESA ATUAL DO CC
+            //Primeiro - Pegar o index
+            const indexDaDespesa = currentAccount.despesas.findIndex(despesa => despesa.idR === despesaAtual.id && despesa.tipo === despesaAtual.tipo);
+
+            //Segundo remover as depesas da lista
+            //FAZER A REMOÇÃO DE QUANTIDADES DE PARCELAS
+            currentAccount.despesas.splice(indexDaDespesa, despesasArr.length);
+
+
+
+
+            //CRIANDO UMA VARIÁVEL PARA SABER AS PARCELAS RESTANTES A SEREM ADICIONADAS
+            let qtdParcelas = +modalEditQtdParcela.value - despesasArr.length;
+            const ultimaDespesa = despesasArr[despesasArr.length - 1];
+
+            for (let k = 0; k < qtdParcelas; k++) {
+
+                despesasArr.push(
+                    {
+                        tipo: "cc",
+                        descricao: modalEditDescricao.value,//não importa nesse loop
+                        valor: 0,//não importa nesse loop
+                        valorDaParcela: 0,//não importa nesse loop
+                        numeroDeParcelas: 0, //não importa nesse loop
+                        parcelaAtual: ultimaDespesa.parcelaAtual + 1,
+                        vencimento: undefined, //não importa aqui nesse loop
+                        pago: 0,
+                        id: undefined, //não importa nesse loop
+                        idR: 0 //não importa nesse loop
+                    }
+                )
+            }
+
+
+            //CONSERTAR A DATA DE VENCIMENTO PARA CADA PARCELA
+            for (let x = 0; x < despesasArr.length; x++) {
+                const dataVencimento = new Date(despesasArr[0].vencimento);
+                dataVencimento.setMonth(dataVencimento.getMonth() + (x));
+                despesasArr[x].vencimento = dataVencimento.toISOString();
+            }
+
+
+            //CONSERTAR O ID PARA CADA PARCELA
+            for (let x = 0; x < despesasArr.length; x++) {
+                // mudar a parte do id pelo codigo abaixo
+                //(currentAccount.despesas[currentAccount.despesas.length - 1]).id + (x + 1);
+                const id = currentAccount.despesas[currentAccount.despesas.length - 1].id + (x + 1); //Pegando o ultimo ID das depesas
+                despesasArr[x].id = id;
+            }
+
+
+            //ADICIONANDO AS MODIFICAÇÕES EM CADA PARCELA 
+            for (let i = 0; i < despesasArr.length; i++) {
+
+                despesasArr[i].descricao = modalEditDescricao.value;
+                despesasArr[i].valorDaParcela = +modalEditValorParcela.value;
+                despesasArr[i].numeroDeParcelas = +modalEditQtdParcela.value;
+                despesasArr[i].idR = despesaAtual.id;
+
+            }
+
+            //ADICIONANDO O VALOR TOTAL DAS PARCELAS
+            const total = despesasArr.reduce((acc, despesa) => acc + despesa.valorDaParcela, 0);
+
+            //Adicionando o valor total nas parcelas
+            for (let j = 0; j < despesasArr.length; j++) {
+                despesasArr[j].valor = total;
+            }
+
+
+            //MANDANDO AS PARCELAS PARA O ARRAY DE DESPESAS ORIGINAL
+            despesasArr.forEach(parcela => {
+                currentAccount.despesas.push(parcela);
+            })
+
+
+            //MUDANDO AS INFORMAÇOES DA DESPESA RAIZ DO CARTÃO DE CRÉDITO
+            const despesaRaiz = currentAccount.cc.find(despesa => despesa.id === despesaAtual.id);
+            despesaRaiz.descricao = modalEditDescricao.value;
+            despesaRaiz.valor = +modalEditValorParcela.value * +modalEditQtdParcela.value;
+            despesaRaiz.valorDaParcela = +modalEditValorParcela.value;
+            despesaRaiz.parcelas = +modalEditQtdParcela.value;
+
+
+            localStorage.setItem('accounts', JSON.stringify(accounts));
+            criarTabelaCC(currentAccount);
+            mostrarDM(currentAccount);
+            atualizarEstatisticas(currentAccount);
+            atualizarValorTotalDasTabelas(currentAccount);
+            attBalance(currentAccount);
+
+            modalEditDescricao.value = modalEditQtdParcela.value = modalEditValor.value = modalEditValorParcela.value = '';
+            modalEdit.classList.add('hidden');
+            overlay.classList.add('hidden');
+            return;
+        }
+        //SE O NUMERO DE PARCELAS PERMANECER A MESMA
+        else if (+modalEditQtdParcela.value === despesaAtual.parcelas && +modalEditQtdParcela.value >= 1) {
+
+            //MUDANDO AS INFORMAÇOES DA DESPESA RAIZ DO CARTÃO DE CRÉDITO
+            const despesaRaiz = currentAccount.cc.find(despesa => despesa.id === despesaAtual.id);
+            despesaRaiz.descricao = modalEditDescricao.value;
+            despesaRaiz.valor = +modalEditValorParcela.value * +modalEditQtdParcela.value;
+            despesaRaiz.valorDaParcela = +modalEditValorParcela.value;
+            despesaRaiz.parcelas = +modalEditQtdParcela.value;
+
+
+            //MUDANDO APENAS AS INFORMAÇÕES DAS PARCELAS DAS DESPESAS
+            currentAccount.despesas.filter(despesa => despesa.idR === despesaAtual.id && despesa.tipo === despesaAtual.tipo).forEach(despesa => {
+
+                despesa.descricao = modalEditDescricao.value;
+                despesa.valorDaParcela = +modalEditValorParcela.value;
+                despesa.numeroDeParcelas = +modalEditQtdParcela.value;
+                despesa.valor = +modalEditValorParcela.value * +modalEditQtdParcela.value;
+            });
+
+
+            localStorage.setItem('accounts', JSON.stringify(accounts));
+            criarTabelaCC(currentAccount);
+            mostrarDM(currentAccount);
+            atualizarEstatisticas(currentAccount);
+            atualizarValorTotalDasTabelas(currentAccount);
+            attBalance(currentAccount);
+
+            modalEditDescricao.value = modalEditQtdParcela.value = modalEditValor.value = modalEditValorParcela.value = '';
+            modalEdit.classList.add('hidden');
+            overlay.classList.add('hidden');
+            return;
+        } else {
+            return;
+        }
+
+    }
+
+})
+
+btnFecharModalEdit.addEventListener('click', () => {
+    overlay.classList.add('hidden');
+    modalEdit.classList.add('hidden');
+})

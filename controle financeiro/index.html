@@ -97,6 +97,11 @@
     <link rel="stylesheet" href="assets/css/modal/modal-card-text.css">
     <link rel="stylesheet" href="assets/css/modal/modal-cards.css">
 
+    <!-- MODAL EDIT -->
+    <link rel="stylesheet" href="assets/css/modal-edit/modal-edit.css">
+    <link rel="stylesheet" href="assets/css/modal-edit/modal-edit-heading.css">
+    <link rel="stylesheet" href="assets/css/modal-edit/modal-edit-container.css">
+
     <!-- FOOTER -->
     <link rel="stylesheet" href="assets/css/footer/footer.css">
     <link rel="stylesheet" href="assets/css/footer/footer-link.css">
@@ -108,7 +113,7 @@
         <h1 class="header__heading">Controle Financeiro <i class="fa-solid fa-hand-holding-dollar header__icon"></i>
             </h2>
     </header>
-    <!-- DEPOIS QUE TERMINAR A PARTE DE LAYOUT DO APP REMOVER O HIDDEN DE INFO -->
+    
     <div class="info">
 
         <div class="info__container">
@@ -173,16 +178,6 @@
         <h2 class="modal__acc-heading">Contas cadastradas</h2>
 
         <div class="modal__acc-cards">
-            <!-- <div class="modal__acc-card">
-                <p class="modal__acc-card-text">Dono: <span class="modal__acc-card-span acc-owner">Micael
-                        Martins</span></p>
-                <p class="modal__acc-card-text">Username: <span class="modal__acc-card-span acc-username">Micael
-                        Martins</span></p>
-                <p class="modal__acc-card-text">PIN: <span class="modal__acc-card-span acc-pin">Micael
-                        Martins</span></p>
-                <p class="modal__acc-card-text">Data de criação: <span class="modal__acc-card-span acc-date">12/05/2024</span></p>
-            </div> -->
-
 
         </div>
     </div>
@@ -348,21 +343,11 @@
                             <th>valor</th>
                             <th>Data de recebimento</th>
                             <th>recebido ?</th>
-                            <th>ação</th>
+                            <th>remover</th>
+                            <th>editar</th>
                         </tr>
                     </thead>
                     <tbody class="expenses__tbody" id="e-tbody">
-                        <!-- <tr class="e-tr" id="0">
-                            <td>salário</td>
-                            <td>R$ 1400,00</td>
-                            <td>09/05/2024</td>
-                            <td>
-                                <button class="expenses__btn expenses__btn--not-received">não</button>
-                            </td>
-                            <td>
-                                <button class="expenses__btn expenses__btn--remove"><i class="fa-solid fa-trash-can"></i></button>
-                            </td>
-                        </tr> -->
 
                     </tbody>
                 </table>
@@ -404,18 +389,11 @@
                             <th>descrição</th>
                             <th>valor</th>
                             <th>Vencimento</th>
-                            <th>ação</th>
+                            <th>remover</th>
+                            <th>editar</th>
                         </tr>
                     </thead>
                     <tbody class="expenses__tbody" id="df-tbody">
-                        <!-- <tr class="df-tr" id="0">
-                            <td>aluguel</td>
-                            <td>R$ 400,00</td>
-                            <td>Dia 12</td>
-                            <td>
-                                <button class="expenses__btn expenses__btn--remove"><i class="fa-solid fa-trash-can"></i></button>
-                            </td>
-                        </tr> -->
 
                     </tbody>
                 </table>
@@ -457,18 +435,11 @@
                             <th>descrição</th>
                             <th>valor</th>
                             <th>data de pagamento</th>
-                            <th>ação</th>
+                            <th>remover</th>
+                            <th>editar</th>
                         </tr>
                     </thead>
                     <tbody class="expenses__tbody" id="dv-tbody">
-                        <!-- <tr class="dv-tr" id="0">
-                            <td>aluguel</td>
-                            <td>R$ 400,00</td>
-                            <td>07/05/2024</td>
-                            <td>
-                                <button class="expenses__btn expenses__btn--remove"><i class="fa-solid fa-trash-can"></i></button>
-                            </td>
-                        </tr> -->
 
                     </tbody>
                 </table>
@@ -492,7 +463,7 @@
             </form>
         </div>
 
-        <!-- CARTÃO DE CRÉIDTO - CADASTRO -->
+        <!-- CARTÃO DE CRÉDITO - CADASTRO -->
         <div class="container-expenses">
 
             <div class="expenses expenses--cc">
@@ -506,22 +477,12 @@
                             <th>parcelas</th>
                             <th>valor da parcela</th>
                             <th>status</th>
-                            <th>ação</th>
+                            <th>remover</th>
+                            <th>editar</th>
                         </tr>
                     </thead>
                     <tbody class="expenses__tbody" id="cc-tbody">
-                        <!-- <tr class="cc-tr" id="0">
-                            <td>aluguel</td>
-                            <td>R$ 400,00</td>
-                            <td>4</td>
-                            <td>100</td>
-                            <td>
-                                <button class="expenses__btn expenses__btn--waiting" id="status--cc">em andamento</button>
-                            </td>
-                            <td>
-                                <button class="expenses__btn expenses__btn--remove"><i class="fa-solid fa-trash-can"></i></button>
-                            </td>
-                        </tr> -->
+                        
                     </tbody>
                 </table>
 
@@ -578,34 +539,6 @@
                         </tr>
                     </thead>
                     <tbody class="expenses__tbody" id="dm-tbody">
-                        <!-- <tr class="dm-tr" id="0">
-                            <td>aluguel</td>
-                            <td>R$ 400,00</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>07/05/2024</td>
-                            <td>
-                                <button class="expenses__btn expenses__btn--not-paid">não pago</button>
-                            </td>
-                            <td>
-                                <button class="expenses__btn expenses__btn--remove"><i class="fa-solid fa-trash-can"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>aluguel</td>
-                            <td>R$ 600,00</td>
-                            <td>R$ 200,00</td>
-                            <td>3</td>
-                            <td>2º parcela</td>
-                            <td>23/05/2024</td>
-                            <td>
-                                <button class="expenses__btn expenses__btn--not-paid">não pago</button>
-                            </td>
-                            <td>
-                                <button class="expenses__btn expenses__btn--remove"><i class="fa-solid fa-trash-can"></i></button>
-                            </td>
-                        </tr> -->
 
                     </tbody>
                 </table>
@@ -636,34 +569,6 @@
                         </tr>
                     </thead>
                     <tbody class="expenses__tbody" id="dp-tbody">
-                        <!-- <tr class="dm-tr" id="0">
-                            <td>aluguel</td>
-                            <td>R$ 400,00</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>07/05/2024</td>
-                            <td>
-                                <button class="expenses__btn expenses__btn--not-paid">não pago</button>
-                            </td>
-                            <td>
-                                <button class="expenses__btn expenses__btn--remove"><i class="fa-solid fa-trash-can"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>aluguel</td>
-                            <td>R$ 600,00</td>
-                            <td>R$ 200,00</td>
-                            <td>3</td>
-                            <td>2º parcela</td>
-                            <td>23/05/2024</td>
-                            <td>
-                                <button class="expenses__btn expenses__btn--not-paid">não pago</button>
-                            </td>
-                            <td>
-                                <button class="expenses__btn expenses__btn--remove"><i class="fa-solid fa-trash-can"></i></button>
-                            </td>
-                        </tr> -->
 
                     </tbody>
                 </table>
@@ -700,6 +605,68 @@
                 <p class="modal__card-text">Despesa variável é um gasto que muda todo mês, como a conta do supermercado
                     ou gasolina. E também é um gasto imprevisto, por exemplo: comprar um sorvete, blusa, roupa.</p>
             </div>
+        </div>
+    </div>
+
+    <!-- MODAL EDIT -->
+    <div class="modal modal__edit hidden">
+        <button class="modal__close" id="close-modal-edit"><i class="fa-solid fa-xmark"></i></button>
+        <h2 class="modal__edit-heading">nome da despesa</h2>
+
+        <div class="modal__edit-container">
+
+            <form class="form form--edit" id="edit-form">
+
+                <div class="form__box">
+                    <label for="edit-id" class="form__label">Descrição</label>
+                    <input type="text" id="edit-description" class="form__input">
+                </div>
+
+                <div class="form__box">
+                    <label for="edit-value" class="form__label">Valor</label>
+                    <input type="number" id="edit-value" class="form__input">
+                </div>
+
+                <div class="container-edit-cc hidden">
+                    <p class="alert">Caso ja tenha pagado uma parcela, mexa somente no campo da descrição!</p>
+                    <div class="form__box">
+                        <label for="edit-value-parcel" class="form__label">Valor da Parcela</label>
+                        <input
+                        t type="number" id="edit-value-parcel" class="form__input">
+                    </div>
+                    <div class="form__box">
+                        <label for="edit-qtd-parcel" class="form__label">Quantidade de Parcelas</label>
+                        <input type="number" id="edit-qtd-parcel" class="form__input">
+                    </div>
+                </div>
+
+                <div class="modal__edit-container--radio">
+
+                    <label>Mudar apenas o valor:</label>
+
+                    <div class="form__box form__box--radio">
+
+                        <div class="form__box--radio">
+                            <label for="radio1" class="form__box--radio-label radio-active">do mês atual</label>
+                            <input type="radio" name="option" value="0" id="radio1" checked>
+                        </div>
+
+                        <div class="form__box--radio">
+                            <label for="radio2" class="form__box--radio-label">dos meses subsequentes</label>
+                            <input type="radio" name="option" value="1" id="radio2">
+                        </div>
+
+                        <div class="form__box--radio">
+                            <label for="radio3" class="form__box--radio-label">ambos</label>
+                            <input type="radio" name="option" value="2" id="radio3">
+                        </div>
+
+                    </div>
+                </div>
+
+                <button class="form__btn btn" id="edit-btn">alterar</button>
+            </form>
+
         </div>
     </div>
 

@@ -1,0 +1,28 @@
+.modal__edit {
+    height: 90%;
+    background-color: var(--gray-dark-2);
+    overflow: auto;
+}
+
+.modal__edit::-webkit-scrollbar {
+    background-color: var(--gray-light-4);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.modal__edit::-webkit-scrollbar-thumb {
+    background-color: var(--gray-light);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.alert {
+    color: var(--red-light);
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+}
+
+.container-edit-cc.hidden {
+    display: none;
+}
