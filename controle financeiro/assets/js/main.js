@@ -102,6 +102,8 @@ const modalEdit = document.querySelector('.modal__edit');
 const modalEditContainerCC = document.querySelector('.container-edit-cc');
 const modalEditTitulo = document.querySelector('.modal__edit-heading');
 const btnFecharModalEdit = document.getElementById('close-modal-edit');
+// const modalEditID = document.getElementById('edit-id');
+// modalEditID.disabled = true;
 const modalEditDescricao = document.getElementById('edit-description');
 const modalEditValor = document.getElementById('edit-value');
 const modalEditValorParcela = document.getElementById('edit-value-parcel');
@@ -111,7 +113,6 @@ const radioOpcoes = document.querySelectorAll('.form__box--radio-label');
 const containerOpcoes = document.querySelector('.modal__edit-container--radio');
 
 let despesaAtual;
-
 
 //TABELA DA DESPESA MENSAL
 const dmTabela = document.getElementById('dm-tbody');
@@ -123,7 +124,6 @@ const dpTabela = document.getElementById('dp-tbody');
 //BOTÃO TOPO DA PÁGINA
 const btnTopoPagina = document.getElementById('top-page');
 btnTopoPagina.addEventListener('click', topoPagina);
-
 
 const accounts = JSON.parse(localStorage.getItem('accounts')) || [];
 
@@ -466,6 +466,7 @@ function criarBotaoEdit(despesa) {
         modalEdit.classList.remove('hidden');
         overlay.classList.remove('hidden');
         despesaAtual = despesa;
+        // console.log(despesaAtual);
         preencherFormularioEdit(despesa);
     })
 
@@ -475,7 +476,7 @@ function criarBotaoEdit(despesa) {
 //PREENCHER FORMULARIO DE ALTERAÇÃO
 function preencherFormularioEdit(despesaAtual) {
 
-    if (despesaAtual.tipo === 'e') {
+    if (despesaAtual.tipo === 'e'){
         modalEditTitulo.textContent = 'Entrada';
         containerOpcoes.classList.add('hidden');
         modalEditContainerCC.classList.add('hidden');
@@ -483,8 +484,6 @@ function preencherFormularioEdit(despesaAtual) {
         modalEditDescricao.value = despesaAtual.descricao;
         modalEditValor.value = despesaAtual.valor;
         modalEditValor.disabled = false;
-
-        return;
     } else if (despesaAtual.tipo === 'df') {
         modalEditTitulo.textContent = 'Despesa fixa';
         containerOpcoes.classList.remove('hidden');
@@ -520,6 +519,9 @@ function preencherFormularioEdit(despesaAtual) {
 
         return;
     }
+
+
+    // modalEditID.value = despesaAtual.id;
 
 }
 
@@ -941,6 +943,18 @@ function attStatusEntrada(conta) {
     })
 }
 
+/*
+conta.entrada.filter(despesa => {
+            if (ano) {
+                return (new Date(despesa.vencimento).getMonth() === i && despesa.pago && new Date(despesa.vencimento).getFullYear() === ano)
+            } else {
+                return (new Date(despesa.vencimento).getMonth() === i && despesa.pago && new Date(despesa.vencimento).getFullYear() === new Date().getFullYear())
+            }
+ 
+Se o usuario filtrar o ano da estatisca, irá retornar as despesas e as entradas do mês filtrado
+Caso ele não filtre, mostrará por padrão o do ano atual
+*/
+
 function atualizarEstatisticas(conta, ano = undefined) {
 
     if (ano) {
@@ -969,6 +983,7 @@ function atualizarEstatisticas(conta, ano = undefined) {
         mesesEntrada[i].textContent = formatarDinheiro(estatisticaMensalArr[0]);
 
         //SAIDA
+
         const saidaEstatistica = conta.despesas.filter(despesa => {
             if (ano) {
                 return (new Date(despesa.vencimento).getMonth() === i && new Date(despesa.vencimento).getFullYear() === ano)
@@ -984,6 +999,21 @@ function atualizarEstatisticas(conta, ano = undefined) {
             }
         });
         mesesSaida[i].textContent = formatarDinheiro(estatisticaMensalArr[1]);
+
+        //.reduce((acc, despesa) => {
+        //     const despesasMensais = [0];
+
+        //     if (despesa.tipo === 'cc') {
+        //         despesasMensais[0] += (acc + despesa.valorDaParcela);
+        //     } else {
+        //         despesasMensais[0] += (acc + despesa.valor);
+        //     }
+
+        //     return -despesasMensais[0];
+        // }, 0);
+
+        // estatisticaMensalArr[1] += saidaEstatistica;
+        // mesesSaida[i].textContent = formatarDinheiro(estatisticaMensalArr[1]);
 
 
         //RESULTADO
@@ -1031,7 +1061,20 @@ function atualizarEstatisticas(conta, ano = undefined) {
             }
         });
         saidaAnual.textContent = formatarDinheiro(estatisticaAnualArr[1]);
+        // .reduce((acc, despesa) => {
+        //     const despesasAnual = [0];
 
+        //     if (despesa.tipo === 'cc') {
+        //         despesasAnual[0] += (acc + despesa.valorDaParcela);
+        //     } else {
+        //         despesasAnual[0] += (acc + despesa.valor);
+        //     }
+
+        //     return -despesasAnual[0];
+        // }, 0);
+
+        // estatisticaAnualArr[1] += saidaEstatistica;
+        // saidaAnual.textContent = formatarDinheiro(estatisticaAnualArr[1]);
 
         //RESULTADO
         estatisticaAnualArr[2] = estatisticaAnualArr[0] + estatisticaAnualArr[1];
@@ -1122,8 +1165,6 @@ function atualizarValorTotalDasTabelas(conta) {
     } else {
         dmTotal.textContent = formatarDinheiro(0);
     }
-
-    ////////////////////////////////////////////////////////////////////////////////////
 
 
     //ATUALIZAR AS ESTATISTICAS
@@ -1241,6 +1282,7 @@ document.querySelectorAll('td').forEach(cell => {
             c.classList.remove('blur', 'active');
         });
     });
+
 });
 
 
@@ -1271,10 +1313,13 @@ const criarCardDasContas = conta => {
 }
 
 
+
 //FUNÇÃO REMOVER A CLASSE ATIVO DO BOTÃO RADIO
 function removerClasseRadioAtivo() {
     radioOpcoes.forEach(opcao => opcao.classList.remove('radio-active'));
 }
+
+
 ////////////////////////////////////////////////////////////////////////////////////
 
 //EVENT LISTENERS
@@ -1406,7 +1451,7 @@ btnLogin.addEventListener('click', function (e) {
                     return;
                 } else {
                     infoErrorLogin.classList.remove('hidden');
-                    loginPin.value = '';
+                    inputPin.value = '';
                     return;
                 }
             })
@@ -2026,7 +2071,7 @@ btnAlterar.addEventListener('click', e => {
             for (let x = 0; x < despesasArr.length; x++) {
                 // mudar a parte do id pelo codigo abaixo
                 //(currentAccount.despesas[currentAccount.despesas.length - 1]).id + (x + 1);
-                const id = (currentAccount.despesas[currentAccount.despesas.length - 1]).id + (x + 1); //Pegando o ultimo ID das depesas
+                const id = currentAccount.despesas[currentAccount.despesas.length - 1].id + (x + 1); //Pegando o ultimo ID das depesas
                 despesasArr[x].id = id;
             }
 
