@@ -102,8 +102,6 @@ const modalEdit = document.querySelector('.modal__edit');
 const modalEditContainerCC = document.querySelector('.container-edit-cc');
 const modalEditTitulo = document.querySelector('.modal__edit-heading');
 const btnFecharModalEdit = document.getElementById('close-modal-edit');
-// const modalEditID = document.getElementById('edit-id');
-// modalEditID.disabled = true;
 const modalEditDescricao = document.getElementById('edit-description');
 const modalEditValor = document.getElementById('edit-value');
 const modalEditValorParcela = document.getElementById('edit-value-parcel');
@@ -466,7 +464,6 @@ function criarBotaoEdit(despesa) {
         modalEdit.classList.remove('hidden');
         overlay.classList.remove('hidden');
         despesaAtual = despesa;
-        // console.log(despesaAtual);
         preencherFormularioEdit(despesa);
     })
 
@@ -519,9 +516,6 @@ function preencherFormularioEdit(despesaAtual) {
 
         return;
     }
-
-
-    // modalEditID.value = despesaAtual.id;
 
 }
 
@@ -2038,7 +2032,6 @@ btnAlterar.addEventListener('click', e => {
 
             //CRIANDO UMA VARIÁVEL PARA SABER AS PARCELAS RESTANTES A SEREM ADICIONADAS
             let qtdParcelas = +modalEditQtdParcela.value - despesasArr.length;
-            const ultimaDespesa = despesasArr[despesasArr.length - 1];
 
             for (let k = 0; k < qtdParcelas; k++) {
 
@@ -2049,7 +2042,7 @@ btnAlterar.addEventListener('click', e => {
                         valor: 0,//não importa nesse loop
                         valorDaParcela: 0,//não importa nesse loop
                         numeroDeParcelas: 0, //não importa nesse loop
-                        parcelaAtual: ultimaDespesa.parcelaAtual + 1,
+                        parcelaAtual: despesasArr[despesasArr.length - 1] + 1,
                         vencimento: undefined, //não importa aqui nesse loop
                         pago: 0,
                         id: undefined, //não importa nesse loop
@@ -2069,10 +2062,10 @@ btnAlterar.addEventListener('click', e => {
 
             //CONSERTAR O ID PARA CADA PARCELA
             for (let x = 0; x < despesasArr.length; x++) {
-                // mudar a parte do id pelo codigo abaixo
-                //(currentAccount.despesas[currentAccount.despesas.length - 1]).id + (x + 1);
+            
                 const id = currentAccount.despesas[currentAccount.despesas.length - 1].id + (x + 1); //Pegando o ultimo ID das depesas
                 despesasArr[x].id = id;
+                
             }
 
 
