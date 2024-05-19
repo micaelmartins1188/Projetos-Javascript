@@ -2026,7 +2026,7 @@ btnAlterar.addEventListener('click', e => {
             for (let x = 0; x < despesasArr.length; x++) {
                 // mudar a parte do id pelo codigo abaixo
                 //(currentAccount.despesas[currentAccount.despesas.length - 1]).id + (x + 1);
-                const id = currentAccount.despesas[currentAccount.despesas.length - 1].id + (x + 1); //Pegando o ultimo ID das depesas
+                const id = (currentAccount.despesas[currentAccount.despesas.length - 1]).id + (x + 1); //Pegando o ultimo ID das depesas
                 despesasArr[x].id = id;
             }
 
@@ -2096,7 +2096,7 @@ btnAlterar.addEventListener('click', e => {
                 despesa.valor = +modalEditValorParcela.value * +modalEditQtdParcela.value;
             });
 
-
+        
             localStorage.setItem('accounts', JSON.stringify(accounts));
             criarTabelaCC(currentAccount);
             mostrarDM(currentAccount);
