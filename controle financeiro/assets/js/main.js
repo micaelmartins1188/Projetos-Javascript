@@ -1451,6 +1451,7 @@ btnLogin.addEventListener('click', function (e) {
                     return;
                 } else {
                     infoErrorLogin.classList.remove('hidden');
+                    loginPin.value = '';
                     return;
                 }
             })
