@@ -1,0 +1,10 @@
+.form__text {
+    color: var(--red);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.form__text.hidden {
+    display: none;
+}

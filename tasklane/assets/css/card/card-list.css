@@ -1,0 +1,7 @@
+.card__list {
+    color: var(--gray-light);
+    list-style: none;
+
+    max-height: 300px;
+    overflow: auto;
+}

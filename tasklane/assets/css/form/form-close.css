@@ -1,0 +1,14 @@
+.form__close {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    background-color: transparent;
+    border: none;
+    font-size: 4rem;
+    color: var(--gray-light);
+}
+
+.form__close:hover,
+.form__close:active {
+    color: var(--gray-light-2);
+}

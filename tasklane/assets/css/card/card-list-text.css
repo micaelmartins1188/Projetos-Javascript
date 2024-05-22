@@ -1,0 +1,16 @@
+.card__list-text {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    max-height: 100px;
+    overflow: auto;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+    background-color: var(--gray-dark-2);
+    padding: 1rem;
+    border-radius: 8px;
+    color: var(--gray-light);
+    box-sizing: border-box;
+    word-break: break-word;
+    filter: blur(0);
+}

@@ -1,0 +1,40 @@
+.card__list-btn-status {
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    border: none;
+    background-color: var(--gray-dark-3);
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.card__list-btn-status--initial {
+    background-color: var(--red);
+}
+
+.card__list-btn-status--in-progress {
+    background-color: var(--orange);
+}
+
+.card__list-btn-status--done {
+    background-color: var(--green);
+}
+
+
+.card__list-btn-status:nth-child(1):hover,
+.card__list-btn-status:nth-child(1):active {
+    background-color: var(--red);
+    opacity: .7;
+}
+
+.card__list-btn-status:nth-child(2):hover,
+.card__list-btn-status:nth-child(2):active {
+    background-color: var(--orange);
+    opacity: .7;
+}
+
+.card__list-btn-status:nth-child(3):hover,
+.card__list-btn-status:nth-child(3):active {
+    background-color: var(--green);
+    opacity: .7;
+}

@@ -1,0 +1,7 @@
+.form__heading {
+    text-transform: uppercase;
+    color: var(--gray-light);
+    font-size: 3rem;
+    letter-spacing: 1px;
+    margin-bottom: 3rem;
+}

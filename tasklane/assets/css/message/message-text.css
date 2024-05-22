@@ -1,0 +1,11 @@
+.message__text {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: var(--gray-dark-2);
+    font-size: 2rem;
+}
+
+.message__text:first-of-type {
+    margin-bottom: .5rem;
+}

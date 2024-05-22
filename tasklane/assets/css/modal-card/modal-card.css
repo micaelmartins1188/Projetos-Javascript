@@ -1,0 +1,7 @@
+.modal__card {
+    background-color: var(--gray-dark-2);
+    padding: 3rem;
+    border-radius: 8px;
+    text-align: center;
+    width: 80%;
+}

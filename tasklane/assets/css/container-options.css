@@ -1,0 +1,6 @@
+.container-options {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+    width: 100%;
+}

@@ -1,0 +1,13 @@
+.message {
+    background-color: var(--green-2);
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.message span {
+    text-transform: lowercase;
+}
+
+.message.hidden {
+    display: none;
+}

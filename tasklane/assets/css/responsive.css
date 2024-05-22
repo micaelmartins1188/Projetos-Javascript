@@ -1,0 +1,133 @@
+@media screen and (min-width: 600px) {
+    /* FORM LOGIN */
+    #form-login {
+        width: 60%;
+    }
+
+    /* FORM TASKS */
+    .form.form__tasks {
+        width: 80%;
+        border-radius: 10px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    /* FORM LOGIN */
+    #form-login {
+        width: 50%;
+    }
+
+    /* CONTAINER FORM EDIT */
+    .container--form-edit {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    /* FORM LOGIN */
+    #form-login {
+        width: 30%;
+    }
+
+    /* FORM TASKS */
+    .form.form__tasks {
+        width: 60%;
+    }
+
+    /* CONTAINER CARDS */
+    .container.container--cards {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* LAYOUT TASKS */
+    .card__list::-webkit-scrollbar,
+    .modal--view::-webkit-scrollbar,
+    .modal__heading::-webkit-scrollbar,
+    .modal__description::-webkit-scrollbar,
+    .card__list-text::-webkit-scrollbar {
+        background-color: transparent;
+    }
+
+    /* CARD LIST */
+    .card__list::-webkit-scrollbar-thumb {
+        background-color: var(--gray-dark);
+    }
+
+    /* CHANGING THE SCROLLBAR OF THE ELEMENTS */
+    .modal--view::-webkit-scrollbar-thumb,
+    .modal__heading::-webkit-scrollbar-thumb,
+    .modal__description::-webkit-scrollbar-thumb,
+    .card__list-text::-webkit-scrollbar-thumb {
+        background-color: var(--gray-dark);
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+    /* CHANGING THE SCROLLBAR OF THE ELEMENTS */
+    .modal.modal--view::-webkit-scrollbar-thumb,
+    .modal__heading::-webkit-scrollbar-thumb,
+    .modal__description::-webkit-scrollbar-thumb,
+    .card__list-text::-webkit-scrollbar-thumb {
+        background-color: var(--gray-light);
+    }
+
+    /* CARD LIST INITIAL */
+    .card.card--initial {
+        width: 45%;
+        margin-bottom: 0;
+    }
+
+    /* CARD LIST IN PROGRESS AND CARD LIST DONE */
+    .card.card--in-progress,
+    .card.card--done {
+        width: 90%;
+    }
+
+
+    /* CONTAINER CARD IN PROGRESS AND CARD DONE */
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        flex: 1;
+        align-items: flex-end;
+    }
+
+
+
+    /* MODAL VIEW */
+    .modal--view {
+        width: 90%;
+        height: 90%;
+        border-radius: 10px;
+        padding: 6rem 5rem;
+    }
+
+    /* CONTAINER VIEW */
+    .container.container--view-info {
+        width: 70%;
+        margin: 0 auto;
+    }
+    
+     /* MODAL VIEW - LAYOUT TOP */
+    .modal--view-layout-top {
+        display: flex;
+    }
+
+    /* MODAL VIEW - CONTAINER INFO */
+    .modal--view-layout-top > .container--view-info {
+        width: 50%;
+        box-sizing: border-box;
+    }
+
+    /* MODAL VIEW - CONTAINER FORM SUBTASKS*/
+    .modal--view-layout-top > .container--form-subtasks {
+        width: 50%;
+    }
+
+    /* MODAL VIEW - FORM SUBTASKS */
+    .modal--view-layout-top > .container--form-subtasks > .form--subtasks {
+        width: 100%;
+    }
+}

@@ -1,0 +1,28 @@
+.form__tasks-textarea {
+    width: 100%;
+    resize: none;
+    margin-bottom: 3rem;
+    border-radius: 8px;
+    background-color: var(--gray-dark-3);
+    padding: 2rem;
+    font-size: 2.5743rem;
+    color: var(--gray-light);
+    outline-color: var(--gray-light-3);
+    height: 250px;
+    box-sizing: border-box;
+}
+
+.form__tasks-textarea::-webkit-scrollbar {
+    background-color: transparent;
+}
+
+
+.form__tasks-textarea::-webkit-scrollbar-thumb {
+    background-color: var(--gray-light);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+#subtask-description {
+    filter: blur(0);
+}

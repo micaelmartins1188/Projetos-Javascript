@@ -1,0 +1,36 @@
+:root {
+    --gray-dark: #141414;
+    --gray-dark-2: #1f1f1f;
+    --gray-dark-3: #333333;
+
+
+    --gray-light: #ebebeb;
+    --gray-light-2: #adadad;
+    --gray-light-3: #A29797;
+
+    --red: #e94e4e;
+    --orange: #d3912d;
+    --green: #81be31;
+
+    --red-2: #ff6161;
+    --orange-2: #fdb241;
+    --green-2: #bdff67;
+
+    --red-3: #ad2d2d;
+    --orange-3: #ad792a;
+    --green-3: #6fa529;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 50%;
+}
+
+body {
+    background-color: var(--gray-dark);
+    font-family: sans-serif;
+}

@@ -1,0 +1,9 @@
+.container-status {
+    background-color: var(--gray-dark-2);
+    border-radius: 8px;
+    width: 70%;
+    padding: 2rem;
+
+    display: flex;
+    justify-content: space-around;
+}

@@ -1,0 +1,38 @@
+.container {
+    padding: 5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.container.hidden {
+    display: none;
+}
+
+.container--form-tasks {
+    padding: 5rem 0;
+    width: 100vw;
+}
+
+.container--cards {
+    text-align: center;
+}
+
+.container.container--view-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container--form-edit {
+    padding: 0;
+}
+
+.app.hidden > .container {
+    display: none;
+}
+
+.app.hidden > .info-status {
+    display: none;
+}

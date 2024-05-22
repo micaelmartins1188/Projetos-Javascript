@@ -1,0 +1,20 @@
+.info-status__btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    border: none;
+    background-color: var(--gray-dark);
+    margin-bottom: 1rem;
+}
+
+.info-status__btn--initial {
+    background-color: var(--red);
+}
+
+.info-status__btn--in-progress {
+    background-color: var(--orange);
+}
+
+.info-status__btn--done {
+    background-color: var(--green);
+}

@@ -1,0 +1,23 @@
+.card {
+    background-color: var(--gray-dark-2);
+    padding: 2rem;
+    border-radius: 10px;
+    width: 80vw;
+    box-sizing: border-box;
+}
+
+.card:not(:last-child) {
+    margin-bottom: 5rem;
+}
+
+.card--initial {
+    background-color: var(--red-3);
+}
+
+.card--in-progress {
+    background-color: var(--orange-3);
+}
+
+.card--done {
+    background-color: var(--green-3);
+}
