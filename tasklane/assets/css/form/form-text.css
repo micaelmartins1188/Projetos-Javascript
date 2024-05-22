@@ -3,6 +3,7 @@
     font-size: 2rem;
     margin-bottom: 1rem;
     letter-spacing: 1px;
+    text-align: center;
 }
 
 .form__text.hidden {
