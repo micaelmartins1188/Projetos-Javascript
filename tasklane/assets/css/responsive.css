@@ -46,6 +46,12 @@
         align-items: center;
     }
 
+    /* CONTAINER EDIT INFO */
+    .container.container--edit-info {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
     /* LAYOUT TASKS */
     .card__list::-webkit-scrollbar,
     .modal--view::-webkit-scrollbar,
