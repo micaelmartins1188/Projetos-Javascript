@@ -2352,7 +2352,7 @@ btnReajuste.addEventListener('click', function(e) {
         despesaAtual.valor = +modalReajusteValor.value;
         modalReajuste.classList.add('hidden');
         overlay.classList.add('hidden');
-        console.log(despesaAtual);
+        // console.log(despesaAtual);
         
         if(despesaAtual.tipo === 'dv') {
             const despesaRaiz = currentAccount.dv.find(element => element.id === despesaAtual.idR);
