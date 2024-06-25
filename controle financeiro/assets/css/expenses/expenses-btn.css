@@ -26,7 +26,8 @@
     color: var(--gray-dark-3);
 }
 
-.expenses__btn--remove {
+.expenses__btn--remove,
+.expenses__btn--reajuste {
     color: var(--gray-light-2);
     font-size: 1.5rem;
     transition: all .4s ease;
@@ -36,6 +37,16 @@
 .expenses__btn--remove:focus {
     outline: none;
     color: var(--red-light);
+}
+
+.expenses__btn--reajuste:hover,
+.expenses__btn--reajuste:focus {
+    outline: none;
+    color: var(--orange-light);
+}
+
+.expenses__btn--search {
+    margin: 0 .5rem;
 }
 
 .expenses__btn--waiting {

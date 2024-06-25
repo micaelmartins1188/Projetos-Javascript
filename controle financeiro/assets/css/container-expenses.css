@@ -8,3 +8,7 @@
 .container-expenses:not(:last-child) {
     border-bottom: 2px solid var(--gray-dark-2);
 }
+
+.container-expenses.hidden {
+    display: none;
+}

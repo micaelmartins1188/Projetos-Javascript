@@ -73,6 +73,10 @@
     <link rel="stylesheet" href="assets/css/filter/filter-select.css">
     <link rel="stylesheet" href="assets/css/filter/filter-btn.css">
 
+    <!-- BUTTONS -->
+    <link rel="stylesheet" href="assets/css/buttons/buttons.css">
+    <link rel="stylesheet" href="assets/css/buttons/buttons-btn.css">
+
     <!-- TABLE -->
     <link rel="stylesheet" href="assets/css/table/table.css">
     <link rel="stylesheet" href="assets/css/table/table-head.css">
@@ -86,9 +90,14 @@
     <link rel="stylesheet" href="assets/css/expenses/expenses-tbody.css">
     <link rel="stylesheet" href="assets/css/expenses/expenses-btn.css">
     <link rel="stylesheet" href="assets/css/expenses/expenses-result.css">
+    <link rel="stylesheet" href="assets/css/expenses/expenses-close.css">
 
     <!-- CONTAINER EXPENSES -->
     <link rel="stylesheet" href="assets/css/container-expenses.css">
+
+    <!-- SEARCH EXPENSES -->
+    <link rel="stylesheet" href="assets/css/search/search.css">
+    <link rel="stylesheet" href="assets/css/search/search-heading.css">
 
     <!-- MODAL INFO -->
     <link rel="stylesheet" href="assets/css/modal/modal-heading.css">
@@ -101,6 +110,11 @@
     <link rel="stylesheet" href="assets/css/modal-edit/modal-edit.css">
     <link rel="stylesheet" href="assets/css/modal-edit/modal-edit-heading.css">
     <link rel="stylesheet" href="assets/css/modal-edit/modal-edit-container.css">
+
+    <!-- MODAL REAJUSTE -->
+    <link rel="stylesheet" href="assets/css/modal-reajuste/modal-reajuste.css">
+    <link rel="stylesheet" href="assets/css/modal-reajuste/modal-reajuste-heading.css">
+    <link rel="stylesheet" href="assets/css/modal-reajuste/modal-reajuste-container.css">
 
     <!-- FOOTER -->
     <link rel="stylesheet" href="assets/css/footer/footer.css">
@@ -329,10 +343,19 @@
 
         </div>
 
+        <!-- BOTÕES -->
+        <div class="buttons">
+            <button class="buttons__btn">Entrada</button>
+            <button class="buttons__btn">Despesa Fixa</button>
+            <button class="buttons__btn">Despesa Variável</button>
+            <button class="buttons__btn">Cartão de Crédito</button>
+        </div>
+
         <!-- ENTRADA - CADASTRO -->
-        <div class="container-expenses">
+        <div class="container-expenses hidden">
 
             <div class="expenses">
+                <button class="expenses__close">X</button>
                 <h3 class="expenses__heading">Entrada <button class="expenses__heading--question" id="btn1"><i
                             class="fa-solid fa-question"></i></button></h3>
 
@@ -377,9 +400,10 @@
         </div>
 
         <!-- DESPESA FIXA - CADASTRO -->
-        <div class="container-expenses">
+        <div class="container-expenses hidden">
 
             <div class="expenses">
+                <button class="expenses__close">X</button>
                 <h3 class="expenses__heading">Despesas Fixas <button class="expenses__heading--question" id="btn2"><i
                             class="fa-solid fa-question"></i></button></h3>
 
@@ -423,9 +447,10 @@
         </div>
 
         <!-- DESPESA VARIAVEL - CADASTRO -->
-        <div class="container-expenses">
+        <div class="container-expenses hidden">
 
             <div class="expenses">
+                <button class="expenses__close">X</button>
                 <h3 class="expenses__heading">Despesas Variáveis <button class="expenses__heading--question"
                         id="btn3"><i class="fa-solid fa-question"></i></button></h3>
 
@@ -464,9 +489,10 @@
         </div>
 
         <!-- CARTÃO DE CRÉDITO - CADASTRO -->
-        <div class="container-expenses">
+        <div class="container-expenses hidden">
 
             <div class="expenses expenses--cc">
+                <button class="expenses__close">X</button>
                 <h3 class="expenses__heading">Cartão de Crédito</h3>
 
                 <table class="expenses__table">
@@ -535,7 +561,8 @@
                             <th>parcela atual</th>
                             <th>vencimento</th>
                             <th>status</th>
-                            <th>ação</th>
+                            <th>reajuste de valor</th>
+                            <th>remover</th>
                         </tr>
                     </thead>
                     <tbody class="expenses__tbody" id="dm-tbody">
@@ -565,7 +592,8 @@
                             <th>parcela atual</th>
                             <th>vencimento</th>
                             <th>status</th>
-                            <th>ação</th>
+                            <th>reajuste de valor</th>
+                            <th>remover</th>
                         </tr>
                     </thead>
                     <tbody class="expenses__tbody" id="dp-tbody">
@@ -578,6 +606,94 @@
             </div>
 
         </div>
+
+        <!-- MECANISMO DE BUSCA DAS DESPESAS -->
+        <div class="search">
+            <h2 class="search__heading">Buscar Despesas</h2>
+
+            <div class="filter" id="filter-expenses">
+                <h3 class="filter__heading">Filtrar:</h3>
+
+                <select class="filter__select" id="filter-expenses-select-month">
+                    <option value="0">jan</option>
+                    <option value="1">fev</option>
+                    <option value="2">mar</option>
+                    <option value="3">abr</option>
+                    <option value="4">mai</option>
+                    <option value="5">jun</option>
+                    <option value="6">jul</option>
+                    <option value="7">ago</option>
+                    <option value="8">set</option>
+                    <option value="9">out</option>
+                    <option value="10">nov</option>
+                    <option value="11">dez</option>
+                </select>
+
+                <select class="filter__select" id="filter-expenses-select-year">
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                </select>
+
+                <button class="filter__btn" id="search-btn">confirmar</button>
+            </div>
+
+            <div class="container-expenses">
+
+                <div class="expenses expenses--search">
+                    <h3 class="expenses__heading">Resultado da Busca</h3>
+    
+                    <table class="expenses__table">
+                        <thead class="expenses__thead">
+                            <tr>
+                                <th>descrição</th>
+                                <th>valor</th>
+                                <th>nº de parcelas</th>
+                                <th>valor da parcela</th>
+                                <th>parcela atual</th>
+                                <th>vencimento</th>
+                                <th>status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="expenses__tbody" id="search-tbody">
+                            <!-- <tr class="dm-tr" id="0">
+                                <td>aluguel</td>
+                                <td>R$ 400,00</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>07/05/2024</td>
+                                <td>
+                                    <button class="expenses__btn expenses__btn--not-paid">não pago</button>
+                                </td>
+                                <td>
+                                    <button class="expenses__btn expenses__btn--remove"><i class="fa-solid fa-trash-can"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>aluguel</td>
+                                <td>R$ 600,00</td>
+                                <td>R$ 200,00</td>
+                                <td>3</td>
+                                <td>2º parcela</td>
+                                <td>23/05/2024</td>
+                                <td>
+                                    <button class="expenses__btn expenses__btn--not-paid">não pago</button>
+                                </td>
+                                <td>
+                                    <button class="expenses__btn expenses__btn--remove"><i class="fa-solid fa-trash-can"></i></button>
+                                </td>
+                            </tr> -->
+    
+                        </tbody>
+                    </table>
+                </div>
+    
+            </div>
+        </div>
+
     </div>
 
     <!-- MODAL INFO -->
@@ -665,6 +781,26 @@
                 </div>
 
                 <button class="form__btn btn" id="edit-btn">alterar</button>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- MODAL REAJUSTE -->
+    <div class="modal modal__reajuste hidden">
+        <button class="modal__close" id="close-modal-reajuste"><i class="fa-solid fa-xmark"></i></button>
+        <h2 class="modal__reajuste-heading">nome da despesa</h2>
+
+        <div class="modal__reajuste-container">
+
+            <form class="form form--reajuste" id="reajuste-form">
+
+                <div class="form__box">
+                    <label for="edit-value" class="form__label">Valor</label>
+                    <input type="number" id="reajuste-value" class="form__input">
+                </div>
+
+                <button class="form__btn btn" id="reajuste-btn">alterar</button>
             </form>
 
         </div>

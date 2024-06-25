@@ -1,0 +1,7 @@
+.modal__reajuste {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid var(--gray-light);
+}

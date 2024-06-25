@@ -53,6 +53,12 @@ const resultadoBalance = document.getElementById('value-result');
 //BOTÃO FILTRO
 const filtroSelect = document.getElementById('filter-select-year');
 
+//SEARCH EXPENSES
+const filtroMesDaDespesa = document.getElementById('filter-expenses-select-month');
+const filtroAnoDaDespesa = document.getElementById('filter-expenses-select-year');
+const btnFiltroDespesa = document.getElementById('search-btn');
+
+
 // MESES DA ESTATISTICAS
 const mesesEntrada = document.querySelectorAll('.month-in');
 const mesesSaida = document.querySelectorAll('.month-out');
@@ -61,6 +67,14 @@ const entradaAnual = document.getElementById('value-in--yearly');
 const saidaAnual = document.getElementById('value-out--yearly');
 const resultadoAnual = document.getElementById('value-result--yearly');
 const tituloEstatistica = document.getElementById('statistic-year-heading');
+
+
+//BOTÕES DE CHAMADA
+const btnsChamada = document.querySelectorAll('.buttons__btn');
+const divDespesas = document.querySelectorAll('.container-expenses');
+
+// BOTÃO CLOSE DESPESA
+const btnsCloseDespesa = document.querySelectorAll('.expenses__close');
 
 
 //ENTRADA FORMULÁRIO
@@ -112,7 +126,18 @@ const btnAlterar = document.getElementById('edit-btn');
 const radioOpcoes = document.querySelectorAll('.form__box--radio-label');
 const containerOpcoes = document.querySelector('.modal__edit-container--radio');
 
+
+//MODAL RENEW
+const btnFecharModalReajuste = document.getElementById('close-modal-reajuste');
+const modalReajuste = document.querySelector('.modal__reajuste');
+const modalReajusteTitulo = document.querySelector('.modal__reajuste-heading');
+const modalReajusteValor = document.getElementById('reajuste-value');
+const btnReajuste = document.getElementById('reajuste-btn');
+
+
 let despesaAtual;
+let mesBusca, anoBusca;
+
 
 //TABELA DA DESPESA MENSAL
 const dmTabela = document.getElementById('dm-tbody');
@@ -653,6 +678,12 @@ function mostrarDM(conta) {
             tdStatus.appendChild(btnStatus);
             lista.appendChild(tdStatus);
 
+            //criar um td para o botão de reajuste
+            const tdBtnReajuste = document.createElement('td');
+            const btnReajuste = criarBotaoReajuste(item);
+            tdBtnReajuste.appendChild(btnReajuste);
+            lista.appendChild(tdBtnReajuste);
+
             //criar um td para o botão de remover (somente para o aluguel)
             const tdBtnRemove = document.createElement('td');
             const btnRemove = criarBotaoDeRemoverDM(conta, item);
@@ -705,6 +736,12 @@ function mostrarDP(conta) {
             tdStatus.appendChild(btnStatus);
             lista.appendChild(tdStatus);
 
+            //criar um td para o botão de reajuste
+            const tdBtnReajuste = document.createElement('td');
+            const btnReajuste = criarBotaoReajuste(item);
+            tdBtnReajuste.appendChild(btnReajuste);
+            lista.appendChild(tdBtnReajuste);
+
             //criar um td para o botão de remover (somente para o aluguel)
             const tdBtnRemove = document.createElement('td');
             const btnRemove = criarBotaoDeRemoverDM(conta, item);
@@ -728,6 +765,24 @@ function mostrarDP(conta) {
     }
 }
 
+// FUNÇÃO CRIAR BOTÃO DE REAJUSTE DE VALOR
+function criarBotaoReajuste(despesa) {
+    const btn = document.createElement('button');
+    btn.classList.add('expenses__btn', 'expenses__btn--reajuste');
+    btn.innerHTML = '<i class="fa-regular fa-pen-to-square"></i>';
+
+    btn.addEventListener('click', function () {
+            modalReajuste.classList.remove('hidden');
+            overlay.classList.remove('hidden');
+            despesaAtual = despesa;
+            // console.log(currentAccount, despesaAtual);
+    
+            modalReajusteTitulo.textContent = `${despesaAtual.descricao}`;
+            modalReajusteValor.value = despesaAtual.valor;
+    })
+
+    return btn;
+}
 
 //FUNÇÃO REMOVER UMA DESPESA DA DESEPSA MENSAL
 function criarBotaoDeRemoverDM(conta, item) {
@@ -774,6 +829,46 @@ function criarBotaoDeRemoverDM(conta, item) {
             }
 
             localStorage.setItem('accounts', JSON.stringify(accounts));
+            mostrarBuscaDeDespesas(currentAccount, anoBusca, mesBusca);
+
+        } if (item.tipo === 'dv') {
+            //REMOVENDO OS DADOS DA TABELA PARA O USUÁRIO
+            const tr = btn.closest('tr');
+            if (tr) tr.remove();
+
+            if (conta.despesas.filter(despesa => despesa.idR === item.idR && despesa.descricao === item.descricao).length === 1) {
+                const despesaID = conta.dv.find(despesa => despesa.id === item.idR).id;
+                // console.log(despesaID);
+                conta.despesas.splice(conta.despesas.findIndex(elemento => elemento.id === item.id), 1);
+                atualizarValorTotalDasTabelas(conta);
+                attBalance(conta);
+
+                conta.dv.splice(conta.dv.findIndex(elemento => elemento.id === item.idR), 1);
+                atualizarValorTotalDasTabelas(conta);
+                attBalance(conta);
+                mostrarDP(conta);
+
+                // console.log(conta.df.find(despesa => despesa.id === item.idR));
+                const elemento = document.querySelector(`.dv-tr[data-id='${despesaID}']`);
+                if (elemento) {
+                    elemento.remove();
+                    atualizarValorTotalDasTabelas(conta);
+                    attBalance(conta);
+                    mostrarDP(conta);
+                } else {
+                    console.log("Elemento não encontrado com ID:", despesaID);
+                }
+
+
+            } else {
+                //REMOVENDO A DESPESA DA CONTA DO USUARIO
+                conta.despesas.splice(conta.despesas.findIndex(elemento => elemento.id === item.id), 1);
+                atualizarValorTotalDasTabelas(conta);
+                attBalance(conta);
+            }
+
+            localStorage.setItem('accounts', JSON.stringify(accounts));
+            mostrarBuscaDeDespesas(currentAccount, anoBusca, mesBusca);
         }
     })
 
@@ -845,6 +940,8 @@ function criarBotaoDePagamentoDM(conta, despesa) {
                 attStatusCC(conta, despesaCC[0]);
             }
         }
+
+        mostrarBuscaDeDespesas(currentAccount, anoBusca, mesBusca);
     })
 
 
@@ -898,6 +995,7 @@ function criarBotaoDePagamentoDP(conta, despesa) {
 
         }
 
+        mostrarBuscaDeDespesas(currentAccount, anoBusca, mesBusca);
         this.remove();
     })
 
@@ -1320,6 +1418,95 @@ function removerClasseRadioAtivo() {
 }
 
 
+function atualizarInterfaceUsuario(conta) {
+    criarTabelaDF(conta);
+    criarTabelaDV(conta);
+    criarTabelaCC(conta);
+    criarTabelaEntrada(conta);
+    atualizarDM();
+    mostrarDM(conta);
+    mostrarDP(conta);
+    atualizarValorTotalDasTabelas(conta);
+    attBalance(conta);
+    attStatusEntrada(conta);
+    checkStatusCC(conta);
+}
+
+function esconderDivDespesas() {
+    for (let i = 0; i < 4; i++) {
+        divDespesas[i].classList.add('hidden');
+    }
+}
+
+btnsChamada.forEach((btn, i) => {
+    btn.addEventListener('click', function () {
+        esconderDivDespesas();
+        divDespesas[i].classList.remove('hidden');
+    })
+})
+
+btnsCloseDespesa.forEach(btn => {
+    btn.addEventListener('click', function () {
+        esconderDivDespesas();
+    })
+})
+
+
+//BOTÃO DE PAGAMENTO DAS DESPESAS MENSAIS
+function criarBotaoDePagamentoBuscaDeDespesas(despesa) {
+    const btn = document.createElement('button');
+    if (despesa.pago) {
+        btn.classList.add('expenses__btn', 'expenses__btn--search', 'expenses__btn--paid', `dm-status--${despesa.id}`);
+        btn.textContent = 'pago';
+    } else {
+        btn.classList.add('expenses__btn', 'expenses__btn--search', 'expenses__btn--not-paid', `dm-status--${despesa.id}`);
+        btn.textContent = 'não pago';
+    }
+
+    if (despesa.pago && despesa.tipo === 'dv') {
+        btn.classList.add('expenses__btn', 'expenses__btn--search', 'expenses__btn--paid', `dm-status--${despesa.id}`);
+        btn.textContent = 'pago';
+    }
+
+    btn.disabled = true;
+    return btn;
+}
+
+
+function mostrarBuscaDeDespesas(conta, ano, mes) {
+    if (conta.despesas.length > 0) {
+        document.getElementById('search-tbody').innerHTML = '';
+
+        conta.despesas.filter(despesa => new Date(despesa.vencimento).getMonth() === mes && new Date(despesa.vencimento).getFullYear() === ano).forEach(item => {
+
+            const lista = document.createElement('tr');
+            lista.classList.add("search-tr");
+            lista.dataset.id = item.id
+            lista.innerHTML = `<td>${item.descricao}</td>
+            <td>${formatarDinheiro(item.valor)}</td>
+            <td>${item.numeroDeParcelas}</td>
+            <td>${formatarDinheiro(item.valorDaParcela)}</td>
+            <td>${item.parcelaAtual ? (item.parcelaAtual + 'º Parcela') : 0}</td>
+            <td>${formatarData(item.vencimento)}</td>
+            `;
+
+            //criar um td para o status
+            const tdStatus = document.createElement('td');
+            const btnStatus = criarBotaoDePagamentoBuscaDeDespesas(item);
+            tdStatus.appendChild(btnStatus);
+            lista.appendChild(tdStatus);
+
+            //criar um td para o botão de remover (somente para o aluguel)
+            // const tdBtnRemove = document.createElement('td');
+            // const btnRemove = criarBotaoDeRemoverDM(conta, item);
+            // tdBtnRemove.appendChild(btnRemove);
+            // lista.appendChild(tdBtnRemove);
+
+            document.getElementById('search-tbody').appendChild(lista);
+        })
+    }
+}
+
 ////////////////////////////////////////////////////////////////////////////////////
 
 //EVENT LISTENERS
@@ -1434,17 +1621,7 @@ btnLogin.addEventListener('click', function (e) {
                         })
                     }
 
-                    criarTabelaDF(currentAccount);
-                    criarTabelaDV(currentAccount);
-                    criarTabelaCC(currentAccount);
-                    criarTabelaEntrada(currentAccount);
-                    atualizarDM();
-                    mostrarDM(currentAccount);
-                    mostrarDP(currentAccount);
-                    atualizarValorTotalDasTabelas(currentAccount);
-                    attBalance(currentAccount);
-                    attStatusEntrada(currentAccount);
-                    checkStatusCC(currentAccount);
+                    atualizarInterfaceUsuario(currentAccount);
                     app.classList.remove('hidden');
                     btnTopoPagina.classList.remove('hidden');
                     topoPagina();
@@ -1915,6 +2092,7 @@ btnAlterar.addEventListener('click', e => {
         atualizarValorTotalDasTabelas(currentAccount);
         attBalance(currentAccount);
         mostrarDM(currentAccount);
+        mostrarBuscaDeDespesas(currentAccount, anoBusca, mesBusca);
 
         modalEditDescricao.value = modalEditQtdParcela.value = modalEditValor.value = modalEditValorParcela.value = '';
         modalEdit.classList.add('hidden');
@@ -2159,4 +2337,44 @@ btnAlterar.addEventListener('click', e => {
 btnFecharModalEdit.addEventListener('click', () => {
     overlay.classList.add('hidden');
     modalEdit.classList.add('hidden');
+})
+
+
+btnFecharModalReajuste.addEventListener('click', function() {
+    modalReajuste.classList.add('hidden');
+    overlay.classList.add('hidden');
+})
+
+btnReajuste.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    if(+modalReajusteValor.value !== despesaAtual.valor) {
+        despesaAtual.valor = +modalReajusteValor.value;
+        modalReajuste.classList.add('hidden');
+        overlay.classList.add('hidden');
+        console.log(despesaAtual);
+        
+        if(despesaAtual.tipo === 'dv') {
+            const despesaRaiz = currentAccount.dv.find(element => element.id === despesaAtual.idR);
+            despesaRaiz.valor = +modalReajusteValor.value;
+        }
+        
+
+        criarTabelaDV(currentAccount);
+        atualizarEstatisticas(currentAccount);
+        atualizarValorTotalDasTabelas(currentAccount);
+        attBalance(currentAccount);
+        mostrarDM(currentAccount);
+        mostrarDP(currentAccount);
+        mostrarBuscaDeDespesas(currentAccount, anoBusca, mesBusca);
+        localStorage.setItem('accounts', JSON.stringify(accounts));
+    }
+})
+
+
+btnFiltroDespesa.addEventListener('click', function() {
+    mesBusca = +filtroMesDaDespesa.value;
+    anoBusca = +filtroAnoDaDespesa.value;
+    mostrarBuscaDeDespesas(currentAccount, anoBusca, mesBusca);
+    btnFiltroDespesa.blur();
 })
