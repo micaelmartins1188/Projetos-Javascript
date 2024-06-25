@@ -23,3 +23,7 @@
 .expenses:last-child {
     margin-bottom: 5rem;
 }
+
+.expenses--search {
+    width: 100%;
+}
