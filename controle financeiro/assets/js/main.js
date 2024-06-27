@@ -1607,7 +1607,7 @@ document.getElementById('downloadButton').addEventListener('click', function () 
         // Cria um elemento <a> para o link de download
         let a = document.createElement('a');
         a.href = url;
-        a.download = `info-financas-${currentAccount.owner.split(' ')[0].toLowerCase()}-${currentAccount.owner.split(' ')[2].toLowerCase()}.json`;
+        a.download = `info-financas-${currentAccount.owner.split(' ')[0].toLowerCase()}-${currentAccount.owner.split(' ')[1].toLowerCase()}.json`;
 
         // Adiciona o link ao documento
         document.body.appendChild(a);
