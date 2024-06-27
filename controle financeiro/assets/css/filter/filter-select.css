@@ -3,6 +3,7 @@
     padding: 5px 10px;
     color: var(--gray-light);
     margin-right: 1rem;
+    font-size: 2rem;
 }
 
 .filter__select:hover,
