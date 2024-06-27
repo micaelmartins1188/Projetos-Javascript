@@ -306,6 +306,11 @@ function criarTabelaDF(conta) {
             <td>Dia ${new Date(item.vencimento).getDate()}</td>
             `;
 
+            const tdRenovar = document.createElement('td');
+            const btnRenovar = criarBtnRenovar(conta, item);
+            tdRenovar.appendChild(btnRenovar);
+            lista.appendChild(tdRenovar);
+
             const td = document.createElement('td');
             const btnRemover = criarBotaoRemover(conta, item);
             td.appendChild(btnRemover);
@@ -321,6 +326,70 @@ function criarTabelaDF(conta) {
         })
     } else return;
 
+}
+
+
+// FUNÇÃO CRIAR BOTÃO RENOVAR
+function criarBtnRenovar(conta, item) {
+    const btn = document.createElement('button');
+    btn.classList.add('expenses__btn', 'expenses__btn--renew');
+    btn.innerHTML = '+1 ano';
+
+    btn.addEventListener('click', function () {
+        // console.log('Despesa Atual', item);
+        const despesasAtuais = conta.despesas.filter(despesa => despesa.idR === item.id && despesa.tipo === item.tipo);
+        // console.log('Todas as despesas: ', despesasAtuais);
+        // console.log('1º: ', despesasAtuais[0]);
+        // console.log('ultimo: ', despesasAtuais[despesasAtuais.length - 1]);
+
+        //TESTANDO AS DATAS DE RENOVAÇÃO
+        // const dataRenovacaoArr = [];
+        // for (let i = 1; i <= 12; i++) {
+        //     let dataParcela = adicionarMeses(new Date(despesasAtuais[despesasAtuais.length - 1].vencimento), i);
+        //     dataRenovacaoArr.push(dataParcela);
+        //     console.log(new Date(dataRenovacaoArr[i - 1]));
+        //     console.log('Vencimento fixo: ', despesasAtuais[despesasAtuais.length - 1].vencimento);
+        // }
+        
+
+
+        //adicionando despesa fixa nos meses subsequentes
+        for (let i = 1; i <= 12; i++) {
+
+            //Data parcela irá armazenar a data da parcela
+            let dataParcela = adicionarMeses(new Date(despesasAtuais[despesasAtuais.length - 1].vencimento), i);
+
+            //Quando for parcelas, adicionar o mesmo ID de cadastro
+            //Ex: 3 parcelas, 3 parcelas com o mesmo ID do item cadastrado
+            //Quando for excluir um item, é só fazer o forEach e remover todos os itens com o mesmo ID 
+            //do item cadastrado
+
+            //Estou adicionando os dados dentro da conta
+
+            conta.despesas.push({
+                tipo: 'df',
+                descricao: item.descricao,
+                valor: item.valor,
+                valorDaParcela: 0,
+                numeroDeParcelas: 0,
+                parcelaAtual: 0,
+                vencimento: dataParcela.toISOString(),
+                pago: 0,
+                id: conta.despesas[conta.despesas.length - 1] ? (conta.despesas[conta.despesas.length - 1]).id + 1 : 0,
+                idR: item.id
+            });
+        }
+
+        //Atualizando a tabela de despesas mensais para o usuário
+        localStorage.setItem('accounts', JSON.stringify(accounts));
+        atualizarDM();
+        mostrarDM(conta);
+        atualizarValorTotalDasTabelas(conta);
+        attBalance(conta);
+        alert('Sua despesa foi renovada com sucesso!');
+    })
+
+    return btn;
 }
 
 
@@ -433,7 +502,7 @@ function criarBotaoRemover(conta, despesa) {
             conta.df.splice(conta.df.findIndex(elemento => elemento.id === despesa.idR), 1);
 
             //REMOVENDO TODAS AS DESPESAS CRIADAS DA DESPESA FIXA REFERENTE HÁ DESPESA REMOVIDA
-            conta.despesas = conta.despesas.filter(obj => !(obj.idR === despesa.id && obj.descricao === despesa.descricao && obj.tipo === despesa.tipo));
+            conta.despesas = conta.despesas.filter(obj => !(obj.idR === despesa.id && obj.descricao === despesa.descricao && obj.tipo === despesa.tipo && new Date(obj.vencimento) > new Date()));
             //ESTAMOS FAZENDO ALTERAÇÃO DIRETA NO ARRAY DE DESPESAS
             //(SE O OBJETO.ID === O ID DA DESPESA REMOVIDA && SE O OBJETO.DESCRICAO === DESCRICAO DA DESPESA REMOVIDA && SE O OBJETO.TIPO === TIPO DA DESPESA REMOVIDA) => TUDO ISSO VAI DAR TRUE
             // ENTÃO FICARIA FILTRADO SOMENTE O ITEM REMOVIDO, 
@@ -1589,7 +1658,7 @@ document.getElementById('loadButton').addEventListener('click', function () {
                 mesBusca = +filtroMesDaDespesa.value;
                 anoBusca = +filtroAnoDaDespesa.value;
                 mostrarBuscaDeDespesas(currentAccount, anoBusca, mesBusca);
-                alert('Arquivo carregado e objetos atualizados no localStorage.');
+                alert('Arquivo carregado com sucesso!');
             } catch (e) {
                 alert('Erro ao ler o arquivo JSON: ' + e.message);
             }

@@ -27,7 +27,8 @@
 }
 
 .expenses__btn--remove,
-.expenses__btn--reajuste {
+.expenses__btn--reajuste,
+.expenses__btn--renew {
     color: var(--gray-light-2);
     font-size: 1.5rem;
     transition: all .4s ease;
@@ -40,7 +41,9 @@
 }
 
 .expenses__btn--reajuste:hover,
-.expenses__btn--reajuste:focus {
+.expenses__btn--reajuste:focus,
+.expenses__btn--renew:hover,
+.expenses__btn--renew:focus {
     outline: none;
     color: var(--orange-light);
 }
