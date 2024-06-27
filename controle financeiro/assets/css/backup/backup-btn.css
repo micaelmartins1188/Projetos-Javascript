@@ -1,0 +1,15 @@
+.backup__btn {
+    background-color: var(--gray-dark);
+    border: none;
+    color: var(--gray-light);
+    text-transform: uppercase;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: .2s all ease;
+    letter-spacing: 1px;
+}
+
+.backup__btn:hover {
+    border: 1px solid var(--gray-light);
+}

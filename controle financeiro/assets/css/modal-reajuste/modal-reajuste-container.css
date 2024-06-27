@@ -1,3 +1,9 @@
 .modal__reajuste-container {
     width: 50%;
 }
+
+@media screen and (max-width: 800px) {
+    .modal__reajuste-container {
+        width: 100%;
+    }
+}

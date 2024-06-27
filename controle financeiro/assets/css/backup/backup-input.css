@@ -1,0 +1,12 @@
+.backup__input {
+    margin: 2rem 0 1rem;
+
+    background-color: var(--gray-dark);
+    border: none;
+    color: var(--gray-light);
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: .2s all ease;
+    letter-spacing: 1px;
+}

@@ -1397,7 +1397,6 @@ function topoPagina() {
 
 //FUNÇÃO CRIAR OS CARDS DAS CONTAS CADASTRADAS
 const criarCardDasContas = conta => {
-    divAccCards.innerHTML = '';
 
     const div = document.createElement('div');
     div.classList.add('modal__acc-card');
@@ -1507,6 +1506,103 @@ function mostrarBuscaDeDespesas(conta, ano, mes) {
     }
 }
 
+
+
+
+
+document.getElementById('downloadButton').addEventListener('click', function () {
+    // Recupera o objeto do localStorage
+    // let objetoLocal = JSON.parse(localStorage.getItem('accounts'));
+
+    // Verifica se há algo no localStorage
+    if (currentAccount) {
+        // Cria um novo objeto apenas com as propriedades desejadas
+        let objetoDownload = {
+            cc: currentAccount.cc,
+            despesas: currentAccount.despesas,
+            df: currentAccount.df,
+            dm: currentAccount.dm,
+            dv: currentAccount.dv,
+            entrada: currentAccount.entrada
+        };
+
+        // Converte o objeto em JSON
+        let json = JSON.stringify(objetoDownload);
+
+        // Cria um blob com o JSON
+        let blob = new Blob([json], { type: 'application/json' });
+
+        // Cria um link para o arquivo
+        let url = URL.createObjectURL(blob);
+
+        // Cria um elemento <a> para o link de download
+        let a = document.createElement('a');
+        a.href = url;
+        a.download = `info-financas-${currentAccount.owner.split(' ')[0].toLowerCase()}-${currentAccount.owner.split(' ')[2].toLowerCase()}.json`;
+
+        // Adiciona o link ao documento
+        document.body.appendChild(a);
+
+        // Clica no link para iniciar o download
+        a.click();
+
+        // Remove o elemento <a> após o download
+        document.body.removeChild(a);
+    } else {
+        alert('Nenhum objeto encontrado no localStorage');
+    }
+});
+
+
+
+
+
+document.getElementById('loadButton').addEventListener('click', function () {
+    // Seleciona o arquivo carregado
+    let file = document.getElementById('fileInput').files[0];
+
+    if (file) {
+        // Cria um leitor de arquivo
+        let reader = new FileReader();
+
+        reader.onload = function (event) {
+            // Lê o conteúdo do arquivo como texto
+            let contents = event.target.result;
+
+            try {
+                // Parse do JSON do arquivo
+                let objetoCarregado = JSON.parse(contents);
+
+                // Atualiza apenas as propriedades específicas no localStorage
+                // let objetoLocal = JSON.parse(localStorage.getItem('meuObjeto'));
+
+                currentAccount.cc = objetoCarregado.cc || [];
+                currentAccount.despesas = objetoCarregado.despesas || [];
+                currentAccount.df = objetoCarregado.df || [];
+                currentAccount.dm = objetoCarregado.dm || [];
+                currentAccount.dv = objetoCarregado.dv || [];
+                currentAccount.entrada = objetoCarregado.entrada || [];
+
+                // Salva o objeto atualizado no localStorage
+                localStorage.setItem('accounts', JSON.stringify(accounts));
+                atualizarInterfaceUsuario(currentAccount);
+                mesBusca = +filtroMesDaDespesa.value;
+                anoBusca = +filtroAnoDaDespesa.value;
+                mostrarBuscaDeDespesas(currentAccount, anoBusca, mesBusca);
+                alert('Arquivo carregado e objetos atualizados no localStorage.');
+            } catch (e) {
+                alert('Erro ao ler o arquivo JSON: ' + e.message);
+            }
+        };
+
+        // Lê o arquivo como texto
+        reader.readAsText(file);
+    } else {
+        alert('Selecione um arquivo para carregar.');
+    }
+});
+
+
 ////////////////////////////////////////////////////////////////////////////////////
 
 //EVENT LISTENERS
@@ -1573,6 +1669,7 @@ btnCloseMessage.addEventListener('click', function () {
 
 //BTN MOSTRAR A LISTA DE CONTAS CADASTRADA
 btnMostrarModalAcc.addEventListener('click', function () {
+    divAccCards.innerHTML = '';
     modalAcc.classList.remove('hidden');
     overlay.classList.remove('hidden');
 
