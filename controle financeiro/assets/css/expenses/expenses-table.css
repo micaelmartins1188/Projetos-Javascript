@@ -19,7 +19,7 @@
 
 .table::-webkit-scrollbar-thumb,
 .expenses__table::-webkit-scrollbar-thumb {
-    background-color: #141414;
+    background-color: var(--yellow-light);
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
 }
